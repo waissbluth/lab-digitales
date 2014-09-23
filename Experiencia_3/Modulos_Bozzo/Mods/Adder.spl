@@ -1,0 +1,10 @@
+[Inputs]
+=a[7:0]=
+=b[7:0]=
+[Outputs]
+c_out
+=y[7:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Adder
+
