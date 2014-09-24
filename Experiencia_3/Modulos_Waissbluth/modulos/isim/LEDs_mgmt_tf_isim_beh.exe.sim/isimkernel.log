@@ -1,0 +1,29 @@
+Command line:
+   LEDs_mgmt_tf_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49205
+
+Tue Sep 23 22:36:09 2014
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 663.38 Meg
+
+ Total Signals          : 15
+ Total Nets             : 29
+ Total Signal Drivers   : 7
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 11
+ Total Traceable Variables  : 20
+ Total Scalar Nets and Variables : 125
+Total Line Count : 36
+
+ Total Simulation Time: 0.234001 sec
+
+ Current Memory Usage: 663.38 Meg
+
+Tue Sep 23 22:36:31 2014
+

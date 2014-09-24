@@ -1,0 +1,38 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "LEDs_mgmt.v" in library work
+WARNING:HDLCompilers:299 - "LEDs_mgmt.v" line 36 Too many digits specified in binary constant
+Module <LEDs_mgmt> compiled
+No errors in compilation
+Analysis of file <"LEDs_mgmt.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> 
+
+Total memory usage is 208916 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
