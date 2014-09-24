@@ -1,0 +1,5 @@
+set -tmpdir "Z:/Desktop/LabDigitales/Experiencia_3/Generador/xst/projnav.tmp"
+set -xsthdpdir "Z:/Desktop/LabDigitales/Experiencia_3/Generador/xst"
+elaborate
+-ifn LEDs_mgmt.prj
+-ifmt mixed

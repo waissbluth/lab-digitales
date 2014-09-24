@@ -33,16 +33,33 @@ module top_module(
 	 wire enable;
 	 assign enable = sw[7];
 	 
-	 wire freq_btn, freq_btn_deb;
-	 assign freq_btn = btn[0];
+	 wire wave_btn, wave_btn_deb;
+	 assign wave_btn = btn[0];
+	 
+	 wire [1:0] wave;
+	 wire [7:0] index;
+	 wire [7:0] outValue;
 	 
 	 wire [1:0] freq;
+	 assign freq = sw[1:0];
 	 
-	 Debouncer boton(mclk, enable, freq_btn, freq_btn_deb);
+	 wire clk;
 	 
-	 count_2 count_freq(freq_btn_deb, enable, freq);
+	 Debouncer boton(mclk, enable, wave_btn, wave_btn_deb);
 	 
-	 seven_seg segmentos(freq, seg_wire);
+	 count_2 count_freq(wave_btn_deb, enable, wave);
+	 
+	 seven_seg segmentos(wave, seg_wire);
+	 
+	 ReClock clock_mgmt(mclk, enable, freq, clk);
+	 
+	 count_1 count_index(clk, enable, index);
+	 
+	 Functions waves(wave, index, outValue);
+
+
+	 wire [7:0] Led_wire;
+	 LEDs_mgmt leds(outValue, Led_wire);
 	 
 	 always @(posedge mclk)
 	 begin
@@ -50,9 +67,8 @@ module top_module(
 		an = 4'b1110;
 		dp = 1;
 		
-		
-		
-		Led = sw;
+		Led = Led_wire;
+	
 		seg = seg_wire;
 	 end
 	

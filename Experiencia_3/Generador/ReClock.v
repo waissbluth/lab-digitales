@@ -25,10 +25,10 @@ module ReClock
 		
 		output wire out );
 		
-		parameter bits_0 = 5;
-		parameter bits_1 = 4;
-		parameter bits_2 = 3;
-		parameter bits_3 = 2;
+		parameter bits_0 = 19;
+		parameter bits_1 = 18;
+		parameter bits_2 = 17;
+		parameter bits_3 = 16;
 		
 		wire [(bits_0 - 1):0] buffer_0;
 		wire [(bits_1 - 1):0] buffer_1;

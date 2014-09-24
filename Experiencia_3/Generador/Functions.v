@@ -27,7 +27,7 @@ module Functions
 	always @(*)
 	begin
 		case(f)
-			2'b01 : value = index;
+			2'b01 : value = {8{index[7]}};
 			2'b10 : value = index[7] ? 8'b1111_1111 - {index[6:0], 1'b0} : {index[6:0], 1'b0};
 			default value = 8'b0000_0000;
 		endcase
