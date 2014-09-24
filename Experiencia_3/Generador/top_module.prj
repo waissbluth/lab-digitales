@@ -1,0 +1,7 @@
+verilog work "FullAdder.v"
+verilog work "Adder.v"
+verilog work "Counter.v"
+verilog work "seven_seg.v"
+verilog work "Debouncer.v"
+verilog work "count_2.v"
+verilog work "top_module.v"
