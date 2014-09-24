@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: John Debouncy
+// Engineer: Juan Andrés Bozzo
 // 
 // Create Date:    00:08:29 09/23/2014 
 // Design Name: 
