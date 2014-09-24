@@ -28,7 +28,7 @@ module seven_seg_tf;
 	reg [1:0] value;
 
 	// Outputs
-	wire [7:0] segments;
+	wire [6:0] segments;
 
 	// Instantiate the Unit Under Test (UUT)
 	seven_seg uut (

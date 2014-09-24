@@ -20,16 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 module seven_seg(
 		input [1:0] value,
-		output reg [7:0] segments
+		output reg [6:0] segments
 	);
 
 	always@(value)
 	
-	case(value)
-		1: segments = 8'b10011111;
-		2: segments = 8'b00100101;
-		3: segments = 8'b00001101;
-		default: segments = 8'b00000011;
+	case(value)       //abcdefg
+		1: segments = 7'b1111001;
+		2: segments = 7'b0100100;
+		3: segments = 7'b0110000;
+		default: segments = 7'b1111111;
 	endcase
 
 endmodule

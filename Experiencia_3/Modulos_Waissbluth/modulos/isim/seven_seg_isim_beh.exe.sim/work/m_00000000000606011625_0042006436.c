@@ -23,12 +23,12 @@
 #endif
 static const char *ng0 = "//psf/Home/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/seven_seg.v";
 static int ng1[] = {1, 0};
-static unsigned int ng2[] = {159U, 0U};
+static unsigned int ng2[] = {79U, 0U};
 static int ng3[] = {2, 0};
-static unsigned int ng4[] = {37U, 0U};
+static unsigned int ng4[] = {18U, 0U};
 static int ng5[] = {3, 0};
-static unsigned int ng6[] = {13U, 0U};
-static unsigned int ng7[] = {3U, 0U};
+static unsigned int ng6[] = {6U, 0U};
+static unsigned int ng7[] = {1U, 0U};
 
 
 
@@ -82,26 +82,26 @@ LAB13:
 LAB12:    xsi_set_current_line(32, ng0);
     t2 = ((char*)((ng7)));
     t3 = (t0 + 1448);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 8);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 7);
 
 LAB14:    goto LAB2;
 
 LAB6:    xsi_set_current_line(29, ng0);
     t7 = ((char*)((ng2)));
     t8 = (t0 + 1448);
-    xsi_vlogvar_assign_value(t8, t7, 0, 0, 8);
+    xsi_vlogvar_assign_value(t8, t7, 0, 0, 7);
     goto LAB14;
 
 LAB8:    xsi_set_current_line(30, ng0);
     t3 = ((char*)((ng4)));
     t4 = (t0 + 1448);
-    xsi_vlogvar_assign_value(t4, t3, 0, 0, 8);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 7);
     goto LAB14;
 
 LAB10:    xsi_set_current_line(31, ng0);
     t3 = ((char*)((ng6)));
     t4 = (t0 + 1448);
-    xsi_vlogvar_assign_value(t4, t3, 0, 0, 8);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 7);
     goto LAB14;
 
 }
