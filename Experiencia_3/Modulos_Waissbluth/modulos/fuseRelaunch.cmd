@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/seven_seg_tf_isim_beh.exe" -prj "Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/seven_seg_tf_beh.prj" "work.seven_seg_tf" "work.glbl" 

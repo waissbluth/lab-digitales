@@ -1,0 +1,5 @@
+set -tmpdir "Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/xst/projnav.tmp"
+set -xsthdpdir "Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Waissbluth/modulos/xst"
+elaborate
+-ifn count_2.prj
+-ifmt mixed
