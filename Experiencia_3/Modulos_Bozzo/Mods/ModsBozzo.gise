@@ -75,6 +75,12 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ReClock_tf_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_ASY" xil_pn:name="ipcore_dir/Core.asy" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="ipcore_dir/Core.ngc" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ipcore_dir/Core.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/Core.v" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VEO" xil_pn:name="ipcore_dir/Core.veo" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
@@ -118,6 +124,9 @@
     <transform xil_pn:end_ts="1411530472" xil_pn:in_ck="2640051244806511888" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5131413712980874394" xil_pn:start_ts="1411530472">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1411530472" xil_pn:in_ck="-3547954548128975870" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1411530472">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -143,8 +152,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Functions_tf_beh.prj"/>
@@ -157,6 +168,7 @@
     <transform xil_pn:end_ts="1411530476" xil_pn:in_ck="-6721907174617568394" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5325048745697380790" xil_pn:start_ts="1411530476">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
@@ -177,6 +189,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1411440904" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1411440904">
       <status xil_pn:value="SuccessfullyRun"/>

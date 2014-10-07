@@ -1,6 +1,7 @@
 INFO:sim:172 - Generating IP...
 Applying current project options...
 Finished applying current project options.
+Resolving generics for 'Core'...
 ERROR:sim - Unable to find .\ROM.coe
 ERROR:sim -    Coregen is looking for
 ERROR:sim -   
@@ -9,8 +10,13 @@ ERROR:sim - Unable to find .\ROM.coe
 ERROR:sim -    Coregen is looking for
 ERROR:sim -   
    Z:\Desktop\LabDigitales\Experiencia_3\Generador\ipcore_dir\ROM.coe
-ERROR:sim - An invalid core configuration has been detected during
-ERROR:sim -    Customization. Core parameters will be reset to their default
-   values.
-Cancelled executing Tcl generator.
+ERROR:sim - IP initializer could not set IP core parameters on IP model
+ERROR:sim - Unable to find .\ROM.coe
+ERROR:sim -    Coregen is looking for
+ERROR:sim -   
+   Z:\Desktop\LabDigitales\Experiencia_3\Generador\ipcore_dir\ROM.coe
+ERROR:sim - Failed to initialize IP model.
+ERROR:sim - Failed executing Tcl generator.
+ERROR:sim - Failed to generate 'Core'.  Failed executing Tcl generator.
+
 Wrote CGP file for project 'Core'.

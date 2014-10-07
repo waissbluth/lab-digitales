@@ -45,8 +45,8 @@ Setup/Hold to clock mclk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-btn<0>      |    2.725(R)|    0.663(R)|mclk_BUFGP        |   0.000|
-sw<7>       |    3.343(R)|   -0.450(R)|mclk_BUFGP        |   0.000|
+btn<0>      |    1.945(R)|    0.939(R)|mclk_BUFGP        |   0.000|
+sw<7>       |    3.118(R)|   -0.588(R)|mclk_BUFGP        |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Setup/Hold to clock sw<0>
@@ -54,7 +54,7 @@ Setup/Hold to clock sw<0>
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-sw<7>       |    1.865(R)|    1.918(R)|clk               |   0.000|
+sw<7>       |    3.273(R)|    1.932(R)|clk               |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Setup/Hold to clock sw<1>
@@ -62,7 +62,7 @@ Setup/Hold to clock sw<1>
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-sw<7>       |    1.566(R)|    2.239(R)|clk               |   0.000|
+sw<7>       |    3.168(R)|    2.060(R)|clk               |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock mclk to Pad
@@ -71,17 +71,25 @@ Clock mclk to Pad
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
 Led<0>      |    5.776(R)|mclk_BUFGP        |   0.000|
-Led<1>      |    5.760(R)|mclk_BUFGP        |   0.000|
+Led<1>      |    5.761(R)|mclk_BUFGP        |   0.000|
 Led<2>      |    5.775(R)|mclk_BUFGP        |   0.000|
 Led<3>      |    5.775(R)|mclk_BUFGP        |   0.000|
 Led<4>      |    5.776(R)|mclk_BUFGP        |   0.000|
 Led<5>      |    5.763(R)|mclk_BUFGP        |   0.000|
 Led<6>      |    5.774(R)|mclk_BUFGP        |   0.000|
 Led<7>      |    5.750(R)|mclk_BUFGP        |   0.000|
+PIO<0>      |    9.159(R)|mclk_BUFGP        |   0.000|
+PIO<1>      |    9.145(R)|mclk_BUFGP        |   0.000|
+PIO<2>      |    9.145(R)|mclk_BUFGP        |   0.000|
+PIO<3>      |    9.145(R)|mclk_BUFGP        |   0.000|
+PIO<4>      |    9.145(R)|mclk_BUFGP        |   0.000|
+PIO<5>      |    9.136(R)|mclk_BUFGP        |   0.000|
+PIO<6>      |    9.146(R)|mclk_BUFGP        |   0.000|
+PIO<7>      |    9.146(R)|mclk_BUFGP        |   0.000|
 seg<0>      |    5.755(R)|mclk_BUFGP        |   0.000|
 seg<1>      |    5.751(R)|mclk_BUFGP        |   0.000|
 seg<2>      |    5.762(R)|mclk_BUFGP        |   0.000|
-seg<3>      |    5.760(R)|mclk_BUFGP        |   0.000|
+seg<3>      |    5.761(R)|mclk_BUFGP        |   0.000|
 seg<4>      |    5.761(R)|mclk_BUFGP        |   0.000|
 seg<6>      |    5.759(R)|mclk_BUFGP        |   0.000|
 ------------+------------+------------------+--------+
@@ -91,9 +99,9 @@ Clock to Setup on destination clock mclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-mclk           |    3.622|         |         |         |
-sw<0>          |    7.896|         |         |         |
-sw<1>          |    7.896|         |         |         |
+mclk           |    3.669|         |         |         |
+sw<0>          |   12.611|         |         |         |
+sw<1>          |   12.611|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock sw<0>
@@ -101,8 +109,8 @@ Clock to Setup on destination clock sw<0>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-sw<0>          |    4.012|         |         |         |
-sw<1>          |    4.012|         |         |         |
+sw<0>          |    4.850|         |         |         |
+sw<1>          |    4.850|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock sw<1>
@@ -110,19 +118,19 @@ Clock to Setup on destination clock sw<1>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-sw<0>          |    4.012|         |         |         |
-sw<1>          |    4.012|         |         |         |
+sw<0>          |    4.850|         |         |         |
+sw<1>          |    4.850|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Sep 24 10:04:25 2014 
+Analysis completed Wed Sep 24 16:24:46 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 150 MB
+Peak Memory Usage: 151 MB
 
 
 

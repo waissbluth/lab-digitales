@@ -48,8 +48,7 @@
 cp ..\..\..\Core.mif .
 
 
-echo "Compiling Core VHDL UNISIM/Behavioral model"
-vhpcomp  -work work ..\..\implement\results\routed.vhd
+vlogcomp -work work ..\..\implement\results\routed.v
 
 echo "Compiling Test Bench Files"
 
@@ -59,7 +58,6 @@ vhpcomp -work work    ..\bmg_stim_gen.vhd
 vhpcomp -work work    ..\Core_synth.vhd 
 vhpcomp -work work    ..\Core_tb.vhd
 
-
-    fuse -L simprim work.Core_tb -o Core_tb.exe
+    fuse -L simprims_ver work.Core_tb work.glbl -o Core_tb.exe
 
 .\Core_tb.exe -sdftyp /Core_tb/Core_synth_inst/bmg_port=..\..\implement\results\routed.sdf -gui -tclbatch simcmds.tcl

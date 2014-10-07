@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-09-23T22:51:52</DateModified>
+  <DateModified>2014-09-24T16:53:47</DateModified>
   <ModuleName>Debouncer</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_3/Modulos_Bozzo/Mods/iseconfig/Debouncer.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_3/Modulos_Bozzo/Mods</ImplementationReportsDirectory>
+  <SavedFilePath>Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Bozzo/Mods/iseconfig/Debouncer.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Bozzo/Mods\</ImplementationReportsDirectory>
   <DateInitialized>2014-09-23T22:51:51</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

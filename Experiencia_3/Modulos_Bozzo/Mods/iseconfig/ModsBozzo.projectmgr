@@ -11,15 +11,16 @@
          <ClosedNode>/Debouncer E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Debouncer.v</ClosedNode>
          <ClosedNode>/Debouncer E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Debouncer.v/waitCounter - Counter/counter - Adder</ClosedNode>
          <ClosedNode>/ReClock E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|ReClock.v</ClosedNode>
+         <ClosedNode>/ReClock Z:|Desktop|LabDigitales|Experiencia_3|Modulos_Bozzo|Mods|ReClock.v/count_3 - Counter</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Functions (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_3/Modulos_Bozzo/Mods/Functions.v)</SelectedItem>
+         <SelectedItem>Functions (Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Bozzo/Mods/Functions.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000db000000020000000000000000000000000200000064ffffffff000000810000000300000002000000db0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000127000000020000000000000000000000000200000064ffffffff000000810000000300000002000001270000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Functions (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_3/Modulos_Bozzo/Mods/Functions.v)</CurrentItem>
+      <CurrentItem>Functions (Z:/Desktop/LabDigitales/Experiencia_3/Modulos_Bozzo/Mods/Functions.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -27,13 +28,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000105000000010000000100000000000000000000000064ffffffff000000810000000000000001000001050000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -66,32 +67,34 @@
          <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Check Syntax</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000105000000010000000100000000000000000000000064ffffffff000000810000000000000001000001050000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000149000000010000000100000000000000000000000064ffffffff000000810000000000000001000001490000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Check Syntax</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Adder_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Adder_tf.v</ClosedNode>
+         <ClosedNode>/Adder_tf Z:|Desktop|LabDigitales|Experiencia_3|Modulos_Bozzo|Mods|Adder_tf.v</ClosedNode>
          <ClosedNode>/Counter_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Counter_tf.v/uut - Counter</ClosedNode>
          <ClosedNode>/Counter_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Counter_tf.v/uut - Counter/counter - Adder</ClosedNode>
+         <ClosedNode>/Counter_tf Z:|Desktop|LabDigitales|Experiencia_3|Modulos_Bozzo|Mods|Counter_tf.v</ClosedNode>
          <ClosedNode>/Debouncer_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Debouncer_tf.v</ClosedNode>
          <ClosedNode>/Functions_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|Functions_tf.v/indexer - Counter</ClosedNode>
          <ClosedNode>/ReClock_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_3|Modulos_Bozzo|Mods|ReClock_tf.v/uut - ReClock</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Functions_tf (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_3/Modulos_Bozzo/Mods/Functions_tf.v)</SelectedItem>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000f2000000020000000000000000000000000200000064ffffffff000000810000000300000002000000f20000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000013b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000013b0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Functions_tf (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_3/Modulos_Bozzo/Mods/Functions_tf.v)</CurrentItem>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -99,13 +102,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem>Design Utilities</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000105000000010000000100000000000000000000000064ffffffff000000810000000000000001000001050000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000149000000010000000100000000000000000000000064ffffffff000000810000000000000001000001490000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
@@ -121,19 +124,29 @@
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>CORE Generator</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>CORE Generator</SelectedItem>
+         <SelectedItem>View HDL Functional Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000105000000010000000100000000000000000000000064ffffffff000000810000000000000001000001050000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000149000000010000000100000000000000000000000064ffffffff000000810000000000000001000001490000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>CORE Generator</CurrentItem>
+      <CurrentItem>View HDL Functional Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" ></ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>

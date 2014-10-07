@@ -3,8 +3,9 @@ Core.asy
 Core.gise
 Core.mif
 Core.ngc
-Core.vhd
-Core.vho
+Core.sym
+Core.v
+Core.veo
 Core.xco
 Core.xise
 Core\blk_mem_gen_v7_3_readme.txt
@@ -51,4 +52,5 @@ Core\simulation\timing\wave_mti.do
 Core\simulation\timing\wave_ncsim.sv
 Core_flist.txt
 Core_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
 summary.log

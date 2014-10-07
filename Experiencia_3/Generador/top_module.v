@@ -25,7 +25,8 @@ module top_module(
 		output reg [7:0] Led,	// Leds
 		output reg [6:0] seg, 	// 7 segment
 		output reg dp, 			// 7 segment decimal point
-		output reg [3:0] an		// 7 segment selector
+		output reg [3:0] an,		// 7 segment selector
+		output reg [7:0] PIO
     );
 	
 	 wire [6:0] seg_wire;
@@ -70,6 +71,8 @@ module top_module(
 		Led = Led_wire;
 	
 		seg = seg_wire;
+		
+		PIO = {outValue[0], outValue[1], outValue[2], outValue[3], outValue[4], outValue[5], outValue[6], outValue[7]};
 	 end
 	
 endmodule
