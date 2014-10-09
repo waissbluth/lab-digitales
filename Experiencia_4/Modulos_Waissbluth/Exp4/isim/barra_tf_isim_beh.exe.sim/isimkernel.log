@@ -1,0 +1,29 @@
+Command line:
+   barra_tf_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49183
+
+Thu Oct 09 11:55:19 2014
+
+
+ Elaboration Time: 0.031201 sec
+
+ Current Memory Usage: 667.521 Meg
+
+ Total Signals          : 18
+ Total Nets             : 27
+ Total Signal Drivers   : 10
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 15
+ Total Traceable Variables  : 26
+ Total Scalar Nets and Variables : 217
+Total Line Count : 44
+
+ Total Simulation Time: 0.967206 sec
+
+ Current Memory Usage: 982.094 Meg
+
+Thu Oct 09 11:56:09 2014
+

@@ -1,0 +1,10 @@
+Command line:
+   ball_tf_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49207
+
+Thu Oct 09 12:51:33 2014
+
+
+ Elaboration Time: 0.0312 sec

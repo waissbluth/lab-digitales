@@ -1,0 +1,5 @@
+set -tmpdir "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/xst/projnav.tmp"
+set -xsthdpdir "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/xst"
+elaborate
+-ifn ball.prj
+-ifmt mixed
