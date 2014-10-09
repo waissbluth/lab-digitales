@@ -1,5 +1,5 @@
 ISim log file
-Running: Z:\Desktop\LabDigitales\Experiencia_4\Modulos_Waissbluth\Exp4\ball_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/ball_tf_isim_beh.wdb 
+Running: Z:\Desktop\LabDigitales\Experiencia_4\Modulos_Waissbluth\Exp4\scores_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -8,6 +8,74 @@ This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: File "//psf/Home/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf.v" Line 34.  For instance scores_tf/uut/, width 3 of formal port score1 is not equal to width 4 of actual signal score1.
+WARNING: File "//psf/Home/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf.v" Line 35.  For instance scores_tf/uut/, width 3 of formal port score2 is not equal to width 4 of actual signal score2.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: File "//psf/Home/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf.v" Line 34.  For instance scores_tf/uut/, width 3 of formal port score1 is not equal to width 4 of actual signal score1.
+WARNING: File "//psf/Home/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf.v" Line 35.  For instance scores_tf/uut/, width 3 of formal port score2 is not equal to width 4 of actual signal score2.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
 # run 2000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.

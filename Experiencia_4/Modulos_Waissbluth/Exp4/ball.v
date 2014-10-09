@@ -80,6 +80,7 @@ module ball(
 			y <= y_new;	
 			
 		// Cálculo de choque con barras
+		
 			
 	 end
 

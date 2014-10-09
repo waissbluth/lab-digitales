@@ -26,14 +26,15 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ball.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ball.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ball.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ball_tf_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ball_tf_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="ball_tf_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="barra_tf_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="scores_tf_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="scores_tf_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="scores_tf_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
@@ -42,23 +43,21 @@
     <transform xil_pn:end_ts="1412873221" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1412873221">
       <status xil_pn:value="SuccessfullyRun"/>
     </transform>
-    <transform xil_pn:end_ts="1412873221" xil_pn:in_ck="-7111456625889170712" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1412873221">
+    <transform xil_pn:end_ts="1412883025" xil_pn:in_ck="-2706572036472185593" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1412883025">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ball.v"/>
       <outfile xil_pn:name="ball_tf.v"/>
       <outfile xil_pn:name="barra.v"/>
       <outfile xil_pn:name="barra_tf.v"/>
+      <outfile xil_pn:name="scores.v"/>
+      <outfile xil_pn:name="scores_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1412873221" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2685445222988535605" xil_pn:start_ts="1412873221">
+    <transform xil_pn:end_ts="1412883053" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7857023876415737505" xil_pn:start_ts="1412883053">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1412873221" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5469474249434899917" xil_pn:start_ts="1412873221">
+    <transform xil_pn:end_ts="1412883053" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="16726100978060129" xil_pn:start_ts="1412883053">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -66,43 +65,34 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1412873221" xil_pn:in_ck="-7111456625889170712" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1412873221">
+    <transform xil_pn:end_ts="1412883025" xil_pn:in_ck="-2706572036472185593" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1412883025">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ball.v"/>
       <outfile xil_pn:name="ball_tf.v"/>
       <outfile xil_pn:name="barra.v"/>
       <outfile xil_pn:name="barra_tf.v"/>
+      <outfile xil_pn:name="scores.v"/>
+      <outfile xil_pn:name="scores_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1412873224" xil_pn:in_ck="-7111456625889170712" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6473200652360798007" xil_pn:start_ts="1412873221">
+    <transform xil_pn:end_ts="1412883056" xil_pn:in_ck="-2706572036472185593" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3432171486891566431" xil_pn:start_ts="1412883053">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="ball_tf_beh.prj"/>
-      <outfile xil_pn:name="ball_tf_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="scores_tf_beh.prj"/>
+      <outfile xil_pn:name="scores_tf_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1412873224" xil_pn:in_ck="-3569639845472826253" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6917954627483999483" xil_pn:start_ts="1412873224">
+    <transform xil_pn:end_ts="1412883056" xil_pn:in_ck="5369825971678559626" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8148468207842920605" xil_pn:start_ts="1412883056">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="ball_tf_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="scores_tf_isim_beh.wdb"/>
     </transform>
   </transforms>
 
