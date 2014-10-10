@@ -50,7 +50,7 @@ cp ../../../Core.mif .
 mkdir work
 
 
-ncvhdl -v93  -work work ../../implement/results/routed.vhd
+ncvlog -work work ../../implement/results/routed.v
 
 echo "Compiling Test Bench Files"
 
@@ -70,7 +70,7 @@ echo 'MTM_CONTROL = "MAXIMUM";' >> sdf.cmd
 
 
 echo "Elaborating Design"
-ncelab -access +rwc -sdf_cmd_file sdf.cmd $work.Core_tb
+ncelab -access +rwc glbl -sdf_cmd_file sdf.cmd $work.Core_tb
 
 echo "Simulating Design"
 ncsim -gui -input @"simvision -input wave_ncsim.sv" $work.Core_tb

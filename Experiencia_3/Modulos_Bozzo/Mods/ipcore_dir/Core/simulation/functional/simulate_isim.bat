@@ -48,9 +48,9 @@
 cp ..\..\..\Core.mif .
 
 
-echo "Compiling Core VHDL UNISIM/Behavioral model"
-vhpcomp  -work work ..\..\..\Core.vhd 
-vhpcomp  -work work ..\..\example_design\Core_exdes.vhd
+echo "Compiling Core Verilog UNISIM/Behavioral model"
+vlogcomp -work work ..\..\..\Core.v 
+vhpcomp -work work ..\..\example_design\Core_exdes.vhd
 
 echo "Compiling Test Bench Files"
 
@@ -60,7 +60,8 @@ vhpcomp -work work    ..\bmg_stim_gen.vhd
 vhpcomp -work work    ..\Core_synth.vhd 
 vhpcomp -work work    ..\Core_tb.vhd
 
-fuse work.Core_tb -L unisims -L xilinxcorelib -o Core_tb.exe
 
+vlogcomp -work work $XILINX\verilog\src\glbl.v
+fuse work.Core_tb work.glbl -L unisims_ver -L xilinxcorelib_ver -o Core_tb.exe
 
 .\Core_tb.exe -gui -tclbatch simcmds.tcl

@@ -49,9 +49,9 @@ cp ../../../Core.mif .
 
 
 mkdir work
-echo "Compiling Core VHDL UNISIM/Behavioral model"
-ncvhdl -v93  -work work ../../../Core.vhd \
-    ../../example_design/Core_exdes.vhd
+echo "Compiling Core Verilog UNISIM/Behavioral model"
+ncvlog -work work ../../../Core.v 
+ncvhdl -v93 -work work ../../example_design/Core_exdes.vhd
 
 echo "Compiling Test Bench Files"
 
@@ -62,7 +62,8 @@ ncvhdl -v93 -work work    ../Core_synth.vhd
 ncvhdl -v93 -work work    ../Core_tb.vhd
 
 echo "Elaborating Design"
-ncelab -access +rwc work.Core_tb
+ncvlog -work work $XILINX/verilog/src/glbl.v
+ncelab -access +rwc glbl work.Core_tb
 
 echo "Simulating Design"
 ncsim -gui -input @"simvision -input wave_ncsim.sv" work.Core_tb
