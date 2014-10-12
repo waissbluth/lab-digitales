@@ -1,19 +1,42 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf_isim_beh.exe" -prj "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf_beh.prj" "work.scores_tf" "work.glbl" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Pong_tf_isim_beh.exe" -prj "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Pong_tf_beh.prj" "work.Pong_tf" "work.glbl" 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 2
-Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores.v" into library work
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/FullAdder.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Adder.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Counter.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Sync.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Sha.v" into library work
+WARNING:HDLCompiler:693 - "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Sha.v" Line 26: Parameter declaration becomes local in Sha with formal parameter declaration list
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/scores.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Burst.v" into library work
+WARNING:HDLCompiler:693 - "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Burst.v" Line 29: Parameter declaration becomes local in Burst with formal parameter declaration list
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/barra.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/ball.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" into library work
+Analyzing Verilog file "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Pong_tf.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65: Size mismatch in connection of port <x>. Formal port size is 11-bit while actual signal size is 1-bit.
 Completed static elaboration
+Compiling module barra
+Compiling module ball
 Compiling module scores
-Compiling module scores_tf
+Compiling module FullAdder
+Compiling module Adder(bits=20)
+Compiling module Counter(bits=20)
+Compiling module Sha(every=1000000)
+Compiling module Adder(bits=19)
+Compiling module Counter(bits=19)
+Compiling module Burst(numberOfClocks=480000)
+Compiling module Sync
+Compiling module pong
+Compiling module Pong_tf
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 3 Verilog Units
-Built simulation executable Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores_tf_isim_beh.exe
-Fuse Memory Usage: 27276 KB
-Fuse CPU Usage: 327 ms
+Compiled 14 Verilog Units
+Built simulation executable E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Pong_tf_isim_beh.exe
+Fuse Memory Usage: 29328 KB
+Fuse CPU Usage: 529 ms

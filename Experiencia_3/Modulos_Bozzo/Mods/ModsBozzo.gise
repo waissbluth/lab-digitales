@@ -118,6 +118,8 @@
     <transform xil_pn:end_ts="1411530472" xil_pn:in_ck="2640051244806511888" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5131413712980874394" xil_pn:start_ts="1411530472">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1411530472" xil_pn:in_ck="-3547954548128975870" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1411530472">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -179,6 +181,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1411440904" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1411440904">
       <status xil_pn:value="SuccessfullyRun"/>

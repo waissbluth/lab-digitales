@@ -1,0 +1,5 @@
+set -tmpdir "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/xst/projnav.tmp"
+set -xsthdpdir "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/xst"
+elaborate
+-ifn Sha.prj
+-ifmt mixed
