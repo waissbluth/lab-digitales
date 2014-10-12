@@ -1,0 +1,29 @@
+Command line:
+   barra_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  49280
+
+Sun Oct 12 17:23:24 2014
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 667.517 Meg
+
+ Total Signals          : 17
+ Total Nets             : 27
+ Total Signal Drivers   : 6
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 9
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 213
+Total Line Count : 24
+
+ Total Simulation Time: 0.078 sec
+
+ Current Memory Usage: 667.517 Meg
+
+Sun Oct 12 17:23:30 2014
+

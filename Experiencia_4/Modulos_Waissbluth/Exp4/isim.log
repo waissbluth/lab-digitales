@@ -1,40 +1,53 @@
 ISim log file
-Running: E:\Yo\Documents\U\10sem\Lab digitales\Repo\Experiencia_4\Modulos_Waissbluth\Exp4\Pong_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Pong_tf_isim_beh.wdb 
+Running: Z:\Desktop\LabDigitales\Experiencia_4\Modulos_Waissbluth\Exp4\ball_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/ball_tf_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65.  For instance uut/Ball/, width 11 of formal port x is not equal to width 1 of actual signal x_ball.
-WARNING: File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65.  For instance uut/Ball/, width 10 of formal port y is not equal to width 1 of actual signal y_ball.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 2000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 100.00us
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65.  For instance uut/Ball/, width 11 of formal port x is not equal to width 1 of actual signal x_ball.
-WARNING: File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65.  For instance uut/Ball/, width 10 of formal port y is not equal to width 1 of actual signal y_ball.
 # run 2000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 10000.00us
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65.  For instance uut/Ball/, width 11 of formal port x is not equal to width 1 of actual signal x_ball.
-WARNING: File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v" Line 65.  For instance uut/Ball/, width 10 of formal port y is not equal to width 1 of actual signal y_ball.
 # run 2000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 10000.00us
-# run all
-Stopped at time : 331336145 ns : File "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/Sync.v" Line 69
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 2000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.

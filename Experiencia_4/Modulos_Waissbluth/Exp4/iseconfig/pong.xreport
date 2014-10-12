@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-10-12T01:29:28</DateModified>
+  <DateModified>2014-10-12T17:38:07</DateModified>
   <ModuleName>pong</ModuleName>
-  <SummaryTimeStamp>2014-10-11T10:02:06</SummaryTimeStamp>
-  <SavedFilePath>E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4/iseconfig/pong.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_4/Modulos_Waissbluth/Exp4\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2014-10-12T17:16:28</SummaryTimeStamp>
+  <SavedFilePath>Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/iseconfig/pong.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4</ImplementationReportsDirectory>
   <DateInitialized>2014-10-09T16:15:02</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

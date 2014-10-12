@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-MONSTRO::  Sun Oct 12 03:55:06 2014
+NICOLSWAISSF021::  Sun Oct 12 18:16:53 2014
 
 par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
 
@@ -41,10 +41,10 @@ Design Summary Report:
    Number of External Bidir IOBs                  0
 
 
-   Number of BUFGMUXs                        2 out of 24      8%
+   Number of BUFGMUXs                        3 out of 24     12%
    Number of MULT18X18SIOs                   2 out of 4      50%
    Number of RAMB16s                         2 out of 4      50%
-   Number of Slices                        242 out of 960    25%
+   Number of Slices                        416 out of 960    43%
       Number of SLICEMs                      0 out of 480     0%
 
 
@@ -57,16 +57,13 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 1 secs 
 Finished initial Timing Analysis.  REAL time: 1 secs 
 
-WARNING:Par:288 - The signal btn<1>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal btn<2>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal btn<3>_IBUF has no load.  PAR will not attempt to route this signal.
 
 Starting Placer
 Total REAL time at the beginning of Placer: 1 secs 
 Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:5cf54a32) REAL time: 1 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:765a8463) REAL time: 1 secs 
 
 Phase 2.7  Design Feasibility Check
 WARNING:Place:837 - Partially locked IO Bus is found. 
@@ -75,42 +72,42 @@ WARNING:Place:837 - Partially locked IO Bus is found.
 
 INFO:Place:834 - Only a subset of IOs are locked. Out of 19 IOs, 18 are locked and 1 are not locked. If you would like
    to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:5cf54a32) REAL time: 1 secs 
+Phase 2.7  Design Feasibility Check (Checksum:765a8463) REAL time: 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:5cf54a32) REAL time: 1 secs 
+Phase 3.31  Local Placement Optimization (Checksum:765a8463) REAL time: 1 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 ..
-Phase 4.2  Initial Clock and IO Placement (Checksum:6f3ececa) REAL time: 2 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:9d7a34b6) REAL time: 1 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:6f3ececa) REAL time: 2 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:9d7a34b6) REAL time: 1 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:6f3ececa) REAL time: 2 secs 
+Phase 6.36  Local Placement Optimization (Checksum:9d7a34b6) REAL time: 1 secs 
 
 Phase 7.3  Local Placement Optimization
 ..
-Phase 7.3  Local Placement Optimization (Checksum:99782d53) REAL time: 2 secs 
+Phase 7.3  Local Placement Optimization (Checksum:dac1a647) REAL time: 1 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:99782d53) REAL time: 2 secs 
+Phase 8.5  Local Placement Optimization (Checksum:dac1a647) REAL time: 1 secs 
 
 Phase 9.8  Global Placement
 ..................
-.............
-..
-Phase 9.8  Global Placement (Checksum:e272154f) REAL time: 4 secs 
+........................................
+.....
+Phase 9.8  Global Placement (Checksum:b9a5d6e6) REAL time: 4 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:e272154f) REAL time: 4 secs 
+Phase 10.5  Local Placement Optimization (Checksum:b9a5d6e6) REAL time: 4 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:1a07dc17) REAL time: 4 secs 
+Phase 11.18  Placement Optimization (Checksum:2450bda6) REAL time: 4 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:1a07dc17) REAL time: 4 secs 
+Phase 12.5  Local Placement Optimization (Checksum:2450bda6) REAL time: 4 secs 
 
 Total REAL time to Placer completion: 4 secs 
 Total CPU  time to Placer completion: 4 secs 
@@ -121,13 +118,13 @@ Writing design to file pong.ncd
 Starting Router
 
 
-Phase  1  : 1213 unrouted;      REAL time: 5 secs 
+Phase  1  : 2337 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 1132 unrouted;      REAL time: 5 secs 
+Phase  2  : 2189 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 146 unrouted;      REAL time: 5 secs 
+Phase  3  : 326 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 170 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  4  : 351 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
@@ -135,20 +132,22 @@ Updating file: pong.ncd with current fully routed design.
 
 Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
 
 Updating file: pong.ncd with current fully routed design.
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
-Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
-Total REAL time to Router completion: 7 secs 
-Total CPU time to Router completion: 7 secs 
+Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+
+Total REAL time to Router completion: 9 secs 
+Total CPU time to Router completion: 9 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -166,10 +165,12 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|clockHalver/overflow |              |      |      |            |             |
-|                     | BUFGMUX_X1Y10| No   |   21 |  0.014     |  0.047      |
+|          Led_0_OBUF |  BUFGMUX_X1Y0| No   |   33 |  0.024     |  0.064      |
 +---------------------+--------------+------+------+------------+-------------+
-|          mclk_BUFGP | BUFGMUX_X2Y11| No   |   12 |  0.015     |  0.054      |
+|clockHalver/overflow |              |      |      |            |             |
+|                     | BUFGMUX_X1Y10| No   |   21 |  0.015     |  0.052      |
++---------------------+--------------+------+------+------------+-------------+
+|           mclk_IBUF | BUFGMUX_X2Y11| No   |   27 |  0.030     |  0.063      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -189,11 +190,14 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clo | SETUP       |         N/A|     4.906ns|     N/A|           0
-  ckHalver/overflow                         | HOLD        |     0.985ns|            |       0|           0
+  Autotimespec constraint for clock net Led | SETUP       |         N/A|     6.938ns|     N/A|           0
+  _0_OBUF                                   | HOLD        |     0.929ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net mcl | SETUP       |         N/A|     6.642ns|     N/A|           0
-  k_BUFGP                                   | HOLD        |     0.959ns|            |       0|           0
+  Autotimespec constraint for clock net clo | SETUP       |         N/A|     4.898ns|     N/A|           0
+  ckHalver/overflow                         | HOLD        |     1.042ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net mcl | SETUP       |         N/A|     6.384ns|     N/A|           0
+  k_IBUF                                    | HOLD        |     0.959ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -209,18 +213,16 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-WARNING:Par:283 - There are 3 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+Total REAL time to PAR completion: 10 secs 
+Total CPU time to PAR completion: 9 secs 
 
-Total REAL time to PAR completion: 7 secs 
-Total CPU time to PAR completion: 7 secs 
-
-Peak Memory Usage:  314 MB
+Peak Memory Usage:  268 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 6
+Number of warning messages: 1
 Number of info messages: 2
 
 Writing design to file pong.ncd

@@ -1,16 +1,10 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sun Oct 12 03:55:21 2014
+Sun Oct 12 18:17:10 2014
 
 drc -z pong.ncd pong.pcf
 
-WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<2>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<3>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC is
    set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp VSYNC is
@@ -31,5 +25,5 @@ WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<1>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<2>
    is set but the tri state is not configured. 
-DRC detected 0 errors and 13 warnings.  Please see the previously displayed
+DRC detected 0 errors and 10 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

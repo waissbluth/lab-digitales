@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=E:\Yo\Documents\U\10sem\Lab digitales\Repo\Experiencia_4\Modulos_Waissbluth\Exp4\pong.ncd
-OUTFILE=E:\Yo\Documents\U\10sem\Lab digitales\Repo\Experiencia_4\Modulos_Waissbluth\Exp4\pong.bit
+INFILE=Z:\Desktop\LabDigitales\Experiencia_4\Modulos_Waissbluth\Exp4\pong.ncd
+OUTFILE=Z:\Desktop\LabDigitales\Experiencia_4\Modulos_Waissbluth\Exp4\pong.bit
 FAMILY=Spartan3E
 PART=xc3s100e-5cp132
-WORKINGDIR=E:\Yo\Documents\U\10sem\Lab digitales\Repo\Experiencia_4\Modulos_Waissbluth\Exp4
+WORKINGDIR=Z:\Desktop\LabDigitales\Experiencia_4\Modulos_Waissbluth\Exp4
 LICENSE=WebPack
-USER_INFO=210802149_0_0_721
+USER_INFO=210914023_0_0_249

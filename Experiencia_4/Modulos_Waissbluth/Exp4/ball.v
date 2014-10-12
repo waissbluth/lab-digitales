@@ -40,47 +40,45 @@ module ball(
 	 reg mov_x;
 	 reg mov_y;
 	 
-	 reg [10:0] x_new;
-	 reg [9:0] y_new;
 	  
+	 wire [10:0] x_new = mov_x ? (Vx ? x + Vh : x - Vh) : x;
+	 wire [9:0] y_new = mov_y ? (Vy ? y + Vv : y - Vv) : y;
+	 
 	 always@(posedge clk)
 	 begin
 		// Estado inicial
 		if(reset || point_1 || point_2) begin
-			x_new <= 310;
-			y_new <= 180;
+			x <= 310;
+			y <= 180;
 			point_1 <= 0;
 			point_2 <= 0;
 			mov_x <= 1;
-			mov_y <= 1;
+			mov_y <= 0;
 			Vy <= 0;
 			Vx <= 1;
 		// Aplicar velocidad a la pelota
 		end else begin
-			x_new <= mov_x ? (Vx ? x + Vv : x - Vv) : x;
-			y_new <= mov_y ? (Vy ? y + Vh : y - Vh) : y;
+			
+			// Cálculo de puntaje
+			if(x_new > 615)
+				point_1 <= 1;
+			else if(x_new < 4)
+				point_2 <= 1;
+			else
+				x <= x_new;	
+				
+			// Cálculo de rebote vertical
+			if(y_new > 355) begin
+				y <= 355;
+				Vy <= 0;
+			end else if(y_new < 4) begin
+				y <= 4;
+				Vy <= 1;
+			end else
+				y <= y_new;	
+				
+			// Cálculo de choque con barras
 		end
-		
-		// Cálculo de puntaje
-		if(x_new > 615)
-			point_1 <= 1;
-		else if(x_new < 4)
-			point_2 <= 1;
-		else
-			x <= x_new;	
-			
-		// Cálculo de rebote vertical
-		if(y_new > 355) begin
-			y_new <= 355;
-			Vy <= 0;
-		end else if(y_new < 4) begin
-			y_new <= 4;
-			Vy <= 1;
-		end else
-			y <= y_new;	
-			
-		// Cálculo de choque con barras
-		
 			
 	 end
 

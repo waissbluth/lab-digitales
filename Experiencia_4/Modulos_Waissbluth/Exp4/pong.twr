@@ -44,15 +44,19 @@ Setup/Hold to clock mclk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-btn<0>      |    0.565(R)|    0.652(R)|mclk_BUFGP        |   0.000|
-sw<0>       |    1.415(R)|   -0.035(R)|mclk_BUFGP        |   0.000|
-sw<1>       |    1.196(R)|    0.139(R)|mclk_BUFGP        |   0.000|
-sw<2>       |    1.073(R)|    0.237(R)|mclk_BUFGP        |   0.000|
-sw<3>       |    0.857(R)|    0.411(R)|mclk_BUFGP        |   0.000|
-sw<4>       |    1.043(R)|    0.262(R)|mclk_BUFGP        |   0.000|
-sw<5>       |    0.791(R)|    0.463(R)|mclk_BUFGP        |   0.000|
-sw<6>       |    0.484(R)|    0.709(R)|mclk_BUFGP        |   0.000|
-sw<7>       |    1.736(R)|   -0.293(R)|mclk_BUFGP        |   0.000|
+btn<0>      |    1.604(R)|    2.760(R)|Led_0_OBUF        |   0.000|
+btn<1>      |    1.984(R)|    3.123(R)|Led_0_OBUF        |   0.000|
+btn<2>      |    1.961(R)|    2.703(R)|Led_0_OBUF        |   0.000|
+btn<3>      |    2.741(R)|    1.724(R)|Led_0_OBUF        |   0.000|
+sw<0>       |    2.063(R)|    3.859(R)|Led_0_OBUF        |   0.000|
+            |    2.445(R)|   -0.402(R)|mclk_IBUF         |   0.000|
+sw<1>       |    1.157(R)|    0.171(R)|mclk_IBUF         |   0.000|
+sw<2>       |    0.372(R)|    0.794(R)|mclk_IBUF         |   0.000|
+sw<3>       |    0.761(R)|    0.482(R)|mclk_IBUF         |   0.000|
+sw<4>       |    0.293(R)|    0.857(R)|mclk_IBUF         |   0.000|
+sw<5>       |    0.080(R)|    1.026(R)|mclk_IBUF         |   0.000|
+sw<6>       |    0.600(R)|    0.610(R)|mclk_IBUF         |   0.000|
+sw<7>       |    0.991(R)|    0.298(R)|mclk_IBUF         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock mclk to Pad
@@ -60,14 +64,15 @@ Clock mclk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-OutBlue<1>  |   10.586(R)|mclk_BUFGP        |   0.000|
-OutBlue<2>  |   11.063(R)|mclk_BUFGP        |   0.000|
-OutGreen<0> |   10.814(R)|mclk_BUFGP        |   0.000|
-OutGreen<1> |   11.052(R)|mclk_BUFGP        |   0.000|
-OutGreen<2> |   10.825(R)|mclk_BUFGP        |   0.000|
-OutRed<0>   |   11.605(R)|mclk_BUFGP        |   0.000|
-OutRed<1>   |   11.049(R)|mclk_BUFGP        |   0.000|
-OutRed<2>   |   10.846(R)|mclk_BUFGP        |   0.000|
+Led<0>      |    9.619(R)|mclk_IBUF         |   0.000|
+OutBlue<1>  |   11.520(R)|mclk_IBUF         |   0.000|
+OutBlue<2>  |   11.302(R)|mclk_IBUF         |   0.000|
+OutGreen<0> |   11.450(R)|mclk_IBUF         |   0.000|
+OutGreen<1> |   11.155(R)|mclk_IBUF         |   0.000|
+OutGreen<2> |   11.170(R)|mclk_IBUF         |   0.000|
+OutRed<0>   |   11.470(R)|mclk_IBUF         |   0.000|
+OutRed<1>   |   11.449(R)|mclk_IBUF         |   0.000|
+OutRed<2>   |   11.460(R)|mclk_IBUF         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock mclk
@@ -75,18 +80,25 @@ Clock to Setup on destination clock mclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-mclk           |    6.642|         |         |         |
+mclk           |   28.034|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+mclk           |Led<0>         |    6.430|
+---------------+---------------+---------+
 
-Analysis completed Sun Oct 12 03:55:18 2014 
+
+Analysis completed Sun Oct 12 18:17:07 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 155 MB
+Peak Memory Usage: 165 MB
 
 
 

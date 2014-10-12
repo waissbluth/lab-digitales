@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Oct 12 03:55:03 2014
+// Written by: Map P.20131013 on Sun Oct 12 18:16:50 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -34,6 +34,5 @@ COMP "btn<3>" LOCATE = SITE "A7" LEVEL 1;
 COMP "OutRed<0>" LOCATE = SITE "C14" LEVEL 1;
 COMP "OutRed<1>" LOCATE = SITE "D13" LEVEL 1;
 COMP "OutRed<2>" LOCATE = SITE "F13" LEVEL 1;
-NET "mclk_BUFGP/IBUFG" BEL "mclk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
 SCHEMATIC END;
 
