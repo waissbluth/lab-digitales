@@ -90,8 +90,8 @@ module pong(
 	wire [2:0] score2;
 	
 	// Bloques logicos
-	barra Barra1(logicClk, reset, btn[0], btn[1], bar_1_y);
-	barra Barra2(logicClk, reset, btn[2], btn[3], bar_2_y);
+	barra Barra1(logicClk, reset, btn[2], btn[3], bar_1_y);
+	barra Barra2(logicClk, reset, btn[0], btn[1], bar_2_y);
 
 	ball Ball(logicClk, reset, bar_1_y, bar_2_y, x_ball, y_ball, point1, point2);
 	

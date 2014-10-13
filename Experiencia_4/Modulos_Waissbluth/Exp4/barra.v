@@ -30,7 +30,7 @@ module barra(
 	parameter max = 329;
 	
 	// La barra se mueve esta cantidad de pixeles
-	parameter delta = 4;
+	parameter delta = 3;
 	
 	// La barra parte al medio
 	initial y = 180;

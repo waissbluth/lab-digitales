@@ -301,3 +301,50 @@ par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
 bitgen -intstyle ise -f pong.ut pong.ncd 
 xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 
