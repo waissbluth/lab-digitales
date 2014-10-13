@@ -36,27 +36,26 @@ module scores(
 		playing = 1;
 		winner = 0;
 	end
-		
-	 
-	 always@(posedge clk)
-	 begin
-		 if(reset) begin
-			score1 <= 0;
-			score2 <= 0;
-			playing <= 1;
-			winner <= 0;
-		 end else begin	 
-			if((score1 < 7) && (score2 < 7)) begin
-				score1 <= score1 + point1;
-				score2 <= score2 + point2;
-			end else begin
-				playing <= 0;
-				winner <= (score1 == 7);
-			end
-		 end
-		 
-	 
+			 
+	always@(posedge clk)
+	begin
+	 if(reset) begin
+		score1 <= 0;
+		score2 <= 0;
+		playing <= 1;
+		winner <= 0;
+	 end else begin	 
+		if((score1 < 7) && (score2 < 7)) begin
+			score1 <= score1 + point1;
+			score2 <= score2 + point2;
+		end else begin
+			playing <= 0;
+			winner <= (score1 == 7);
+		end
 	 end
+	 
+
+	end
 
 
 endmodule

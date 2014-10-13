@@ -63,7 +63,7 @@ module ball(
 			
 			// Choque con barra 1
 			if(x_new + 4 >= bar_1_x - 5 &&
-				x_new - 4 < bar_1_x + 5 &&
+				x_new - 4 < bar_1_x &&
 				y_new + 4 >= bar_1_y - 30 &&
 				y_new - 4 <= bar_1_y + 30) begin 
 				
@@ -90,7 +90,7 @@ module ball(
 				end
 				
 			//Choque con barra 2	
-			end else if(x_new + 4 >= bar_2_x - 5 &&
+			end else if(x_new + 4 >= bar_2_x &&
 							x_new - 4 < bar_2_x + 5 &&
 							y_new + 4 >= bar_2_y - 30 &&
 							y_new - 4 <= bar_2_y + 30) begin 

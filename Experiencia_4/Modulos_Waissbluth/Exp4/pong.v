@@ -61,12 +61,18 @@ module pong(
 	wire vgaClk;
 	wire logicClk;
 	wire halverCount;
+	wire clk;
 	
 	wire reset;
-	assign reset = sw[0];
+	assign reset = sw[7];
+	wire pause;
+	assign pause = sw[0];
+
 	
-	Sha #(400000) logicTimer(mclk, logicClk);
+	Sha #(400000) logicTimer(mclk, clk);
 	Counter #(1) clockHalver(mclk, 1'b1, reset, halverCount, vgaClk);
+	
+	assign logicClk = clk & !pause;
 	
 	// Pantalla
 	wire [(bitsPosicion - 1):0] x_pixel, y_pixel, y_tmp;
@@ -115,7 +121,7 @@ module pong(
 	// Pelota, barras
 	IsInIntRect #(bitsPosicion, bitsDimension) graphicP1 (anchoBloques, altoBloques, bar_1_x, g_bar_1_y, x_pixel, y_pixel, pixelB1);
 	IsInIntRect #(bitsPosicion, bitsDimension) graphicP2 (anchoBloques, altoBloques, bar_2_x, g_bar_2_y, x_pixel, y_pixel, pixelB2);
-	IsInIntCircle #(bitsPosicion, bitsDimension) graphicBall (8, g_x_ball, g_y_ball, x_pixel, y_pixel, pixelBall);
+	IsInIntCircle #(bitsPosicion, bitsDimension) graphicBall (4, g_x_ball, g_y_ball, x_pixel, y_pixel, pixelBall);
 	
 	// Cancha
 	IsInIntRect #(bitsPosicion, bitsDimension) graphicCageLeft (anchoPared, 360, offsetXCancha, 180 + offsetYCancha, x_pixel, y_pixel, pixelCageLeft);
@@ -129,6 +135,8 @@ module pong(
 	
 	wire paintPixel;
 	assign paintPixel = pixelB1 | pixelB2 | pixelBall | pixelCageLeft | pixelCageRight | pixelCageUp | pixelCageDown | pixelScoreP1 | pixelScoreP2;
+	
+	
 	
 	// Refrescar pantalla
 	always @(posedge mclk)

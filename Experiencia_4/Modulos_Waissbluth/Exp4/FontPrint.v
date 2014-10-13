@@ -33,8 +33,8 @@ module FontPrint
 	wire [2:0] subsX;
 	wire [3:0] subsY;
 	
-	assign subsX = evalX - posX;
-	assign subsY = evalY - posY;
+	assign subsX = 7 - (evalX - posX);
+	assign subsY = 15 - (evalY - posY);
 	
 	font_rom Data (clk, address, data);
 	
