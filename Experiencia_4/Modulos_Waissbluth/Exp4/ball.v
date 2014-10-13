@@ -67,7 +67,27 @@ module ball(
 				y_new + 4 >= bar_1_y - 30 &&
 				y_new - 4 <= bar_1_y + 30) begin 
 				
+				// Siempre se rebota hacia la izquierda
 				Vx <= 1;
+				
+				//Velocidad vertical en base a la altura
+				if(y_new > bar_1_y + 10) begin
+					if(mov_y) begin
+						if(Vy == 0)
+							mov_y <= 0;
+					end else begin
+						mov_y <= 1;
+						Vy <= 1;
+					end
+				end else if(y_new < bar_1_y - 10) begin
+					if(mov_y) begin
+						if(Vy)
+							mov_y <= 0;
+					end else begin
+						mov_y <= 1;
+						Vy <= 0;
+					end
+				end
 				
 			//Choque con barra 2	
 			end else if(x_new + 4 >= bar_2_x - 5 &&
@@ -75,7 +95,38 @@ module ball(
 							y_new + 4 >= bar_2_y - 30 &&
 							y_new - 4 <= bar_2_y + 30) begin 
 				
+				// Siempre se rebota hacia la derecha
 				Vx <= 0;
+				
+				//Velocidad vertical en base a la altura
+				if(y_new > bar_2_y + 10) begin
+					if(mov_y) begin
+						if(Vy == 0)
+							mov_y <= 0;
+					end else begin
+						mov_y <= 1;
+						Vy <= 1;
+					end
+				end else if(y_new < bar_2_y - 10) begin
+					if(mov_y) begin
+						if(Vy)
+							mov_y <= 0;
+					end else begin
+						mov_y <= 1;
+						Vy <= 0;
+					end
+				end
+				
+			end else begin
+				// Cálculo de rebote vertical
+				if(y_new > 355) begin
+					y <= 355;
+					Vy <= 0;
+				end else if(y_new < 4) begin
+					y <= 4;
+					Vy <= 1;
+				end else
+					y <= y_new;	
 			end
 			
 			// Cálculo de puntaje
@@ -84,18 +135,7 @@ module ball(
 			else if(x_new < 4)
 				point_2 <= 1;
 			
-			x <= x_new;	
-			
-			// Cálculo de rebote vertical
-			if(y_new > 355) begin
-				y <= 355;
-				Vy <= 0;
-			end else if(y_new < 4) begin
-				y <= 4;
-				Vy <= 1;
-			end else
-				y <= y_new;	
-				
+			x <= x_new;				
 		end
 			
 	 end

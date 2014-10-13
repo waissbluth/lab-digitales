@@ -65,7 +65,7 @@ module pong(
 	wire reset;
 	assign reset = sw[0];
 	
-	Sha #(500000) logicTimer(mclk, logicClk);
+	Sha #(400000) logicTimer(mclk, logicClk);
 	Counter #(1) clockHalver(mclk, 1'b1, reset, halverCount, vgaClk);
 	
 	// Pantalla

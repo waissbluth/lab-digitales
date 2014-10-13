@@ -44,19 +44,19 @@ Setup/Hold to clock mclk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-btn<0>      |    1.660(R)|    3.306(R)|Led_0_OBUF        |   0.000|
-btn<1>      |    1.826(R)|    3.266(R)|Led_0_OBUF        |   0.000|
-btn<2>      |    2.353(R)|    2.821(R)|Led_0_OBUF        |   0.000|
-btn<3>      |    2.981(R)|    2.278(R)|Led_0_OBUF        |   0.000|
-sw<0>       |    0.716(R)|    3.809(R)|Led_0_OBUF        |   0.000|
-            |    2.472(R)|   -0.123(R)|mclk_IBUF         |   0.000|
-sw<1>       |    0.866(R)|    0.404(R)|mclk_IBUF         |   0.000|
-sw<2>       |    0.987(R)|    0.305(R)|mclk_IBUF         |   0.000|
-sw<3>       |    1.183(R)|    0.149(R)|mclk_IBUF         |   0.000|
-sw<4>       |    0.777(R)|    0.474(R)|mclk_IBUF         |   0.000|
-sw<5>       |    1.056(R)|    0.252(R)|mclk_IBUF         |   0.000|
-sw<6>       |    1.065(R)|    0.244(R)|mclk_IBUF         |   0.000|
-sw<7>       |    1.460(R)|   -0.072(R)|mclk_IBUF         |   0.000|
+btn<0>      |    1.861(R)|    3.959(R)|Led_0_OBUF        |   0.000|
+btn<1>      |    2.113(R)|    3.522(R)|Led_0_OBUF        |   0.000|
+btn<2>      |    2.823(R)|    3.270(R)|Led_0_OBUF        |   0.000|
+btn<3>      |    3.600(R)|    3.213(R)|Led_0_OBUF        |   0.000|
+sw<0>       |    1.026(R)|    4.189(R)|Led_0_OBUF        |   0.000|
+            |    2.019(R)|   -0.063(R)|mclk_IBUF         |   0.000|
+sw<1>       |    1.432(R)|   -0.049(R)|mclk_IBUF         |   0.000|
+sw<2>       |    1.079(R)|    0.233(R)|mclk_IBUF         |   0.000|
+sw<3>       |    1.145(R)|    0.180(R)|mclk_IBUF         |   0.000|
+sw<4>       |    0.672(R)|    0.559(R)|mclk_IBUF         |   0.000|
+sw<5>       |    0.698(R)|    0.538(R)|mclk_IBUF         |   0.000|
+sw<6>       |    0.932(R)|    0.351(R)|mclk_IBUF         |   0.000|
+sw<7>       |    1.553(R)|   -0.147(R)|mclk_IBUF         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock mclk to Pad
@@ -64,15 +64,15 @@ Clock mclk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Led<0>      |   10.025(R)|mclk_IBUF         |   0.000|
-OutBlue<1>  |   10.846(R)|mclk_IBUF         |   0.000|
-OutBlue<2>  |   10.826(R)|mclk_IBUF         |   0.000|
-OutGreen<0> |   11.543(R)|mclk_IBUF         |   0.000|
-OutGreen<1> |   11.132(R)|mclk_IBUF         |   0.000|
-OutGreen<2> |   11.344(R)|mclk_IBUF         |   0.000|
-OutRed<0>   |   11.871(R)|mclk_IBUF         |   0.000|
-OutRed<1>   |   11.856(R)|mclk_IBUF         |   0.000|
-OutRed<2>   |   11.681(R)|mclk_IBUF         |   0.000|
+Led<0>      |    9.989(R)|mclk_IBUF         |   0.000|
+OutBlue<1>  |   10.824(R)|mclk_IBUF         |   0.000|
+OutBlue<2>  |   11.062(R)|mclk_IBUF         |   0.000|
+OutGreen<0> |   11.387(R)|mclk_IBUF         |   0.000|
+OutGreen<1> |   11.012(R)|mclk_IBUF         |   0.000|
+OutGreen<2> |   11.013(R)|mclk_IBUF         |   0.000|
+OutRed<0>   |   11.010(R)|mclk_IBUF         |   0.000|
+OutRed<1>   |   11.497(R)|mclk_IBUF         |   0.000|
+OutRed<2>   |   11.344(R)|mclk_IBUF         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock mclk
@@ -80,25 +80,25 @@ Clock to Setup on destination clock mclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-mclk           |   27.419|         |         |         |
+mclk           |   28.951|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-mclk           |Led<0>         |    6.430|
+mclk           |Led<0>         |    6.845|
 ---------------+---------------+---------+
 
 
-Analysis completed Mon Oct 13 16:24:36 2014 
+Analysis completed Mon Oct 13 17:08:36 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 165 MB
+Peak Memory Usage: 167 MB
 
 
 
