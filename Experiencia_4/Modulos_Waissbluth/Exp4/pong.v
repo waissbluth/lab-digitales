@@ -32,10 +32,17 @@ module pong(
 		output reg [2:0] OutGreen,
 		output reg [2:0] OutBlue
     );
+	 
+	 
+	// Playing = 1: Seguimos Jugando.
+	// Winner = 1: El ganador es el player 1.
+	wire playing, winner;
 
 	// Parametros
 	parameter bitsPosicion = 10;
 	parameter bitsDimension = 10;
+	
+	reg [(bitsPosicion - 1):0] posXWinner;
 	
 	wire [(bitsPosicion - 1):0] offsetXCancha, offsetYCancha, posYPuntajes;
 	assign offsetXCancha = 10;
@@ -69,10 +76,10 @@ module pong(
 	assign pause = sw[0];
 
 	
-	Sha #(400000) logicTimer(mclk, clk);
+	Sha #(300000) logicTimer(mclk, clk);
 	Counter #(1) clockHalver(mclk, 1'b1, reset, halverCount, vgaClk);
 	
-	assign logicClk = clk & !pause;
+	assign logicClk = clk & !pause & playing;
 	
 	// Pantalla
 	wire [(bitsPosicion - 1):0] x_pixel, y_pixel, y_tmp;
@@ -87,10 +94,6 @@ module pong(
 	
 	// Pulsos cuando hay punto para alguien
 	wire point1, point2;
-	
-	// Playing = 1: Seguimos Jugando.
-	// Winner = 1: El ganador es el player 1.
-	wire playing, winner;
 	
 	wire [2:0] score1;
 	wire [2:0] score2;
@@ -116,7 +119,7 @@ module pong(
 	assign g_score2 = score2 + 48;
 	
 	// Bloques graficos
-	wire pixelB1, pixelB2, pixelBall, pixelCageLeft, pixelCageRight, pixelCageUp, pixelCageDown, pixelScoreP1, pixelScoreP2;
+	wire pixelB1, pixelB2, pixelBall, pixelCageLeft, pixelCageRight, pixelCageUp, pixelCageDown, pixelScoreP1, pixelScoreP2, pixelGameOver;
 	
 	// Pelota, barras
 	IsInIntRect #(bitsPosicion, bitsDimension) graphicP1 (anchoBloques, altoBloques, bar_1_x, g_bar_1_y, x_pixel, y_pixel, pixelB1);
@@ -134,9 +137,9 @@ module pong(
 	FontPrint #(bitsPosicion) graphicScore2 (mclk, g_score2, 532, posYPuntajes, x_pixel, y_pixel, pixelScoreP2);
 	
 	wire paintPixel;
-	assign paintPixel = pixelB1 | pixelB2 | pixelBall | pixelCageLeft | pixelCageRight | pixelCageUp | pixelCageDown | pixelScoreP1 | pixelScoreP2;
+	assign paintPixel = pixelB1 | pixelB2 | pixelBall | pixelCageLeft | pixelCageRight | pixelCageUp | pixelCageDown | pixelScoreP1 | pixelScoreP2 | (pixelGameOver & !playing);
 	
-	
+	GameOverPrint #(bitsPosicion) graphicGameOver(mclk, posXWinner, posYPuntajes, x_pixel, y_pixel, winner, pixelGameOver);
 	
 	// Refrescar pantalla
 	always @(posedge mclk)
@@ -167,6 +170,11 @@ module pong(
 			OutGreen = 3'b0;
 			OutBlue[2:1] = 2'b0;
 		end
+		
+		if(winner)
+			posXWinner = 128;
+		else
+			posXWinner = 440;
 	end
 	
 	//Debug

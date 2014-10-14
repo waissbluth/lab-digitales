@@ -30,12 +30,12 @@ module barra(
 	parameter max = 329;
 	
 	// La barra se mueve esta cantidad de pixeles por ciclo
-	parameter delta = 2;
+	parameter delta = 3;
 	
 	// La barra parte al medio
 	initial y = 180;
 
-	always@(posedge clk)
+	always@(posedge clk, posedge reset)
 	begin
 
 		if(reset)

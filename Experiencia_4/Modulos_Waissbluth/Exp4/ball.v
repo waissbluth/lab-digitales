@@ -29,8 +29,8 @@ module ball(
 		output reg point_2
     );
 	  
-	 parameter Vv = 1; 
-	 parameter Vh = 1;
+	 parameter Vv = 2; 
+	 parameter Vh = 2;
 	 
 	 parameter bar_1_x = 20;
 	 parameter bar_2_x = 600;
@@ -47,10 +47,18 @@ module ball(
 	 wire [10:0] x_new = Vx ? x + Vh : x - Vh;
 	 wire [9:0] y_new = mov_y ? (Vy ? y + Vv : y - Vv) : y;
 	 
-	 always@(posedge clk)
+	 always@(posedge clk, posedge reset)
 	 begin
 		// Estado inicial
-		if(reset || point_1 || point_2) begin
+		if(reset) begin
+			x <= 310;
+			y <= 180;
+			point_1 <= 0;
+			point_2 <= 0;
+			mov_y <= 0;
+			Vy <= 0;
+			Vx <= 1;
+		end else if(point_1 || point_2) begin
 			x <= 310;
 			y <= 180;
 			point_1 <= 0;
