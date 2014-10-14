@@ -14,7 +14,7 @@
 <msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">graphicGameOver/w/Data/Mrom_data3182</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">graphicGameOver/n1/Data/Mrom_data3781_12_f5_5</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
-<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">graphicGameOver/r/Data/Mrom_data1771</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">graphicGameOver/r/Data/Mrom_data3781_12_f5_4</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">graphicGameOver/r/Data/Mrom_data1771</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">graphicGameOver/r/Data/Mrom_data3781_12_f5_4</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
 <msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">graphicScore1/Data/Mrom_data4941_191</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">graphicScore1/Data/Mrom_data891_12_f5_5</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.

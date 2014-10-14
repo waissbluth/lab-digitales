@@ -76,8 +76,8 @@ module pong(
 	assign pause = sw[0];
 
 	
-	Sha #(300000) logicTimer(mclk, clk);
-	Counter #(1) clockHalver(mclk, 1'b1, reset, halverCount, vgaClk);
+	Sha #(400000) logicTimer(mclk, clk);
+	Counter #(1) clockHalver(mclk, 1'b1, 0, halverCount, vgaClk);
 	
 	assign logicClk = clk & !pause & playing;
 	
