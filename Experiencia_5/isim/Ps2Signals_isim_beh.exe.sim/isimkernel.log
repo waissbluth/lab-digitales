@@ -1,0 +1,28 @@
+Command line:
+   Ps2Signals_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  4183
+
+Mon Oct 20 01:53:00 2014
+
+
+ Elaboration Time: 0.078 sec
+
+ Current Memory Usage: 1313.89 Meg
+
+ Total Signals          : 74
+ Total Nets             : 69
+ Total Signal Drivers   : 45
+ Total Blocks           : 10
+ Total Primitive Blocks : 5
+ Total Processes        : 50
+ Total Traceable Variables  : 37
+ Total Scalar Nets and Variables : 332
+
+ Total Simulation Time: 0.078 sec
+
+ Current Memory Usage: 1313.89 Meg
+
+Mon Oct 20 01:53:04 2014
+

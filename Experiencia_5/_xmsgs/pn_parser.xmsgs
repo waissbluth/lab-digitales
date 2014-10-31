@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/Adder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/Counter.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/FullAdder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/IntMult.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/IsInIntRect.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/Piano.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/PianoKeys.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/Ps2Signals.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/Pulse.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/SegmentCycler.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/SegmentDisplay.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/Sync.v&quot; into library work</arg>
+</msg>
+
+</messages>
+
