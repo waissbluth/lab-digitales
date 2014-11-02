@@ -1,27 +1,19 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o Z:/Desktop/LabDigitales/Experiencia_5/sin_wave_tf_isim_beh.exe -prj Z:/Desktop/LabDigitales/Experiencia_5/sin_wave_tf_beh.prj work.sin_wave_tf work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o Z:/Desktop/LabDigitales/Experiencia_5/jump_tf_isim_beh.exe -prj Z:/Desktop/LabDigitales/Experiencia_5/jump_tf_beh.prj work.jump_tf work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/ipcore_dir/sin.v" into library work
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/sin_wave.v" into library work
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/sin_wave_tf.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/jump.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/jump_tf.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "Z:/Desktop/LabDigitales/Experiencia_5/sin_wave.v" Line 32: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "Z:/Desktop/LabDigitales/Experiencia_5/sin_wave.v" Line 34: Size mismatch in connection of port <dina>. Formal port size is 8-bit while actual signal size is 32-bit.
 Completed static elaboration
-Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
-Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
-Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
-Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
-Compiling module sin
-Compiling module sin_wave
-Compiling module sin_wave_tf
+Compiling module jump
+Compiling module jump_tf
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 3 sub-compilation(s) to finish...
-Compiled 8 Verilog Units
-Built simulation executable Z:/Desktop/LabDigitales/Experiencia_5/sin_wave_tf_isim_beh.exe
-Fuse Memory Usage: 31700 KB
-Fuse CPU Usage: 467 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable Z:/Desktop/LabDigitales/Experiencia_5/jump_tf_isim_beh.exe
+Fuse Memory Usage: 27292 KB
+Fuse CPU Usage: 420 ms

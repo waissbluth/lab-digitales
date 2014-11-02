@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   21:41:27 11/01/2014
-// Design Name:   sin_wave
-// Module Name:   Z:/Desktop/LabDigitales/Experiencia_5/sin_wave_tf.v
+// Create Date:   22:36:05 11/01/2014
+// Design Name:   jump
+// Module Name:   Z:/Desktop/LabDigitales/Experiencia_5/jump_tf.v
 // Project Name:  Exp5
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: sin_wave
+// Verilog Test Fixture created by ISE for module: jump
 //
 // Dependencies:
 // 
@@ -22,39 +22,33 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module sin_wave_tf;
+module jump_tf;
 
 	// Inputs
-	reg clk;
-	reg [8:0] count;
+	reg [4:0] note;
 
 	// Outputs
-	wire [8:0] val;
+	wire [5:0] jump;
+	wire [26:0] remainder;
 
 	// Instantiate the Unit Under Test (UUT)
-	sin_wave uut (
-		.clk(clk),
-		.count(count), 
-		.val(val)
+	jump uut (
+		.note(note), 
+		.jump(jump), 
+		.remainder(remainder)
 	);
 
 	initial begin
 		// Initialize Inputs
-		clk = 0;
-		count = 0;
+		note = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
-		// Add stimulus here
-		
+
 	end
-		
 	always
-	begin
-		#1  clk = ~clk;
-		#1  count = count + 1;
-	end
+	#1 note = note + 1;
       
 endmodule
 
