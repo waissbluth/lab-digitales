@@ -8,7 +8,49 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/Adder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/Burst.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/Counter.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/FontPrint.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/FullAdder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/GameOverPrint.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/IsInIntCircle.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/IsInIntRect.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/Sha.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/Sync.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/ball.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/barra.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/font_rom.v&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/pong.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Experiencia_4/Modulos_Waissbluth/Exp4/scores.v&quot; into library work</arg>
 </msg>
 
 </messages>

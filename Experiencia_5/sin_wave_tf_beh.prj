@@ -1,0 +1,4 @@
+verilog work "ipcore_dir/sin.v"
+verilog work "sin_wave.v"
+verilog work "sin_wave_tf.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
