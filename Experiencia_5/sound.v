@@ -41,7 +41,13 @@ module sound(
 	
 	always @(posedge clk) begin
 		count <= count + jump;
-		remainder_accum <= remainder_accum + remainder;
+		
+		if (remainder_accum + remainder <= 100000000)
+			remainder_accum <= remainder_accum + remainder;
+		else begin
+			remainder_accum <= remainder_accum + remainder - 100000000;
+			count <= count + 1;
+		end
 	
 	end
 

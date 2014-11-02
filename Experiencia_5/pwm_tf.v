@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   23:03:09 11/01/2014
-// Design Name:   sound
-// Module Name:   Z:/Desktop/LabDigitales/Experiencia_5/sound_tf.v
+// Create Date:   19:16:31 11/02/2014
+// Design Name:   pwm
+// Module Name:   Z:/Desktop/LabDigitales/Experiencia_5/pwm_tf.v
 // Project Name:  Exp5
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: sound
+// Verilog Test Fixture created by ISE for module: pwm
 //
 // Dependencies:
 // 
@@ -22,39 +22,46 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module sound_tf;
+module pwm_tf;
 
 	// Inputs
 	reg clk;
-	reg [4:0] note;
+	reg [7:0] value;
 
 	// Outputs
-	wire [8:0] value;
+	wire pwm;
 
 	// Instantiate the Unit Under Test (UUT)
-	sound uut (
+	pwm uut (
 		.clk(clk), 
-		.note(note), 
-		.value(value)
+		.value(value), 
+		.pwm(pwm)
 	);
 
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		note = 11;
+		value = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
+		value = 30;
+		
+		#16;
+		value = 1;
+		
+		#32;
+		value = 15;
+		
+		#16;
+		value = 7;
 
 	end
 	
 	always
-		#1 clk = ~clk;
-	//always
-		//#100 note = note + 10;
-	
+	#1 clk = ~clk;
       
 endmodule
 

@@ -1,0 +1,10 @@
+Command line:
+   pwm_tf_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49198
+
+Sun Nov 02 19:20:21 2014
+
+
+ Elaboration Time: 0.0468 sec
