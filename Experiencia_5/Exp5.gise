@@ -86,18 +86,17 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="jump_tf_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="jump_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="jump_tf_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="jump_tf_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="piano.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="piano.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="piano.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sin_wave_tf_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sound_tf_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="sound_tf_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sound_tf_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -107,11 +106,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1414889349" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1414889349">
+    <transform xil_pn:end_ts="1414894798" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1414894798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1414893026" xil_pn:in_ck="-890660012155358388" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1414893026">
+    <transform xil_pn:end_ts="1414894798" xil_pn:in_ck="-7615077649254121473" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1414894798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Adder.v"/>
@@ -132,22 +131,24 @@
       <outfile xil_pn:name="sin_tf.v"/>
       <outfile xil_pn:name="sin_wave.v"/>
       <outfile xil_pn:name="sin_wave_tf.v"/>
+      <outfile xil_pn:name="sound.v"/>
+      <outfile xil_pn:name="sound_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1414892188" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2274244085357093100" xil_pn:start_ts="1414892188">
+    <transform xil_pn:end_ts="1414894798" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8834717839437982855" xil_pn:start_ts="1414894798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1414892188" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4623824819493424174" xil_pn:start_ts="1414892188">
+    <transform xil_pn:end_ts="1414894798" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="968575121067151355" xil_pn:start_ts="1414894798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1414889350" xil_pn:in_ck="-7186897565930313167" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5615391837810972038" xil_pn:start_ts="1414889349">
+    <transform xil_pn:end_ts="1414894799" xil_pn:in_ck="-7186897565930313167" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5615391837810972038" xil_pn:start_ts="1414894798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/sin.ngc"/>
       <outfile xil_pn:name="ipcore_dir/sin.v"/>
     </transform>
-    <transform xil_pn:end_ts="1414893026" xil_pn:in_ck="-1271492395348531895" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1414893026">
+    <transform xil_pn:end_ts="1414894799" xil_pn:in_ck="-1174704485492651108" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1414894799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Adder.v"/>
@@ -169,23 +170,20 @@
       <outfile xil_pn:name="sin_tf.v"/>
       <outfile xil_pn:name="sin_wave.v"/>
       <outfile xil_pn:name="sin_wave_tf.v"/>
+      <outfile xil_pn:name="sound.v"/>
+      <outfile xil_pn:name="sound_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1414893029" xil_pn:in_ck="-1271492395348531895" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1066929847212508057" xil_pn:start_ts="1414893026">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1414894839" xil_pn:in_ck="-1174704485492651108" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-952276074059097389" xil_pn:start_ts="1414894799">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="jump_tf_beh.prj"/>
-      <outfile xil_pn:name="jump_tf_isim_beh.exe"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1414893030" xil_pn:in_ck="-2333899739185562677" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1363528946279976740" xil_pn:start_ts="1414893029">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1414894786" xil_pn:in_ck="7097093151557593287" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4259474125903664662" xil_pn:start_ts="1414894786">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForced"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="jump_tf_isim_beh.wdb"/>
+      <outfile xil_pn:name="sound_tf_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1414881405" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1414881405">
       <status xil_pn:value="SuccessfullyRun"/>

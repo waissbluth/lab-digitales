@@ -1,0 +1,6 @@
+verilog isim_temp "ipcore_dir/sin.v"
+verilog isim_temp "sin_wave.v"
+verilog isim_temp "jump.v"
+verilog isim_temp "sound.v"
+verilog isim_temp "sound_tf.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
