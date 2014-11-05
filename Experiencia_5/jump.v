@@ -57,7 +57,7 @@ module jump(
 			jump = 28;
 			remainder = 16000000;
 		end 10 : begin
-			jump = 9;
+			jump = 29;
 			remainder = 83448074;
 		end 11 : begin
 			jump = 31;

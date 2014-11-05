@@ -104,12 +104,14 @@ module PianoKeys
 		wire laCollision[(octaves - 1):0];
 		wire siCollision[(octaves - 1):0];
 		
-		/* Colisiones mascaras */
+		
+		/* Colisiones mascaras * /
 		wire doSMCollision[(octaves - 1):0];
 		wire reSMCollision[(octaves - 1):0];
 		wire faSMCollision[(octaves - 1):0];
 		wire solSMCollision[(octaves - 1):0];
 		wire laSMCollision[(octaves - 1):0];
+		/**/
 		
 		/* Colisiones negras */
 		wire doSCollision[(octaves - 1):0];
@@ -130,12 +132,13 @@ module PianoKeys
 				IsInIntRect #(posBits, dimBits) wLa(keyWidth, keyHeight, wLaPosX[(posBits - 1 + ii*posBits):(ii*posBits)], whitePosY, evalX, evalY, laCollision[ii]);	
 				IsInIntRect #(posBits, dimBits) wSi(keyWidth, keyHeight, wSiPosX[(posBits - 1 + ii*posBits):(ii*posBits)], whitePosY, evalX, evalY, siCollision[ii]);	
 
-				/*** Layer: Mask ***/
+				/*** Layer: Mask 
 				IsInIntRect #(posBits, dimBits) bDoMask(maskWidth, maskHeight, bDoPosX[(posBits - 1 + ii*posBits):(ii*posBits)], blackPosY, evalX, evalY, doSMCollision[ii]);
 				IsInIntRect #(posBits, dimBits) bReMask(maskWidth, maskHeight, bRePosX[(posBits - 1 + ii*posBits):(ii*posBits)], blackPosY, evalX, evalY, reSMCollision[ii]);
 				IsInIntRect #(posBits, dimBits) bFaMask(maskWidth, maskHeight, bFaPosX[(posBits - 1 + ii*posBits):(ii*posBits)], blackPosY, evalX, evalY, faSMCollision[ii]);		
 				IsInIntRect #(posBits, dimBits) bSolMask(maskWidth, maskHeight, bSolPosX[(posBits - 1 + ii*posBits):(ii*posBits)], blackPosY, evalX, evalY, solSMCollision[ii]);
 				IsInIntRect #(posBits, dimBits) bLaMask(maskWidth, maskHeight, bLaPosX[(posBits - 1 + ii*posBits):(ii*posBits)], blackPosY, evalX, evalY, laSMCollision[ii]);
+				***/
 				
 				/*** Layer Black ***/
 				IsInIntRect #(posBits, dimBits) bDo(blackWidth, blackHeight, bDoPosX[(posBits - 1 + ii*posBits):(ii*posBits)], blackPosY, evalX, evalY, doSCollision[ii]);
@@ -159,11 +162,11 @@ module PianoKeys
 														faSCollision[ii] |
 														solSCollision[ii] |
 														laSCollision[ii] |
-														doSMCollision[ii] |
-														reSMCollision[ii] |
-														faSMCollision[ii] |
-														solSMCollision[ii] |
-														laSMCollision[ii] |
+														//doSMCollision[ii] |
+														//reSMCollision[ii] |
+														//faSMCollision[ii] |
+														//solSMCollision[ii] |
+														//laSMCollision[ii] |
 														doCollision[ii] |
 														reCollision[ii] |
 														miCollision[ii] |
@@ -190,12 +193,13 @@ module PianoKeys
 					else if(laSCollision[ii] & pressed[10 + ii*12]) octaveColor[(ii*3 + 2):(ii*3)] <= bDown;
 					else if(laSCollision[ii] & !pressed[10 + ii*12]) octaveColor[(ii*3 + 2):(ii*3)] <= bUp;
 					
-					/* Masks */
+					/* Masks 
 					else if(doSMCollision[ii]) octaveColor[(ii*3 + 2):(ii*3)] <= empty;
 					else if(reSMCollision[ii]) octaveColor[(ii*3 + 2):(ii*3)] <= empty;
 					else if(faSMCollision[ii]) octaveColor[(ii*3 + 2):(ii*3)] <= empty;
 					else if(solSMCollision[ii]) octaveColor[(ii*3 + 2):(ii*3)] <= empty;
 					else if(laSMCollision[ii]) octaveColor[(ii*3 + 2):(ii*3)] <= empty;
+					*/
 					
 					/* Whites */
 					else if(doCollision[ii] & pressed[0 + ii*12]) octaveColor[(ii*3 + 2):(ii*3)] <= wDown;

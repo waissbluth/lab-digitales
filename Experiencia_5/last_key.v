@@ -23,14 +23,12 @@ module last_key
 		input clk,
 		input [num_keys - 1:0] keys,
 		output reg [4:0] key,
-		output press,
+		output reg press,
 		output reg [num_keys - 1:0] display
     );
 	 
 	 reg [num_keys-1:0] prev;
-	 
-	 assign press = |keys;
-	 
+	
 /*	 genvar i;
 	 generate
 		 for(i=0; i<num_keys; i = i+1) begin: juanito
@@ -94,6 +92,33 @@ module last_key
 				default: display <= 24'b000000_000000_000000_000000;
 			endcase
 			
+			case(key)
+				0:  press <= keys[0];
+				1:  press <= keys[1];
+				2:  press <= keys[2];
+				3:  press <= keys[3];
+				4:  press <= keys[4];
+				5:  press <= keys[5];
+				6:  press <= keys[6];
+				7:  press <= keys[7];
+				8:  press <= keys[8];
+				9:  press <= keys[9];
+				10: press <= keys[10];
+				11: press <= keys[11];
+				12: press <= keys[12];
+				13: press <= keys[13];
+				14: press <= keys[14];
+				15: press <= keys[15];
+				16: press <= keys[16];
+				17: press <= keys[17];
+				18: press <= keys[18];
+				19: press <= keys[19];
+				20: press <= keys[20];
+				21: press <= keys[21];
+				22: press <= keys[22];
+				23: press <= keys[23];
+				default: display <= 24'b000000_000000_000000_000000;
+			endcase
 			if(~press) display <= 24'b000000_000000_000000_000000;
 	
 			prev <= keys;

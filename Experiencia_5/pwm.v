@@ -25,7 +25,7 @@ module pwm(
     );
 	 
 	 // Diente de sierra para PWM
-	 reg [2:0] count;
+	 reg [8:0] count;
 	 
 	 initial count = 0;
 	 

@@ -24,13 +24,14 @@ module Piano(
 		input [3:0] btn,			// Buttons
 		input PS2C, PS2D,
 		
-		output [6:0] seg,			// Display
+		/*output [6:0] seg,			// Display
 		output dp,
-		output [3:0] an,
+		output [3:0] an,*/
 		
 		output [7:0] Led,
 		output HSYNC, VSYNC,
-		output [2:0] OutRed, OutGreen, OutBlue
+		output [2:0] OutRed, OutGreen, OutBlue,
+		output salida_pwm
     );
 	 
 	// Parametros
@@ -45,9 +46,9 @@ module Piano(
 	parameter keyboardPosX = 20;
 	parameter keyboardPosY = 20;
 	
-	parameter fpgaClk = 50000 * 1000;
+	parameter fpgaClk = 50000;
 	parameter slowClk = 4;
-	parameter pwmClk = 36;
+	parameter pwmClk = 512 * 4;
 	 
 	// CLKs
 	wire vgaClk, halverCount;
@@ -99,16 +100,16 @@ module Piano(
 	
 	//PWM generation
 	wire pwm_out;
-	wire clk36;
-	ClockRatio #(fpgaClk, pwmClk) pwmClkGen(mclk, clk36);
-	pwm pwm_i(clk36, amplitude, pwm_out);
+	wire clk512;
+	ClockRatio #(fpgaClk, pwmClk) pwmClkGen(mclk, clk512);
+	pwm pwm_i(clk512, amplitude, pwm_out);
 	
 	
 	// Dibujo piano
 	PianoKeys #(bitsPosicion, bitsDimension, octaves) graphicKeys(mclk, keyWidth, keyHeight, keySpace, keyboardPosX, keyboardPosY, x_pixel, y_pixel, keys_display, colorIndex);
 
 	// Segment display
-	SegmentCycler display(mclk, 4'b1111, previousData[7:4], previousData[3:0], lastData[7:4], lastData[3:0], 4'b0000, seg, dp, an);
+	//SegmentCycler display(mclk, 4'b1111, previousData[7:4], previousData[3:0], lastData[7:4], lastData[3:0], 4'b0000, seg, dp, an);
 
 	// Proceso por pixel
 	reg [7:0] outColor;
@@ -135,12 +136,18 @@ module Piano(
 	end
 	
 	// Tests / Not finished
+	reg clk4Change, clk512Change;
 	assign keys[(octaves*12 - 1):8] = 0;
 	assign keys[7:0] = {sw[0], sw[1], sw[2], sw[3], sw[4], sw[5], sw[6], sw[7]};
 	assign Led[2:0] = indexCount;
-	assign Led[7:4] = 0;
+	assign Led[7:6] = 0;
 	assign Led[3] = pwm_out && press;
-	assign Led[4] = clk36;
+	assign Led[4] = clk512Change;
+	assign Led[5] = clk4Change;
+	assign salida_pwm = pwm_out && press;
+	
+	always @(posedge clk4) clk4Change <= !clk4Change;
+	always @(posedge clk512) clk512Change <= !clk512Change;	
 	
 	always @(posedge mclk)
 	begin

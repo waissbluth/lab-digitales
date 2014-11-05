@@ -1,3 +1,84 @@
 xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
 xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
 xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
+xst -intstyle ise -ifn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.xst" -ofn "Z:/Desktop/LabDigitales/Experiencia_5/Piano.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fpga.ucf -p xc3s100e-cp132-5 Piano.ngc Piano.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o Piano_map.ncd Piano.ngd Piano.pcf 
+par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Piano.twx Piano.ncd -o Piano.twr Piano.pcf -ucf fpga.ucf 
+bitgen -intstyle ise -f Piano.ut Piano.ncd 
