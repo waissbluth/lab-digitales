@@ -1,5 +1,0 @@
-verilog isim_temp "FullAdder.v"
-verilog isim_temp "Adder.v"
-verilog isim_temp "Counter.v"
-verilog isim_temp "Ps2Signals.v"
-verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,5 +1,0 @@
-verilog work "FullAdder.v"
-verilog work "Adder.v"
-verilog work "SegmentDisplay.v"
-verilog work "Counter.v"
-verilog work "SegmentCycler.v"

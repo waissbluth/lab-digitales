@@ -1,19 +1,32 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/LabDigitales/Experiencia_5/last_key_tf_isim_beh.exe" -prj "Z:/Desktop/LabDigitales/Experiencia_5/last_key_tf_beh.prj" "work.last_key_tf" "work.glbl" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec_isim_beh.exe" -prj "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec_beh.prj" "work.BinToDec" "work.glbl" 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/last_key.v" into library work
-Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/last_key_tf.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/ToTwosComplement.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/FromTwosComplement.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/Substracter.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/IntDiv.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec3.v" into library work
+Analyzing Verilog file "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec3.v" Line 29: Size mismatch in connection of port <denominador>. Formal port size is 4-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec3.v" Line 33: Size mismatch in connection of port <denominador>. Formal port size is 4-bit while actual signal size is 32-bit.
 Completed static elaboration
-Compiling module last_key_default
-Compiling module last_key_tf
+Compiling module ToTwosComplement_copy1
+Compiling module FromTwosComplement_copy1
+Compiling module Substracter_copy1
+Compiling module ToTwosComplement(bits=5)
+Compiling module FromTwosComplement(bits=5)
+Compiling module Substracter(bits=5)
+Compiling module IntDiv(numBits=10,demBits=4)
+Compiling module BinToDec3
+Compiling module BinToDec
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 3 Verilog Units
-Built simulation executable Z:/Desktop/LabDigitales/Experiencia_5/last_key_tf_isim_beh.exe
-Fuse Memory Usage: 28320 KB
-Fuse CPU Usage: 405 ms
+Waiting for 6 sub-compilation(s) to finish...
+Compiled 10 Verilog Units
+Built simulation executable Z:/Desktop/LabDigitales/Experiencia_5/BinToDec_isim_beh.exe
+Fuse Memory Usage: 29060 KB
+Fuse CPU Usage: 483 ms

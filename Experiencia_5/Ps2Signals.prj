@@ -1,4 +1,0 @@
-verilog work "FullAdder.v"
-verilog work "Adder.v"
-verilog work "Counter.v"
-verilog work "Ps2Signals.v"

@@ -1,0 +1,7 @@
+verilog work "ToTwosComplement.v"
+verilog work "FromTwosComplement.v"
+verilog work "Substracter.v"
+verilog work "IntDiv.v"
+verilog work "BinToDec3.v"
+verilog work "BinToDec.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

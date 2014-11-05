@@ -1,5 +1,0 @@
-verilog work "FullAdder.v"
-verilog work "Adder.v"
-verilog work "IsInIntRect.v"
-verilog work "IntMult.v"
-verilog work "PianoKeys.v"

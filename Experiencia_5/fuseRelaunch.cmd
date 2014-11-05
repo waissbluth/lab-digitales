@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/LabDigitales/Experiencia_5/last_key_tf_isim_beh.exe" -prj "Z:/Desktop/LabDigitales/Experiencia_5/last_key_tf_beh.prj" "work.last_key_tf" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec_isim_beh.exe" -prj "Z:/Desktop/LabDigitales/Experiencia_5/BinToDec_beh.prj" "work.BinToDec" "work.glbl" 

@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module pwm(
-	input clk, // debe ser de 32 kHz
-	input [7:0] value,
+	input clk, // debe ser de  kHz
+	input [8:0] value,
 	output pwm
     );
 	 

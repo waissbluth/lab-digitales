@@ -31,13 +31,15 @@ module last_key_tf;
 	// Outputs
 	wire [4:0] key;
 	wire press;
+	wire [23:0] display;
 
 	// Instantiate the Unit Under Test (UUT)
 	last_key uut (
 		.clk(clk), 
 		.keys(keys), 
 		.key(key),
-		.press(press)
+		.press(press),
+		.display(display)
 	);
 
 	initial begin

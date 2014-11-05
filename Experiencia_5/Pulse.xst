@@ -1,5 +1,0 @@
-set -tmpdir "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/xst/projnav.tmp"
-set -xsthdpdir "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Modulos_Bozzo/Exp5/xst"
-elaborate
--ifn Pulse.prj
--ifmt mixed

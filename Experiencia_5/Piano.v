@@ -44,6 +44,10 @@ module Piano(
 	
 	parameter keyboardPosX = 20;
 	parameter keyboardPosY = 20;
+	
+	parameter fpgaClk = 50000 * 1000;
+	parameter slowClk = 4;
+	parameter pwmClk = 36;
 	 
 	// CLKs
 	wire vgaClk, halverCount;
@@ -70,6 +74,7 @@ module Piano(
 	
 	// Un bit por cada tecla del piano
 	wire[(12*octaves - 1):0] keys;
+	wire[(12*octaves - 1):0] keys_display;
 
 	// Lectura teclado
 	wire keyboardEnable;
@@ -79,8 +84,28 @@ module Piano(
 	wire [2:0] indexCount;
 	Ps2Signals keyboardCtrl(mclk, PS2C, PS2D, keyboardEnable, keyboardData, indexCount);
 	
+	wire [4:0] note;
+	wire press;
+	
+	// Cálculo de tecla
+	last_key last_key_i(mclk, keys, note, press, keys_display);
+	
+	//Genérame un seno
+	wire [8:0] amplitude;
+	wire clk4;
+	ClockRatio #(fpgaClk, slowClk) slowClkGen(mclk, clk4);
+	sound sound_i(clk4, note, amplitude);
+	
+	
+	//PWM generation
+	wire pwm_out;
+	wire clk36;
+	ClockRatio #(fpgaClk, pwmClk) pwmClkGen(mclk, clk36);
+	pwm pwm_i(clk36, amplitude, pwm_out);
+	
+	
 	// Dibujo piano
-	PianoKeys #(bitsPosicion, bitsDimension, octaves) graphicKeys(mclk, keyWidth, keyHeight, keySpace, keyboardPosX, keyboardPosY, x_pixel, y_pixel, keys, colorIndex);
+	PianoKeys #(bitsPosicion, bitsDimension, octaves) graphicKeys(mclk, keyWidth, keyHeight, keySpace, keyboardPosX, keyboardPosY, x_pixel, y_pixel, keys_display, colorIndex);
 
 	// Segment display
 	SegmentCycler display(mclk, 4'b1111, previousData[7:4], previousData[3:0], lastData[7:4], lastData[3:0], 4'b0000, seg, dp, an);
@@ -113,7 +138,9 @@ module Piano(
 	assign keys[(octaves*12 - 1):8] = 0;
 	assign keys[7:0] = {sw[0], sw[1], sw[2], sw[3], sw[4], sw[5], sw[6], sw[7]};
 	assign Led[2:0] = indexCount;
-	assign Led[7:3] = 0;
+	assign Led[7:4] = 0;
+	assign Led[3] = pwm_out && press;
+	assign Led[4] = clk36;
 	
 	always @(posedge mclk)
 	begin
