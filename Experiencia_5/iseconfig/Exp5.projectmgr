@@ -7,6 +7,7 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/BinToDec E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|BinToDec.v</ClosedNode>
          <ClosedNode>/BinToDec Z:|Desktop|LabDigitales|Experiencia_5|BinToDec.v/uut - BinToDec3</ClosedNode>
          <ClosedNode>/IntMult E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|IntMult.v</ClosedNode>
          <ClosedNode>/IsInIntRect E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|IsInIntRect.v</ClosedNode>
@@ -20,21 +21,27 @@
          <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Piano.v/keyboardCtrl - Ps2Signals</ClosedNode>
          <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Piano.v/keyboardCtrl - Ps2Signals/debouncer - Counter</ClosedNode>
          <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Piano.v/keyboardCtrl - Ps2Signals/indexer - Counter</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/clockHalver - Counter</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/graphicKeys - PianoKeys</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/keyboardCtrl - Ps2Signals</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/sound_i - sound</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/clockHalver - Counter</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/display - SegmentCycler</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/display - SegmentCycler/cycler - Counter/counter - Adder</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/graphicKeys - PianoKeys</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/keyboardCtrl - Ps2Signals</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/sound_i - sound</ClosedNode>
+         <ClosedNode>/Ps2Signals E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Ps2Signals.v</ClosedNode>
+         <ClosedNode>/SegmentCycler E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|SegmentCycler.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Piano (Z:/Desktop/LabDigitales/Experiencia_5/Piano.v)</SelectedItem>
+         <SelectedItem>Piano (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Piano.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000013b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000013b0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000017d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000017d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Piano (Z:/Desktop/LabDigitales/Experiencia_5/Piano.v)</CurrentItem>
+      <CurrentItem>Piano (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Experiencia_5/Piano.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -46,7 +53,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000180000000010000000100000000000000000000000064ffffffff000000810000000000000001000001800000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -55,9 +62,9 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems/>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000321000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000002550000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000016f000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000000a30000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Adder.v</CurrentItem>
    </ItemView>
@@ -69,7 +76,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000180000000010001000100000000000000000000000064ffffffff000000810000000000000001000001800000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>work</CurrentItem>
    </ItemView>
@@ -88,32 +95,37 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000130000000010000000100000000000000000000000064ffffffff000000810000000000000001000001300000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Generate Programming File</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/BinToDec E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|BinToDec.v/uut - BinToDec3</ClosedNode>
          <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Piano.v/clockHalver - Counter</ClosedNode>
          <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Piano.v/graphicKeys - PianoKeys</ClosedNode>
          <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Piano.v/keyboardCtrl - Ps2Signals</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/clockHalver - Counter</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/graphicKeys - PianoKeys</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/keyboardCtrl - Ps2Signals</ClosedNode>
+         <ClosedNode>/Piano E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Piano.v/sound_i - sound</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/clockHalver - Counter</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/display - SegmentCycler</ClosedNode>
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/graphicKeys - PianoKeys</ClosedNode>
@@ -121,17 +133,25 @@
          <ClosedNode>/Piano Z:|Desktop|LabDigitales|Experiencia_5|Piano.v/sound_i - sound/siner - sin_wave</ClosedNode>
          <ClosedNode>/Ps2Signals E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Ps2Signals.v</ClosedNode>
          <ClosedNode>/Ps2Signals_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Modulos_Bozzo|Exp5|Ps2Signals_tf.v/uut - Ps2Signals</ClosedNode>
+         <ClosedNode>/Ps2Signals_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|Ps2Signals_tf.v</ClosedNode>
          <ClosedNode>/Ps2Signals_tf Z:|Desktop|LabDigitales|Experiencia_5|Ps2Signals_tf.v</ClosedNode>
+         <ClosedNode>/SegmentCycler E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|SegmentCycler.v</ClosedNode>
+         <ClosedNode>/jump_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|jump_tf.v</ClosedNode>
+         <ClosedNode>/last_key_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|last_key_tf.v</ClosedNode>
+         <ClosedNode>/pwm_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|pwm_tf.v</ClosedNode>
+         <ClosedNode>/sin_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|sin_tf.v</ClosedNode>
+         <ClosedNode>/sin_wave_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|sin_wave_tf.v</ClosedNode>
          <ClosedNode>/sin_wave_tf Z:|Desktop|LabDigitales|Experiencia_5|sin_wave_tf.v</ClosedNode>
+         <ClosedNode>/sound_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Experiencia_5|sound_tf.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>BinToDec (Z:/Desktop/LabDigitales/Experiencia_5/BinToDec.v)</SelectedItem>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000201000000020000000000000000000000000200000064ffffffff000000810000000300000002000002010000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000012a000000020000000000000000000000000200000064ffffffff0000008100000003000000020000012a0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>BinToDec (Z:/Desktop/LabDigitales/Experiencia_5/BinToDec.v)</CurrentItem>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -143,7 +163,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000180000000010000000100000000000000000000000064ffffffff000000810000000000000001000001800000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>

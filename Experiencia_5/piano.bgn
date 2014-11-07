@@ -5,7 +5,7 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
    "Piano" is an NCD, version 3.2, device xc3s100e, package cp132, speed -5
 Opened constraints file Piano.pcf.
 
-Wed Nov 05 18:44:00 2014
+Fri Nov 07 01:06:35 2014
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No Piano.ncd 
 
@@ -93,7 +93,21 @@ Running DRC.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net clk512 is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <btn<0>_IBUF> is incomplete. The signal
+WARNING:PhysDesignRules:367 - The signal <sw<0>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<1>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<2>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<3>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<4>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<5>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<6>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<7>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
@@ -235,7 +249,7 @@ WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
    block:<sound_i/siner/sin_instance/U0/xst_blk_mem_generator/gnativebmg.native_
    blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16_RAMB
    16B>.
-DRC detected 0 errors and 44 warnings.  Please see the previously displayed
+DRC detected 0 errors and 51 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "piano.bit".
