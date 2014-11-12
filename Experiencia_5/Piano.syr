@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: Piano.prj
 
@@ -557,13 +557,13 @@ Unit <Counter> synthesized.
 Synthesizing Unit <sound>.
     Related source file is "sound.v".
     Found 9-bit up accumulator for signal <count>.
-    Found 28-bit comparator lessequal for signal <count$cmp_le0000> created at line 45.
-    Found 27-bit register for signal <remainder_accum>.
-    Found 27-bit adder carry out for signal <remainder_accum$addsub0000> created at line 48.
-    Found 27-bit addsub for signal <remainder_accum$mux0000>.
+    Found 30-bit comparator lessequal for signal <count$cmp_le0000> created at line 45.
+    Found 29-bit register for signal <remainder_accum>.
+    Found 29-bit adder carry out for signal <remainder_accum$addsub0000> created at line 48.
+    Found 29-bit addsub for signal <remainder_accum$mux0000>.
     Summary:
 	inferred   1 Accumulator(s).
-	inferred  27 D-type flip-flop(s).
+	inferred  29 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <sound> synthesized.
@@ -657,8 +657,8 @@ Macro Statistics
  10-bit subtractor                                     : 1
  11-bit adder                                          : 48
  11-bit subtractor                                     : 96
- 27-bit adder carry out                                : 1
- 27-bit addsub                                         : 1
+ 29-bit adder carry out                                : 1
+ 29-bit addsub                                         : 1
  4-bit subtractor                                      : 1
  7-bit adder                                           : 1
  7-bit subtractor                                      : 1
@@ -674,7 +674,7 @@ Macro Statistics
  1-bit register                                        : 41
  11-bit register                                       : 1
  24-bit register                                       : 2
- 27-bit register                                       : 1
+ 29-bit register                                       : 1
  4-bit register                                        : 1
  5-bit register                                        : 1
  7-bit register                                        : 1
@@ -688,7 +688,7 @@ Macro Statistics
  11-bit comparator less                                : 2
  11-bit comparator lessequal                           : 96
  17-bit comparator greatequal                          : 2
- 28-bit comparator lessequal                           : 1
+ 30-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 1
  9-bit comparator lessequal                            : 3
 # Multiplexers                                         : 1
@@ -814,8 +814,8 @@ Macro Statistics
  10-bit subtractor                                     : 1
  11-bit adder                                          : 48
  11-bit subtractor                                     : 96
- 27-bit adder carry out                                : 1
- 27-bit addsub                                         : 1
+ 29-bit adder carry out                                : 1
+ 29-bit addsub                                         : 1
  4-bit subtractor                                      : 1
  7-bit adder                                           : 1
  7-bit subtractor                                      : 1
@@ -827,8 +827,8 @@ Macro Statistics
 # Accumulators                                         : 3
  16-bit updown accumulator                             : 2
  9-bit up accumulator                                  : 1
-# Registers                                            : 151
- Flip-Flops                                            : 151
+# Registers                                            : 153
+ Flip-Flops                                            : 153
 # Comparators                                          : 159
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 2
@@ -837,7 +837,7 @@ Macro Statistics
  11-bit comparator less                                : 2
  11-bit comparator lessequal                           : 96
  17-bit comparator greatequal                          : 2
- 28-bit comparator lessequal                           : 1
+ 30-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 1
  9-bit comparator lessequal                            : 3
 # Multiplexers                                         : 1
@@ -886,8 +886,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 242
- Flip-Flops                                            : 242
+# Registers                                            : 244
+ Flip-Flops                                            : 244
 
 =========================================================================
 
@@ -916,26 +916,26 @@ Design Statistics
 # IOs                              : 35
 
 Cell Usage :
-# BELS                             : 3039
+# BELS                             : 3055
 #      GND                         : 2
-#      INV                         : 652
-#      LUT1                        : 389
+#      INV                         : 653
+#      LUT1                        : 391
 #      LUT2                        : 108
 #      LUT2_D                      : 7
 #      LUT2_L                      : 2
-#      LUT3                        : 92
+#      LUT3                        : 97
 #      LUT3_D                      : 2
 #      LUT4                        : 332
-#      LUT4_D                      : 2
-#      LUT4_L                      : 22
-#      MUXCY                       : 1224
-#      MUXF5                       : 45
+#      LUT4_D                      : 1
+#      LUT4_L                      : 21
+#      MUXCY                       : 1228
+#      MUXF5                       : 47
 #      MUXF6                       : 3
 #      MUXF7                       : 1
 #      VCC                         : 2
-#      XORCY                       : 154
-# FlipFlops/Latches                : 242
-#      FD                          : 117
+#      XORCY                       : 158
+# FlipFlops/Latches                : 244
+#      FD                          : 119
 #      FDC                         : 25
 #      FDR                         : 20
 #      FDRE                        : 63
@@ -958,9 +958,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      917  out of    960    95%  
- Number of Slice Flip Flops:            242  out of   1920    12%  
- Number of 4 input LUTs:               1608  out of   1920    83%  
+ Number of Slices:                      920  out of    960    95%  
+ Number of Slice Flip Flops:            244  out of   1920    12%  
+ Number of 4 input LUTs:               1614  out of   1920    84%  
  Number of IOs:                          35
  Number of bonded IOBs:                  24  out of     83    28%  
  Number of BRAMs:                         2  out of      4    50%  
@@ -990,7 +990,7 @@ Clock Signal                           | Clock buffer(FF name)                  
 mclk                                   | BUFGP                                                                                                                                       | 141   |
 clk512(pwmClkGen/Mcompar_reClk_cy<6>:O)| NONE(*)(pwm_i/count_0)                                                                                                                      | 9     |
 clockHalver/overflow1                  | BUFG                                                                                                                                        | 41    |
-clk41(slowClkGen/Mcompar_reClk_cy<6>:O)| BUFG(*)(sound_i/siner/sin_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram)| 53    |
+clk41(slowClkGen/Mcompar_reClk_cy<6>:O)| BUFG(*)(sound_i/siner/sin_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram)| 55    |
 ---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 (*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -1009,7 +1009,7 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 11.364ns (Maximum Frequency: 87.996MHz)
+   Minimum period: 11.468ns (Maximum Frequency: 87.197MHz)
    Minimum input arrival time before clock: 2.981ns
    Maximum output required time after clock: 7.386ns
    Maximum combinational path delay: No path found
@@ -1104,16 +1104,16 @@ Delay:               5.497ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk41'
-  Clock period: 11.364ns (frequency: 87.996MHz)
-  Total number of paths / destination ports: 678832 / 68
+  Clock period: 11.468ns (frequency: 87.197MHz)
+  Total number of paths / destination ports: 883746 / 70
 -------------------------------------------------------------------------
-Delay:               11.364ns (Levels of Logic = 60)
+Delay:               11.468ns (Levels of Logic = 62)
   Source:            sound_i/remainder_accum_0 (FF)
-  Destination:       sound_i/remainder_accum_26 (FF)
+  Destination:       sound_i/remainder_accum_28 (FF)
   Source Clock:      clk41 rising
   Destination Clock: clk41 rising
 
-  Data Path: sound_i/remainder_accum_0 to sound_i/remainder_accum_26
+  Data Path: sound_i/remainder_accum_0 to sound_i/remainder_accum_28
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1143,12 +1143,12 @@ Delay:               11.364ns (Levels of Logic = 60)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<21> (sound_i/Madd_remainder_accum_addsub0000_cy<21>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<22> (sound_i/Madd_remainder_accum_addsub0000_cy<22>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<23> (sound_i/Madd_remainder_accum_addsub0000_cy<23>)
-     XORCY:CI->O           3   0.699   0.603  sound_i/Madd_remainder_accum_addsub0000_xor<24> (sound_i/remainder_accum_addsub0000<24>)
-     LUT1:I0->O            1   0.612   0.000  sound_i/Mcompar_count_cmp_le0000_cy<9>_rt (sound_i/Mcompar_count_cmp_le0000_cy<9>_rt)
-     MUXCY:S->O            1   0.404   0.000  sound_i/Mcompar_count_cmp_le0000_cy<9> (sound_i/Mcompar_count_cmp_le0000_cy<9>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Mcompar_count_cmp_le0000_cy<10> (sound_i/Mcompar_count_cmp_le0000_cy<10>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Mcompar_count_cmp_le0000_cy<11> (sound_i/Mcompar_count_cmp_le0000_cy<11>)
-     MUXCY:CI->O          60   0.399   1.110  sound_i/Mcompar_count_cmp_le0000_cy<12> (sound_i/count_cmp_le0000)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<24> (sound_i/Madd_remainder_accum_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<25> (sound_i/Madd_remainder_accum_addsub0000_cy<25>)
+     XORCY:CI->O           3   0.699   0.603  sound_i/Madd_remainder_accum_addsub0000_xor<26> (sound_i/remainder_accum_addsub0000<26>)
+     LUT1:I0->O            1   0.612   0.000  sound_i/Mcompar_count_cmp_le0000_cy<11>_rt (sound_i/Mcompar_count_cmp_le0000_cy<11>_rt)
+     MUXCY:S->O            1   0.404   0.000  sound_i/Mcompar_count_cmp_le0000_cy<11> (sound_i/Mcompar_count_cmp_le0000_cy<11>)
+     MUXCY:CI->O          64   0.399   1.111  sound_i/Mcompar_count_cmp_le0000_cy<12> (sound_i/count_cmp_le0000)
      LUT3:I2->O            1   0.612   0.387  sound_i/remainder_accum_mux0001<0>1 (sound_i/remainder_accum_mux0001<0>)
      LUT4:I2->O            1   0.612   0.000  sound_i/Maddsub_remainder_accum_mux0000_lut<0> (sound_i/Maddsub_remainder_accum_mux0000_lut<0>)
      MUXCY:S->O            1   0.404   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<0> (sound_i/Maddsub_remainder_accum_mux0000_cy<0>)
@@ -1157,8 +1157,8 @@ Delay:               11.364ns (Levels of Logic = 60)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<3> (sound_i/Maddsub_remainder_accum_mux0000_cy<3>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<4> (sound_i/Maddsub_remainder_accum_mux0000_cy<4>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<5> (sound_i/Maddsub_remainder_accum_mux0000_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<6> (sound_i/Maddsub_remainder_accum_mux0000_cy<6>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<7> (sound_i/Maddsub_remainder_accum_mux0000_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<6> (sound_i/Maddsub_remainder_accum_mux0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<7> (sound_i/Maddsub_remainder_accum_mux0000_cy<7>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<8> (sound_i/Maddsub_remainder_accum_mux0000_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<9> (sound_i/Maddsub_remainder_accum_mux0000_cy<9>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<10> (sound_i/Maddsub_remainder_accum_mux0000_cy<10>)
@@ -1176,12 +1176,14 @@ Delay:               11.364ns (Levels of Logic = 60)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<22> (sound_i/Maddsub_remainder_accum_mux0000_cy<22>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<23> (sound_i/Maddsub_remainder_accum_mux0000_cy<23>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<24> (sound_i/Maddsub_remainder_accum_mux0000_cy<24>)
-     MUXCY:CI->O           0   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<25> (sound_i/Maddsub_remainder_accum_mux0000_cy<25>)
-     XORCY:CI->O           1   0.699   0.000  sound_i/Maddsub_remainder_accum_mux0000_xor<26> (sound_i/remainder_accum_mux0000<26>)
-     FD:D                      0.268          sound_i/remainder_accum_26
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<25> (sound_i/Maddsub_remainder_accum_mux0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<26> (sound_i/Maddsub_remainder_accum_mux0000_cy<26>)
+     MUXCY:CI->O           0   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<27> (sound_i/Maddsub_remainder_accum_mux0000_cy<27>)
+     XORCY:CI->O           1   0.699   0.000  sound_i/Maddsub_remainder_accum_mux0000_xor<28> (sound_i/remainder_accum_mux0000<28>)
+     FD:D                      0.268          sound_i/remainder_accum_28
     ----------------------------------------
-    Total                     11.364ns (8.815ns logic, 2.550ns route)
-                                       (77.6% logic, 22.4% route)
+    Total                     11.468ns (8.918ns logic, 2.551ns route)
+                                       (77.8% logic, 22.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mclk'
@@ -1306,14 +1308,14 @@ Offset:              7.280ns (Levels of Logic = 12)
 =========================================================================
 
 
-Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 17.23 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.24 secs
  
 --> 
 
-Total memory usage is 319044 kilobytes
+Total memory usage is 315072 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   58 (   0 filtered)
+Number of warnings :   59 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 
