@@ -24,8 +24,8 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 </msg>
 
 <msg type="warning" file="Pack" num="249" delta="old" >The following adjacent carry multiplexers occupy different slice components.  The resulting carry chain will have suboptimal timing.
-	<arg fmt="%s" index="1">sound_i/Mcompar_count_cmp_le0000_cy&lt;12&gt;</arg>
-	<arg fmt="%s" index="2">sound_i/Maddsub_remainder_accum_mux0000_cy&lt;0&gt;</arg>
+	<arg fmt="%s" index="1">sound_i/Mcompar_remainder_accum_cmp_le0000_cy&lt;12&gt;</arg>
+	<arg fmt="%s" index="2">sound_i/Maccum_remainder_accum_cy&lt;0&gt;</arg>
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">clk512</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.

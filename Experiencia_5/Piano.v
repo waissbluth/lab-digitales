@@ -137,7 +137,7 @@ module Piano(
 	end
 	
 	// Union FPGA
-	assign Led = keys[23:16];
+	assign Led = {0,note};
 	assign salida_pwm = pwm_out & press;
 	assign reset = btn[0];
 	

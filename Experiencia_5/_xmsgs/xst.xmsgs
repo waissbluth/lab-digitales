@@ -11,7 +11,7 @@
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Counter.v&quot; line 31 </arg>Connection to input port &apos;<arg fmt="%s" index="2">a</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="261" delta="new" ><arg fmt="%s" index="1">&quot;sound.v&quot; line 33 </arg>Connection to output port &apos;<arg fmt="%s" index="2">remainder</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="261" delta="old" ><arg fmt="%s" index="1">&quot;sound.v&quot; line 33 </arg>Connection to output port &apos;<arg fmt="%s" index="2">remainder</arg>&apos; does not match port size
 </msg>
 
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;sin_wave.v&quot; line 32 </arg>Connection to input port &apos;<arg fmt="%s" index="2">wea</arg>&apos; does not match port size

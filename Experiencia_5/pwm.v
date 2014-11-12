@@ -21,7 +21,7 @@
 module pwm(
 	input clk, // debe ser de  kHz
 	input [8:0] value,
-	output pwm
+	output reg pwm
     );
 	 
 	 // Diente de sierra para PWM
@@ -31,9 +31,8 @@ module pwm(
 	 
 	 always @(posedge clk) begin
 		count <= count + 1;
+		pwm <= value > count;
 	 end
-	 
-	 assign pwm = value > count;
 
 
 endmodule

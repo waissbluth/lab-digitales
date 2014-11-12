@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: Piano.prj
 
@@ -464,10 +464,12 @@ Unit <ClockRatio_2> synthesized.
 
 Synthesizing Unit <pwm>.
     Related source file is "pwm.v".
-    Found 9-bit comparator greater for signal <pwm>.
+    Found 1-bit register for signal <pwm>.
     Found 9-bit up counter for signal <count>.
+    Found 9-bit comparator greater for signal <pwm$cmp_gt0000> created at line 34.
     Summary:
 	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <pwm> synthesized.
 
@@ -557,14 +559,14 @@ Unit <Counter> synthesized.
 Synthesizing Unit <sound>.
     Related source file is "sound.v".
     Found 9-bit up accumulator for signal <count>.
-    Found 30-bit comparator lessequal for signal <count$cmp_le0000> created at line 45.
-    Found 29-bit register for signal <remainder_accum>.
-    Found 29-bit adder carry out for signal <remainder_accum$addsub0000> created at line 48.
-    Found 29-bit addsub for signal <remainder_accum$mux0000>.
+    Found 6-bit adder for signal <count$addsub0000>.
+    Found 29-bit updown accumulator for signal <remainder_accum>.
+    Found 29-bit adder for signal <remainder_accum$addsub0000>.
+    Found 29-bit adder carry out for signal <remainder_accum$addsub0001> created at line 44.
+    Found 30-bit comparator lessequal for signal <remainder_accum$cmp_le0000> created at line 44.
     Summary:
-	inferred   1 Accumulator(s).
-	inferred  29 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
+	inferred   2 Accumulator(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <sound> synthesized.
 
@@ -652,14 +654,15 @@ Macro Statistics
  32x24-bit ROM                                         : 1
  32x33-bit ROM                                         : 1
  8x8-bit ROM                                           : 1
-# Adders/Subtractors                                   : 178
+# Adders/Subtractors                                   : 179
  10-bit adder                                          : 26
  10-bit subtractor                                     : 1
  11-bit adder                                          : 48
  11-bit subtractor                                     : 96
+ 29-bit adder                                          : 1
  29-bit adder carry out                                : 1
- 29-bit addsub                                         : 1
  4-bit subtractor                                      : 1
+ 6-bit adder                                           : 1
  7-bit adder                                           : 1
  7-bit subtractor                                      : 1
  8-bit adder carry out                                 : 1
@@ -667,14 +670,14 @@ Macro Statistics
 # Counters                                             : 5
  10-bit up counter                                     : 4
  9-bit up counter                                      : 1
-# Accumulators                                         : 3
+# Accumulators                                         : 4
  16-bit updown accumulator                             : 2
+ 29-bit updown accumulator                             : 1
  9-bit up accumulator                                  : 1
 # Registers                                            : 52
- 1-bit register                                        : 41
+ 1-bit register                                        : 42
  11-bit register                                       : 1
  24-bit register                                       : 2
- 29-bit register                                       : 1
  4-bit register                                        : 1
  5-bit register                                        : 1
  7-bit register                                        : 1
@@ -809,14 +812,15 @@ Macro Statistics
 # ROMs                                                 : 2
  32x33-bit ROM                                         : 1
  8x8-bit ROM                                           : 1
-# Adders/Subtractors                                   : 178
+# Adders/Subtractors                                   : 179
  10-bit adder                                          : 26
  10-bit subtractor                                     : 1
  11-bit adder                                          : 48
  11-bit subtractor                                     : 96
+ 29-bit adder                                          : 1
  29-bit adder carry out                                : 1
- 29-bit addsub                                         : 1
  4-bit subtractor                                      : 1
+ 6-bit adder                                           : 1
  7-bit adder                                           : 1
  7-bit subtractor                                      : 1
  8-bit adder carry out                                 : 1
@@ -824,11 +828,12 @@ Macro Statistics
 # Counters                                             : 5
  10-bit up counter                                     : 4
  9-bit up counter                                      : 1
-# Accumulators                                         : 3
+# Accumulators                                         : 4
  16-bit updown accumulator                             : 2
+ 29-bit updown accumulator                             : 1
  9-bit up accumulator                                  : 1
-# Registers                                            : 153
- Flip-Flops                                            : 153
+# Registers                                            : 125
+ Flip-Flops                                            : 125
 # Comparators                                          : 159
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 2
@@ -876,8 +881,17 @@ Optimizing unit <PianoKeys> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Piano, actual ratio is 103.
+Found area constraint ratio of 100 (+ 5) on block Piano, actual ratio is 104.
 Optimizing block <Piano> to meet ratio 100 (+ 5) of 960 slices :
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom00008 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom00001357 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom00001495 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom000015 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom00001684 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom00002052 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom000023 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom00002484 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+PACKER Warning: Lut sound_i/jumper/Mrom_note_rom000026 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
 Area constraint is met for block <Piano>, final ratio is 98.
 
 Final Macro Processing ...
@@ -886,8 +900,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 244
- Flip-Flops                                            : 244
+# Registers                                            : 245
+ Flip-Flops                                            : 245
 
 =========================================================================
 
@@ -916,31 +930,31 @@ Design Statistics
 # IOs                              : 35
 
 Cell Usage :
-# BELS                             : 3055
+# BELS                             : 3115
 #      GND                         : 2
-#      INV                         : 653
-#      LUT1                        : 391
-#      LUT2                        : 108
-#      LUT2_D                      : 7
-#      LUT2_L                      : 2
-#      LUT3                        : 97
+#      INV                         : 656
+#      LUT1                        : 395
+#      LUT2                        : 110
+#      LUT2_D                      : 9
+#      LUT2_L                      : 3
+#      LUT3                        : 76
 #      LUT3_D                      : 2
-#      LUT4                        : 332
-#      LUT4_D                      : 1
-#      LUT4_L                      : 21
-#      MUXCY                       : 1228
-#      MUXF5                       : 47
+#      LUT4                        : 354
+#      LUT4_D                      : 3
+#      LUT4_L                      : 24
+#      MUXCY                       : 1256
+#      MUXF5                       : 32
 #      MUXF6                       : 3
 #      MUXF7                       : 1
 #      VCC                         : 2
-#      XORCY                       : 158
-# FlipFlops/Latches                : 244
-#      FD                          : 119
+#      XORCY                       : 187
+# FlipFlops/Latches                : 245
+#      FD                          : 118
 #      FDC                         : 25
-#      FDR                         : 20
+#      FDR                         : 21
 #      FDRE                        : 63
 #      FDRS                        : 11
-#      FDS                         : 2
+#      FDS                         : 3
 #      FDSE                        : 4
 # RAMS                             : 2
 #      RAMB16_S36                  : 1
@@ -958,9 +972,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      920  out of    960    95%  
- Number of Slice Flip Flops:            244  out of   1920    12%  
- Number of 4 input LUTs:               1614  out of   1920    84%  
+ Number of Slices:                      931  out of    960    96%  
+ Number of Slice Flip Flops:            245  out of   1920    12%  
+ Number of 4 input LUTs:               1632  out of   1920    85%  
  Number of IOs:                          35
  Number of bonded IOBs:                  24  out of     83    28%  
  Number of BRAMs:                         2  out of      4    50%  
@@ -988,7 +1002,7 @@ Clock Information:
 Clock Signal                           | Clock buffer(FF name)                                                                                                                       | Load  |
 ---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 mclk                                   | BUFGP                                                                                                                                       | 141   |
-clk512(pwmClkGen/Mcompar_reClk_cy<6>:O)| NONE(*)(pwm_i/count_0)                                                                                                                      | 9     |
+clk512(pwmClkGen/Mcompar_reClk_cy<6>:O)| NONE(*)(pwm_i/count_0)                                                                                                                      | 10    |
 clockHalver/overflow1                  | BUFG                                                                                                                                        | 41    |
 clk41(slowClkGen/Mcompar_reClk_cy<6>:O)| BUFG(*)(sound_i/siner/sin_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram)| 55    |
 ---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
@@ -1009,9 +1023,9 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 11.468ns (Maximum Frequency: 87.197MHz)
+   Minimum period: 10.342ns (Maximum Frequency: 96.694MHz)
    Minimum input arrival time before clock: 2.981ns
-   Maximum output required time after clock: 7.386ns
+   Maximum output required time after clock: 6.463ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1036,11 +1050,11 @@ Delay:               8.164ns (Levels of Logic = 8)
      FDRE:C->Q             4   0.514   0.568  keyboardKeys/termoCode_5 (keyboardKeys/termoCode_5)
      LUT2:I1->O            4   0.612   0.529  last_key_i/key_and00061 (last_key_i/key_and0006)
      LUT4:I2->O            1   0.612   0.360  last_key_i/key_mux0000<3>12 (last_key_i/key_mux0000<3>12)
-     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>34_SW0 (N78)
+     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>34_SW0 (N83)
      LUT4:I3->O            1   0.612   0.360  last_key_i/key_mux0000<3>34 (last_key_i/key_mux0000<3>34)
-     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>79_SW0 (N80)
+     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>79_SW0 (N85)
      LUT4:I3->O            1   0.612   0.360  last_key_i/key_mux0000<3>79 (last_key_i/key_mux0000<3>79)
-     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>116_SW0 (N98)
+     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>116_SW0 (N111)
      LUT4:I3->O            1   0.612   0.000  last_key_i/key_mux0000<3>116 (last_key_i/key_mux0000<3>)
      FDSE:D                    0.268          last_key_i/key_1
     ----------------------------------------
@@ -1049,40 +1063,41 @@ Delay:               8.164ns (Levels of Logic = 8)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk512'
-  Clock period: 3.338ns (frequency: 299.585MHz)
-  Total number of paths / destination ports: 45 / 9
+  Clock period: 3.863ns (frequency: 258.869MHz)
+  Total number of paths / destination ports: 63 / 10
 -------------------------------------------------------------------------
-Delay:               3.338ns (Levels of Logic = 9)
-  Source:            pwm_i/count_1 (FF)
-  Destination:       pwm_i/count_8 (FF)
+Delay:               3.863ns (Levels of Logic = 10)
+  Source:            pwm_i/count_0 (FF)
+  Destination:       pwm_i/pwm (FF)
   Source Clock:      clk512 rising
   Destination Clock: clk512 rising
 
-  Data Path: pwm_i/count_1 to pwm_i/count_8
+  Data Path: pwm_i/count_0 to pwm_i/pwm
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.514   0.532  pwm_i/count_1 (pwm_i/count_1)
-     LUT1:I0->O            1   0.612   0.000  pwm_i/Mcount_count_cy<1>_rt (pwm_i/Mcount_count_cy<1>_rt)
-     MUXCY:S->O            1   0.404   0.000  pwm_i/Mcount_count_cy<1> (pwm_i/Mcount_count_cy<1>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcount_count_cy<2> (pwm_i/Mcount_count_cy<2>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcount_count_cy<3> (pwm_i/Mcount_count_cy<3>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcount_count_cy<4> (pwm_i/Mcount_count_cy<4>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcount_count_cy<5> (pwm_i/Mcount_count_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcount_count_cy<6> (pwm_i/Mcount_count_cy<6>)
-     MUXCY:CI->O           0   0.051   0.000  pwm_i/Mcount_count_cy<7> (pwm_i/Mcount_count_cy<7>)
-     XORCY:CI->O           1   0.699   0.000  pwm_i/Mcount_count_xor<8> (Result<8>2)
-     FD:D                      0.268          pwm_i/count_8
+     FD:C->Q               2   0.514   0.532  pwm_i/count_0 (pwm_i/count_0)
+     LUT2:I0->O            1   0.612   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_lut<0> (pwm_i/Mcompar_pwm_cmp_gt0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<0> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<1> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<2> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<3> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<4> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<5> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<6> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<7> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<7>)
+     MUXCY:CI->O           1   0.289   0.357  pwm_i/Mcompar_pwm_cmp_gt0000_cy<8> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<8>)
+     FDR:R                     0.795          pwm_i/pwm
     ----------------------------------------
-    Total                      3.338ns (2.806ns logic, 0.532ns route)
-                                       (84.1% logic, 15.9% route)
+    Total                      3.863ns (2.974ns logic, 0.889ns route)
+                                       (77.0% logic, 23.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clockHalver/overflow1'
-  Clock period: 5.497ns (frequency: 181.914MHz)
+  Clock period: 5.580ns (frequency: 179.208MHz)
   Total number of paths / destination ports: 1090 / 111
 -------------------------------------------------------------------------
-Delay:               5.497ns (Levels of Logic = 4)
+Delay:               5.580ns (Levels of Logic = 4)
   Source:            vgaDriver/vc_4 (FF)
   Destination:       vgaDriver/v_9 (FF)
   Source Clock:      clockHalver/overflow1 rising
@@ -1094,20 +1109,20 @@ Delay:               5.497ns (Levels of Logic = 4)
     ----------------------------------------  ------------
      FDRE:C->Q             5   0.514   0.690  vgaDriver/vc_4 (vgaDriver/vc_4)
      LUT4:I0->O            1   0.612   0.426  vgaDriver/von_cmp_gt000117 (vgaDriver/von_cmp_gt000117)
-     LUT3:I1->O            3   0.612   0.520  vgaDriver/von_cmp_gt0001113 (vgaDriver/von_cmp_gt00012)
-     LUT3:I1->O            1   0.612   0.000  vgaDriver/v_not000112 (vgaDriver/v_not000111)
+     LUT3:I1->O            3   0.612   0.603  vgaDriver/von_cmp_gt0001113 (vgaDriver/von_cmp_gt00012)
+     LUT3:I0->O            1   0.612   0.000  vgaDriver/v_not000112 (vgaDriver/v_not000111)
      MUXF5:I0->O          10   0.278   0.750  vgaDriver/v_not00011_f5 (vgaDriver/v_not0001)
      FDRE:CE                   0.483          vgaDriver/v_0
     ----------------------------------------
-    Total                      5.497ns (3.111ns logic, 2.386ns route)
-                                       (56.6% logic, 43.4% route)
+    Total                      5.580ns (3.111ns logic, 2.469ns route)
+                                       (55.8% logic, 44.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk41'
-  Clock period: 11.468ns (frequency: 87.197MHz)
-  Total number of paths / destination ports: 883746 / 70
+  Clock period: 10.342ns (frequency: 96.694MHz)
+  Total number of paths / destination ports: 451737 / 71
 -------------------------------------------------------------------------
-Delay:               11.468ns (Levels of Logic = 62)
+Delay:               10.342ns (Levels of Logic = 61)
   Source:            sound_i/remainder_accum_0 (FF)
   Destination:       sound_i/remainder_accum_28 (FF)
   Source Clock:      clk41 rising
@@ -1118,72 +1133,71 @@ Delay:               11.468ns (Levels of Logic = 62)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               2   0.514   0.449  sound_i/remainder_accum_0 (sound_i/remainder_accum_0)
-     LUT2:I1->O            1   0.612   0.000  sound_i/Madd_remainder_accum_addsub0000_lut<0> (sound_i/Madd_remainder_accum_addsub0000_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<0> (sound_i/Madd_remainder_accum_addsub0000_cy<0>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<1> (sound_i/Madd_remainder_accum_addsub0000_cy<1>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<2> (sound_i/Madd_remainder_accum_addsub0000_cy<2>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<3> (sound_i/Madd_remainder_accum_addsub0000_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<4> (sound_i/Madd_remainder_accum_addsub0000_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<5> (sound_i/Madd_remainder_accum_addsub0000_cy<5>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<6> (sound_i/Madd_remainder_accum_addsub0000_cy<6>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<7> (sound_i/Madd_remainder_accum_addsub0000_cy<7>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<8> (sound_i/Madd_remainder_accum_addsub0000_cy<8>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<9> (sound_i/Madd_remainder_accum_addsub0000_cy<9>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<10> (sound_i/Madd_remainder_accum_addsub0000_cy<10>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<11> (sound_i/Madd_remainder_accum_addsub0000_cy<11>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<12> (sound_i/Madd_remainder_accum_addsub0000_cy<12>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<13> (sound_i/Madd_remainder_accum_addsub0000_cy<13>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<14> (sound_i/Madd_remainder_accum_addsub0000_cy<14>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<15> (sound_i/Madd_remainder_accum_addsub0000_cy<15>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<16> (sound_i/Madd_remainder_accum_addsub0000_cy<16>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<17> (sound_i/Madd_remainder_accum_addsub0000_cy<17>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<18> (sound_i/Madd_remainder_accum_addsub0000_cy<18>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<19> (sound_i/Madd_remainder_accum_addsub0000_cy<19>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<20> (sound_i/Madd_remainder_accum_addsub0000_cy<20>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<21> (sound_i/Madd_remainder_accum_addsub0000_cy<21>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<22> (sound_i/Madd_remainder_accum_addsub0000_cy<22>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<23> (sound_i/Madd_remainder_accum_addsub0000_cy<23>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<24> (sound_i/Madd_remainder_accum_addsub0000_cy<24>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0000_cy<25> (sound_i/Madd_remainder_accum_addsub0000_cy<25>)
-     XORCY:CI->O           3   0.699   0.603  sound_i/Madd_remainder_accum_addsub0000_xor<26> (sound_i/remainder_accum_addsub0000<26>)
-     LUT1:I0->O            1   0.612   0.000  sound_i/Mcompar_count_cmp_le0000_cy<11>_rt (sound_i/Mcompar_count_cmp_le0000_cy<11>_rt)
-     MUXCY:S->O            1   0.404   0.000  sound_i/Mcompar_count_cmp_le0000_cy<11> (sound_i/Mcompar_count_cmp_le0000_cy<11>)
-     MUXCY:CI->O          64   0.399   1.111  sound_i/Mcompar_count_cmp_le0000_cy<12> (sound_i/count_cmp_le0000)
-     LUT3:I2->O            1   0.612   0.387  sound_i/remainder_accum_mux0001<0>1 (sound_i/remainder_accum_mux0001<0>)
-     LUT4:I2->O            1   0.612   0.000  sound_i/Maddsub_remainder_accum_mux0000_lut<0> (sound_i/Maddsub_remainder_accum_mux0000_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<0> (sound_i/Maddsub_remainder_accum_mux0000_cy<0>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<1> (sound_i/Maddsub_remainder_accum_mux0000_cy<1>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<2> (sound_i/Maddsub_remainder_accum_mux0000_cy<2>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<3> (sound_i/Maddsub_remainder_accum_mux0000_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<4> (sound_i/Maddsub_remainder_accum_mux0000_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<5> (sound_i/Maddsub_remainder_accum_mux0000_cy<5>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<6> (sound_i/Maddsub_remainder_accum_mux0000_cy<6>)
-     MUXCY:CI->O           1   0.052   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<7> (sound_i/Maddsub_remainder_accum_mux0000_cy<7>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<8> (sound_i/Maddsub_remainder_accum_mux0000_cy<8>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<9> (sound_i/Maddsub_remainder_accum_mux0000_cy<9>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<10> (sound_i/Maddsub_remainder_accum_mux0000_cy<10>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<11> (sound_i/Maddsub_remainder_accum_mux0000_cy<11>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<12> (sound_i/Maddsub_remainder_accum_mux0000_cy<12>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<13> (sound_i/Maddsub_remainder_accum_mux0000_cy<13>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<14> (sound_i/Maddsub_remainder_accum_mux0000_cy<14>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<15> (sound_i/Maddsub_remainder_accum_mux0000_cy<15>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<16> (sound_i/Maddsub_remainder_accum_mux0000_cy<16>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<17> (sound_i/Maddsub_remainder_accum_mux0000_cy<17>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<18> (sound_i/Maddsub_remainder_accum_mux0000_cy<18>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<19> (sound_i/Maddsub_remainder_accum_mux0000_cy<19>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<20> (sound_i/Maddsub_remainder_accum_mux0000_cy<20>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<21> (sound_i/Maddsub_remainder_accum_mux0000_cy<21>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<22> (sound_i/Maddsub_remainder_accum_mux0000_cy<22>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<23> (sound_i/Maddsub_remainder_accum_mux0000_cy<23>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<24> (sound_i/Maddsub_remainder_accum_mux0000_cy<24>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<25> (sound_i/Maddsub_remainder_accum_mux0000_cy<25>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<26> (sound_i/Maddsub_remainder_accum_mux0000_cy<26>)
-     MUXCY:CI->O           0   0.051   0.000  sound_i/Maddsub_remainder_accum_mux0000_cy<27> (sound_i/Maddsub_remainder_accum_mux0000_cy<27>)
-     XORCY:CI->O           1   0.699   0.000  sound_i/Maddsub_remainder_accum_mux0000_xor<28> (sound_i/remainder_accum_mux0000<28>)
+     LUT2:I1->O            1   0.612   0.000  sound_i/Madd_remainder_accum_addsub0001_lut<0> (sound_i/Madd_remainder_accum_addsub0001_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<0> (sound_i/Madd_remainder_accum_addsub0001_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<1> (sound_i/Madd_remainder_accum_addsub0001_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<2> (sound_i/Madd_remainder_accum_addsub0001_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<3> (sound_i/Madd_remainder_accum_addsub0001_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<4> (sound_i/Madd_remainder_accum_addsub0001_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<5> (sound_i/Madd_remainder_accum_addsub0001_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<6> (sound_i/Madd_remainder_accum_addsub0001_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<7> (sound_i/Madd_remainder_accum_addsub0001_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<8> (sound_i/Madd_remainder_accum_addsub0001_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<9> (sound_i/Madd_remainder_accum_addsub0001_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<10> (sound_i/Madd_remainder_accum_addsub0001_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<11> (sound_i/Madd_remainder_accum_addsub0001_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<12> (sound_i/Madd_remainder_accum_addsub0001_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<13> (sound_i/Madd_remainder_accum_addsub0001_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<14> (sound_i/Madd_remainder_accum_addsub0001_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<15> (sound_i/Madd_remainder_accum_addsub0001_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<16> (sound_i/Madd_remainder_accum_addsub0001_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<17> (sound_i/Madd_remainder_accum_addsub0001_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<18> (sound_i/Madd_remainder_accum_addsub0001_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<19> (sound_i/Madd_remainder_accum_addsub0001_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<20> (sound_i/Madd_remainder_accum_addsub0001_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<21> (sound_i/Madd_remainder_accum_addsub0001_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<22> (sound_i/Madd_remainder_accum_addsub0001_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<23> (sound_i/Madd_remainder_accum_addsub0001_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<24> (sound_i/Madd_remainder_accum_addsub0001_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<25> (sound_i/Madd_remainder_accum_addsub0001_cy<25>)
+     XORCY:CI->O           1   0.699   0.509  sound_i/Madd_remainder_accum_addsub0001_xor<26> (sound_i/remainder_accum_addsub0001<26>)
+     LUT1:I0->O            1   0.612   0.000  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11>_rt (sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11>_rt)
+     MUXCY:S->O            1   0.404   0.000  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11> (sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11>)
+     MUXCY:CI->O          36   0.399   1.074  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<12> (sound_i/remainder_accum_cmp_le0000)
+     INV:I->O              1   0.612   0.357  sound_i/remainder_accum_cmp_le0000_inv2_INV_0 (sound_i/remainder_accum_cmp_le0000_inv)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<0> (sound_i/Maccum_remainder_accum_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<1> (sound_i/Maccum_remainder_accum_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<2> (sound_i/Maccum_remainder_accum_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<3> (sound_i/Maccum_remainder_accum_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<4> (sound_i/Maccum_remainder_accum_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<5> (sound_i/Maccum_remainder_accum_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<6> (sound_i/Maccum_remainder_accum_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<7> (sound_i/Maccum_remainder_accum_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<8> (sound_i/Maccum_remainder_accum_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<9> (sound_i/Maccum_remainder_accum_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<10> (sound_i/Maccum_remainder_accum_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<11> (sound_i/Maccum_remainder_accum_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<12> (sound_i/Maccum_remainder_accum_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<13> (sound_i/Maccum_remainder_accum_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<14> (sound_i/Maccum_remainder_accum_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<15> (sound_i/Maccum_remainder_accum_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<16> (sound_i/Maccum_remainder_accum_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<17> (sound_i/Maccum_remainder_accum_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<18> (sound_i/Maccum_remainder_accum_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<19> (sound_i/Maccum_remainder_accum_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<20> (sound_i/Maccum_remainder_accum_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<21> (sound_i/Maccum_remainder_accum_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<22> (sound_i/Maccum_remainder_accum_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<23> (sound_i/Maccum_remainder_accum_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<24> (sound_i/Maccum_remainder_accum_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<25> (sound_i/Maccum_remainder_accum_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  sound_i/Maccum_remainder_accum_cy<26> (sound_i/Maccum_remainder_accum_cy<26>)
+     MUXCY:CI->O           0   0.051   0.000  sound_i/Maccum_remainder_accum_cy<27> (sound_i/Maccum_remainder_accum_cy<27>)
+     XORCY:CI->O           1   0.699   0.000  sound_i/Maccum_remainder_accum_xor<28> (sound_i/Result<28>)
      FD:D                      0.268          sound_i/remainder_accum_28
     ----------------------------------------
-    Total                     11.468ns (8.918ns logic, 2.551ns route)
-                                       (77.8% logic, 22.2% route)
+    Total                     10.342ns (7.953ns logic, 2.389ns route)
+                                       (76.9% logic, 23.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mclk'
@@ -1218,7 +1232,7 @@ Offset:              6.463ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q             5   0.514   0.690  vgaDriver/vc_3 (vgaDriver/vc_3)
-     LUT4:I0->O            1   0.612   0.509  vgaDriver/vsync_SW0 (N35)
+     LUT4:I0->O            1   0.612   0.509  vgaDriver/vsync_SW0 (N47)
      LUT4:I0->O            1   0.612   0.357  vgaDriver/vsync (VSYNC_OBUF)
      OBUF:I->O                 3.169          VSYNC_OBUF (VSYNC)
     ----------------------------------------
@@ -1226,10 +1240,30 @@ Offset:              6.463ns (Levels of Logic = 3)
                                        (75.9% logic, 24.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
-  Total number of paths / destination ports: 17 / 17
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk512'
+  Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              5.255ns (Levels of Logic = 2)
+Offset:              5.161ns (Levels of Logic = 2)
+  Source:            pwm_i/pwm (FF)
+  Destination:       salida_pwm (PAD)
+  Source Clock:      clk512 rising
+
+  Data Path: pwm_i/pwm to salida_pwm
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.514   0.509  pwm_i/pwm (pwm_i/pwm)
+     LUT2:I0->O            1   0.612   0.357  salida_pwm1 (salida_pwm_OBUF)
+     OBUF:I->O                 3.169          salida_pwm_OBUF (salida_pwm)
+    ----------------------------------------
+    Total                      5.161ns (4.295ns logic, 0.866ns route)
+                                       (83.2% logic, 16.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              5.172ns (Levels of Logic = 2)
   Source:            last_key_i/press (FF)
   Destination:       salida_pwm (PAD)
   Source Clock:      mclk rising
@@ -1238,82 +1272,22 @@ Offset:              5.255ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.514   0.603  last_key_i/press (last_key_i/press)
-     LUT2:I0->O            1   0.612   0.357  salida_pwm1 (salida_pwm_OBUF)
-     OBUF:I->O                 3.169          salida_pwm_OBUF (salida_pwm)
-    ----------------------------------------
-    Total                      5.255ns (4.295ns logic, 0.960ns route)
-                                       (81.7% logic, 18.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk512'
-  Total number of paths / destination ports: 18 / 1
--------------------------------------------------------------------------
-Offset:              7.386ns (Levels of Logic = 12)
-  Source:            pwm_i/count_0 (FF)
-  Destination:       salida_pwm (PAD)
-  Source Clock:      clk512 rising
-
-  Data Path: pwm_i/count_0 to salida_pwm
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.514   0.532  pwm_i/count_0 (pwm_i/count_0)
-     LUT2:I0->O            1   0.612   0.000  pwm_i/Mcompar_pwm_lut<0> (pwm_i/Mcompar_pwm_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  pwm_i/Mcompar_pwm_cy<0> (pwm_i/Mcompar_pwm_cy<0>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<1> (pwm_i/Mcompar_pwm_cy<1>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<2> (pwm_i/Mcompar_pwm_cy<2>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<3> (pwm_i/Mcompar_pwm_cy<3>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<4> (pwm_i/Mcompar_pwm_cy<4>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<5> (pwm_i/Mcompar_pwm_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<6> (pwm_i/Mcompar_pwm_cy<6>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<7> (pwm_i/Mcompar_pwm_cy<7>)
-     MUXCY:CI->O           1   0.399   0.426  pwm_i/Mcompar_pwm_cy<8> (pwm_i/Mcompar_pwm_cy<8>)
+     FD:C->Q               3   0.514   0.520  last_key_i/press (last_key_i/press)
      LUT2:I1->O            1   0.612   0.357  salida_pwm1 (salida_pwm_OBUF)
      OBUF:I->O                 3.169          salida_pwm_OBUF (salida_pwm)
     ----------------------------------------
-    Total                      7.386ns (6.071ns logic, 1.315ns route)
-                                       (82.2% logic, 17.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk41'
-  Total number of paths / destination ports: 9 / 1
--------------------------------------------------------------------------
-Offset:              7.280ns (Levels of Logic = 12)
-  Source:            sound_i/siner/val_0 (FF)
-  Destination:       salida_pwm (PAD)
-  Source Clock:      clk41 rising
-
-  Data Path: sound_i/siner/val_0 to salida_pwm
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              1   0.514   0.426  sound_i/siner/val_0 (sound_i/siner/val_0)
-     LUT2:I1->O            1   0.612   0.000  pwm_i/Mcompar_pwm_lut<0> (pwm_i/Mcompar_pwm_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  pwm_i/Mcompar_pwm_cy<0> (pwm_i/Mcompar_pwm_cy<0>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<1> (pwm_i/Mcompar_pwm_cy<1>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<2> (pwm_i/Mcompar_pwm_cy<2>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<3> (pwm_i/Mcompar_pwm_cy<3>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<4> (pwm_i/Mcompar_pwm_cy<4>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<5> (pwm_i/Mcompar_pwm_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<6> (pwm_i/Mcompar_pwm_cy<6>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cy<7> (pwm_i/Mcompar_pwm_cy<7>)
-     MUXCY:CI->O           1   0.399   0.426  pwm_i/Mcompar_pwm_cy<8> (pwm_i/Mcompar_pwm_cy<8>)
-     LUT2:I1->O            1   0.612   0.357  salida_pwm1 (salida_pwm_OBUF)
-     OBUF:I->O                 3.169          salida_pwm_OBUF (salida_pwm)
-    ----------------------------------------
-    Total                      7.280ns (6.071ns logic, 1.209ns route)
-                                       (83.4% logic, 16.6% route)
+    Total                      5.172ns (4.295ns logic, 0.877ns route)
+                                       (83.0% logic, 17.0% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 17.24 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 16.21 secs
  
 --> 
 
-Total memory usage is 315072 kilobytes
+Total memory usage is 320144 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   59 (   0 filtered)
