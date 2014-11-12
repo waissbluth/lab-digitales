@@ -240,7 +240,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="Piano.lso"/>
@@ -262,6 +264,7 @@
     <transform xil_pn:end_ts="1415223817" xil_pn:in_ck="1595752085306140358" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1489412277540061469" xil_pn:start_ts="1415223811">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Piano.bld"/>
       <outfile xil_pn:name="Piano.ngd"/>
       <outfile xil_pn:name="Piano_ngdbuild.xrpt"/>
@@ -272,6 +275,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Piano.pcf"/>
       <outfile xil_pn:name="Piano_map.map"/>
       <outfile xil_pn:name="Piano_map.mrp"/>
@@ -286,6 +292,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Piano.ncd"/>
       <outfile xil_pn:name="Piano.pad"/>
       <outfile xil_pn:name="Piano.par"/>
@@ -301,6 +308,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Piano.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="piano.bgn"/>
@@ -313,6 +321,7 @@
     <transform xil_pn:end_ts="1415223838" xil_pn:in_ck="-1563319482805137564" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1415223835">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Piano.twr"/>
       <outfile xil_pn:name="Piano.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
@@ -321,6 +330,7 @@
       <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
