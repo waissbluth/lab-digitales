@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-MONSTRO::  Fri Nov 07 01:06:14 2014
+MONSTRO::  Wed Nov 12 10:43:23 2014
 
 par -w -intstyle ise -ol high -t 1 Piano_map.ncd Piano.ncd Piano.pcf 
 
@@ -53,8 +53,8 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 1 secs 
-Finished initial Timing Analysis.  REAL time: 1 secs 
+Starting initial Timing Analysis.  REAL time: 2 secs 
+Finished initial Timing Analysis.  REAL time: 2 secs 
 
 WARNING:Par:288 - The signal sw<0>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal sw<1>_IBUF has no load.  PAR will not attempt to route this signal.
@@ -69,11 +69,11 @@ WARNING:Par:288 - The signal btn<2>_IBUF has no load.  PAR will not attempt to r
 WARNING:Par:288 - The signal btn<3>_IBUF has no load.  PAR will not attempt to route this signal.
 
 Starting Placer
-Total REAL time at the beginning of Placer: 1 secs 
+Total REAL time at the beginning of Placer: 2 secs 
 Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:7a5772ff) REAL time: 2 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:7a5772ff) REAL time: 3 secs 
 
 Phase 2.7  Design Feasibility Check
 WARNING:Place:837 - Partially locked IO Bus is found. 
@@ -82,27 +82,27 @@ WARNING:Place:837 - Partially locked IO Bus is found.
 
 INFO:Place:834 - Only a subset of IOs are locked. Out of 20 IOs, 19 are locked and 1 are not locked. If you would like
    to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:7a5772ff) REAL time: 2 secs 
+Phase 2.7  Design Feasibility Check (Checksum:7a5772ff) REAL time: 3 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:7a5772ff) REAL time: 2 secs 
+Phase 3.31  Local Placement Optimization (Checksum:7a5772ff) REAL time: 3 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 ........
-Phase 4.2  Initial Clock and IO Placement (Checksum:cc2e9b31) REAL time: 2 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:cc2e9b31) REAL time: 3 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:cc2e9b31) REAL time: 2 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:cc2e9b31) REAL time: 3 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:cc2e9b31) REAL time: 2 secs 
+Phase 6.36  Local Placement Optimization (Checksum:cc2e9b31) REAL time: 3 secs 
 
 Phase 7.3  Local Placement Optimization
 ........
-Phase 7.3  Local Placement Optimization (Checksum:4ef7ef45) REAL time: 2 secs 
+Phase 7.3  Local Placement Optimization (Checksum:4ef7ef45) REAL time: 3 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:4ef7ef45) REAL time: 2 secs 
+Phase 8.5  Local Placement Optimization (Checksum:4ef7ef45) REAL time: 3 secs 
 
 Phase 9.8  Global Placement
 ...................
@@ -111,18 +111,18 @@ Phase 9.8  Global Placement
 ................................................................................................................
 ......................
 ........................
-Phase 9.8  Global Placement (Checksum:15bca2b3) REAL time: 4 secs 
+Phase 9.8  Global Placement (Checksum:15bca2b3) REAL time: 6 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:15bca2b3) REAL time: 4 secs 
+Phase 10.5  Local Placement Optimization (Checksum:15bca2b3) REAL time: 6 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:16b05710) REAL time: 5 secs 
+Phase 11.18  Placement Optimization (Checksum:16b05710) REAL time: 6 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:16b05710) REAL time: 5 secs 
+Phase 12.5  Local Placement Optimization (Checksum:16b05710) REAL time: 6 secs 
 
-Total REAL time to Placer completion: 5 secs 
+Total REAL time to Placer completion: 7 secs 
 Total CPU  time to Placer completion: 5 secs 
 Writing design to file Piano.ncd
 
@@ -131,37 +131,37 @@ Writing design to file Piano.ncd
 Starting Router
 
 
-Phase  1  : 4069 unrouted;      REAL time: 6 secs 
+Phase  1  : 4069 unrouted;      REAL time: 8 secs 
 
-Phase  2  : 3795 unrouted;      REAL time: 6 secs 
+Phase  2  : 3795 unrouted;      REAL time: 8 secs 
 
-Phase  3  : 802 unrouted;      REAL time: 6 secs 
+Phase  3  : 802 unrouted;      REAL time: 8 secs 
 
-Phase  4  : 846 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
+Phase  4  : 846 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
-
-Updating file: Piano.ncd with current fully routed design.
-
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
-
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 11 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
 Updating file: Piano.ncd with current fully routed design.
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 13 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 12 secs 
+Updating file: Piano.ncd with current fully routed design.
 
-Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 13 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
 
-Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 13 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+
+Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
 WARNING:Route:455 - CLK Net:clk512 may have excessive skew because 
       5 CLK pins and 9 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 13 secs 
+Total REAL time to Router completion: 15 secs 
 Total CPU time to Router completion: 12 secs 
 
 Partition Implementation Status
@@ -235,7 +235,7 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 11 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 13 secs 
+Total REAL time to PAR completion: 15 secs 
 Total CPU time to PAR completion: 13 secs 
 
 Peak Memory Usage:  333 MB
