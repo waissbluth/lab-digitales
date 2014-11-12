@@ -79,12 +79,15 @@ module Piano(
 
 	// Lectura teclado
 	wire keyboardEnable;
+	assign keyboardEnable = 1;
+	
 	wire [7:0] keyboardData;
-	reg [7:0] lastData, previousData;
+	wire keyRecieved;
+	wire reset;
 	
-	wire [2:0] indexCount;
-	Ps2Signals keyboardCtrl(mclk, PS2C, PS2D, keyboardEnable, keyboardData, indexCount);
-	
+	ps2_rx keyboardCtrl(mclk, reset, PS2D, PS2C, keyboardEnable, keyRecieved, keyboardData);
+	KeyToTermometer keyboardKeys(	mclk, reset, keyRecieved, keyboardData, keys);
+
 	wire [4:0] note;
 	wire press;
 	
@@ -93,17 +96,15 @@ module Piano(
 	
 	//Genérame un seno
 	wire [8:0] amplitude;
-	wire clk4;
+	wire clk4;	
 	ClockRatio #(fpgaClk, slowClk) slowClkGen(mclk, clk4);
 	sound sound_i(clk4, note, amplitude);
-	
 	
 	//PWM generation
 	wire pwm_out;
 	wire clk512;
 	ClockRatio #(fpgaClk, pwmClk) pwmClkGen(mclk, clk512);
 	pwm pwm_i(clk512, amplitude, pwm_out);
-	
 	
 	// Dibujo piano
 	PianoKeys #(bitsPosicion, bitsDimension, octaves) graphicKeys(mclk, keyWidth, keyHeight, keySpace, keyboardPosX, keyboardPosY, x_pixel, y_pixel, keys_display, colorIndex);
@@ -135,25 +136,9 @@ module Piano(
 		end else outColor <= 0;
 	end
 	
-	// Tests / Not finished
-	reg clk4Change, clk512Change;
-	assign keys[(octaves*12 - 1):8] = 0;
-	assign keys[7:0] = {sw[0], sw[1], sw[2], sw[3], sw[4], sw[5], sw[6], sw[7]};
-	assign Led[2:0] = indexCount;
-	assign Led[7:6] = 0;
-	assign Led[3] = pwm_out && press;
-	assign Led[4] = clk512Change;
-	assign Led[5] = clk4Change;
-	assign salida_pwm = pwm_out && press;
-	
-	always @(posedge clk4) clk4Change <= !clk4Change;
-	always @(posedge clk512) clk512Change <= !clk512Change;	
-	
-	always @(posedge mclk)
-	begin
-		if(keyboardEnable)
-			previousData <= lastData;
-			lastData <= keyboardData;
-	end
+	// Union FPGA
+	assign Led = keys[23:16];
+	assign salida_pwm = pwm_out & press;
+	assign reset = btn[0];
 	
 endmodule

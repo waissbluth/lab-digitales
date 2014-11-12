@@ -34,6 +34,9 @@ module Counter_tf;
 	// Outputs
 	wire [(bits - 1):0] count;
 	wire overflow;
+	
+	wire xorTest;
+	assign xorTest = ^count;
 
 	// Instantiate the Unit Under Test (UUT)
 	Counter #(bits) uut (
