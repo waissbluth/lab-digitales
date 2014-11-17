@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Proyecto/Intento1/ApplyMat_tf_isim_beh.exe" -prj "E:/Yo/Documents/U/10sem/Lab digitales/Repo/Proyecto/Intento1/ApplyMat_tf_beh.prj" "work.ApplyMat_tf" "work.glbl" 

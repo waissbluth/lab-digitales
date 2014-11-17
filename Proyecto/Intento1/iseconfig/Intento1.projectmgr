@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="Intento1" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/BaricentricCoords E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|BaricentricCoords.v</ClosedNode>
+         <ClosedNode>/Cosine E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Cosine.v</ClosedNode>
+         <ClosedNode>/PerspDivSimple E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|PerspDivSimple.v</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/tris - BaricentricCoords</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/tris - BaricentricCoords/lambda_0Calc - BoothsDiv</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/tris - BaricentricCoords/lambda_1Calc - BoothsDiv</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/vert0Proy - PerspDivSimple</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/vert1Proy - PerspDivSimple</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/vert2Proy - PerspDivSimple</ClosedNode>
+         <ClosedNode>/RotationZYXMat E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|RotationZYXMat.v/cosineCalc - Cosine</ClosedNode>
+         <ClosedNode>/RotationZYXMat E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|RotationZYXMat.v/sineCalc - Sine</ClosedNode>
+         <ClosedNode>/Sine E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Sine.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000014b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000014b0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>RotationZYXMat (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Proyecto/Intento1/RotationZYXMat.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000224000000010000000100000000000000000000000064ffffffff000000810000000000000001000002240000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000392000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000002c60000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>StaticCounter.v</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+         <ClosedNode>Implement Design/Map</ClosedNode>
+         <ClosedNode>Implement Design/Map/Generate Post-Map Static Timing</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Back-annotate Pin Locations</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Generate IBIS Model</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Generate Post-Place &amp; Route Static Timing</ClosedNode>
+         <ClosedNode>Implement Design/Translate</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000224000000010000000100000000000000000000000064ffffffff000000810000000000000001000002240000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ApplyMat E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|ApplyMat.v</ClosedNode>
+         <ClosedNode>/ApplyMat_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|ApplyMat_tf.v</ClosedNode>
+         <ClosedNode>/BaricentricCoord_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|BaricentricCoord_tf.v</ClosedNode>
+         <ClosedNode>/BaricentricCoord_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|BaricentricCoord_tf.v/uut - BaricentricCoords</ClosedNode>
+         <ClosedNode>/BoothsDiv_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|BoothsDiv_tf.v</ClosedNode>
+         <ClosedNode>/BoothsDiv_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|BoothsDiv_tf.v/uut - BoothsDiv</ClosedNode>
+         <ClosedNode>/BoothsMult_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|BoothsMult_tf.v</ClosedNode>
+         <ClosedNode>/Cosine E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Cosine.v</ClosedNode>
+         <ClosedNode>/Cosine_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Cosine_tf.v</ClosedNode>
+         <ClosedNode>/Cosine_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Cosine_tf.v/uut - Cosine</ClosedNode>
+         <ClosedNode>/PerspDivSimple_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|PerspDivSimple_tf.v</ClosedNode>
+         <ClosedNode>/PerspDivSimple_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|PerspDivSimple_tf.v/uut - PerspDivSimple</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v</ClosedNode>
+         <ClosedNode>/Proyecto E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Proyecto.v/tris - BaricentricCoords</ClosedNode>
+         <ClosedNode>/RotationZYXMat_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|RotationZYXMat_tf.v</ClosedNode>
+         <ClosedNode>/RotationZYXMat_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|RotationZYXMat_tf.v/uut - RotationZYXMat</ClosedNode>
+         <ClosedNode>/RotationZYXMat_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|RotationZYXMat_tf.v/uut - RotationZYXMat/cosineCalc - Cosine</ClosedNode>
+         <ClosedNode>/RotationZYXMat_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|RotationZYXMat_tf.v/uut - RotationZYXMat/sineCalc - Sine</ClosedNode>
+         <ClosedNode>/Sine E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Sine.v</ClosedNode>
+         <ClosedNode>/Sine_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Cosine_tf.v</ClosedNode>
+         <ClosedNode>/Sine_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Sine_tf.v</ClosedNode>
+         <ClosedNode>/Sine_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|Sine_tf.v/uut - Sine</ClosedNode>
+         <ClosedNode>/StaticCounter_tf E:|Yo|Documents|U|10sem|Lab digitales|Repo|Proyecto|Intento1|StaticCounter_tf.v</ClosedNode>
+         <ClosedNode>/TwosComp_tf E:|Yo|Documents|U|10sem|Diseno digital|Proyecto|Entrega 2|Filtor|TwosComp_tf.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000123000000020000000000000000000000000200000064ffffffff000000810000000300000002000001230000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>ApplyMat_tf (E:/Yo/Documents/U/10sem/Lab digitales/Repo/Proyecto/Intento1/ApplyMat_tf.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000224000000010000000100000000000000000000000064ffffffff000000810000000000000001000002240000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000224000000010000000100000000000000000000000064ffffffff000000810000000000000001000002240000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
+   <CurrentView>Behavioral Simulation</CurrentView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Edit Constraints (Text)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000180000000010000000100000000000000000000000064ffffffff000000810000000000000001000001800000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Edit Constraints (Text)</CurrentItem>
+   </ItemView>
+   <CopyAdditionalFiles/>
+</Project>
