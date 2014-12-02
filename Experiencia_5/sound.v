@@ -27,7 +27,7 @@ module sound(
 	reg [8:0] count;
 	reg [28:0] remainder_accum;
 	
-	wire [5:0] jump;
+	wire [6:0] jump;
 	wire [28:0] remainder;
 	
 	jump jumper(note, jump, remainder);
@@ -40,13 +40,13 @@ module sound(
 	end
 	
 	always @(posedge clk) begin
-		count <= count + jump;
 		
-		if (remainder_accum + remainder <= 100000000)
+		if (remainder_accum + remainder <= 100000000) begin
 			remainder_accum <= remainder_accum + remainder;
-		else begin
-			remainder_accum <= remainder_accum + remainder - 100000000;
-			count <= count + 1;
+			count <= count + jump;
+		end else begin
+			remainder_accum <= remainder_accum - 100000000 + remainder;
+			count <= count + jump + 1;
 		end
 	
 	end

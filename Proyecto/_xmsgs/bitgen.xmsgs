@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;3&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;4&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;5&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;6&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">btn&lt;0&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;7&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">btn&lt;1&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">btn&lt;2&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">btn&lt;3&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">PS2C_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">PS2D_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutBlue&lt;1&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutBlue&lt;2&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;1&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;2&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;3&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;4&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;5&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;6&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">HSYNC_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">sw&lt;7&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutRed&lt;0&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutRed&lt;1&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutRed&lt;2&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">VSYNC_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;0&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutGreen&lt;0&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;1&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutGreen&lt;1&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">Led&lt;2&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="368" delta="new" >The signal &lt;<arg fmt="%s" index="1">OutGreen&lt;2&gt;_OBUF</arg>&gt; is incomplete. The signal is not driven by any source pin in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutBlue&lt;1&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutBlue&lt;2&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">HSYNC</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutRed&lt;0&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutRed&lt;1&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutRed&lt;2&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">VSYNC</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutGreen&lt;0&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutGreen&lt;1&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="781" delta="new" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutGreen&lt;2&gt;</arg> is set but the tri state is not configured. 
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;3&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;4&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;5&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;6&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;7&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutBlue&lt;1&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutBlue&lt;2&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">HSYNC_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutRed&lt;0&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutRed&lt;1&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutRed&lt;2&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">VSYNC_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;0&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutGreen&lt;0&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;1&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutGreen&lt;1&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">Led&lt;2&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="PhysDesignRules" num="10" delta="new" >The network &lt;<arg fmt="%s" index="1">OutGreen&lt;2&gt;_OBUF</arg>&gt; is completely unrouted.
+</msg>
+
+<msg type="error" file="Bitgen" num="25" delta="new" >DRC detected <arg fmt="%d" index="1">36</arg> errors and <arg fmt="%d" index="2">23</arg> warnings.  Please see the previously displayed individual error or warning messages for more details.
+</msg>
+
+</messages>
+

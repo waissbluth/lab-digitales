@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module jump(
 		input [4:0] note,
-		output reg [5:0] jump,
-		output reg [26:0] remainder
+		output reg [6:0] jump,
+		output reg [28:0] remainder
     );
 
 	always @*

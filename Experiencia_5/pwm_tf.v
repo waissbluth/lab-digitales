@@ -26,7 +26,7 @@ module pwm_tf;
 
 	// Inputs
 	reg clk;
-	reg [7:0] value;
+	reg [8:0] value;
 
 	// Outputs
 	wire pwm;
@@ -55,8 +55,11 @@ module pwm_tf;
 		#32;
 		value = 15;
 		
-		#16;
-		value = 7;
+		#1000;
+		value = 256;
+		
+		#10000;
+		value = 511;
 
 	end
 	

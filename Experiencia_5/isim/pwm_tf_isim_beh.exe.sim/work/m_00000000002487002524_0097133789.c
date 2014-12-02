@@ -35,7 +35,7 @@ static void Initial_30_0(char *t0)
 LAB0:    xsi_set_current_line(30, ng0);
     t1 = ((char*)((ng1)));
     t2 = (t0 + 1768);
-    xsi_vlogvar_assign_value(t2, t1, 0, 0, 3);
+    xsi_vlogvar_assign_value(t2, t1, 0, 0, 9);
 
 LAB1:    return;
 }
@@ -75,9 +75,9 @@ LAB5:    xsi_set_current_line(33, ng0);
     t6 = *((char **)t5);
     t7 = ((char*)((ng2)));
     memset(t8, 0, 8);
-    xsi_vlog_unsigned_add(t8, 32, t6, 3, t7, 32);
+    xsi_vlog_unsigned_add(t8, 32, t6, 9, t7, 32);
     t9 = (t0 + 1768);
-    xsi_vlogvar_wait_assign_value(t9, t8, 0, 0, 3, 0LL);
+    xsi_vlogvar_wait_assign_value(t9, t8, 0, 0, 9, 0LL);
     goto LAB2;
 
 }
