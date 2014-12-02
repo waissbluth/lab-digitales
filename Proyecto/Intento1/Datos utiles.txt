@@ -1,3 +1,0 @@
-- El rango de rotación es -pi..pi
-- Hay 1308 ciclos entre actualizaciones de pantalla.
-- Hay 10 ciclos entre actualizaciones cambios de línea.

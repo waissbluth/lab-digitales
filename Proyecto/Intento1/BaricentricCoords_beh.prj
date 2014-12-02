@@ -1,6 +1,0 @@
-verilog work "ToTwosComplement.v"
-verilog work "FromTwosComplement.v"
-verilog work "BoothsMult.v"
-verilog work "BoothsDiv.v"
-verilog work "BaricentricCoords.v"
-verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

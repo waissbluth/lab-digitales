@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=E:\Yo\Documents\U\10sem\Lab digitales\Repo\Proyecto\Intento1\Proyecto.ncd
-OUTFILE=E:\Yo\Documents\U\10sem\Lab digitales\Repo\Proyecto\Intento1\Proyecto.bit
-FAMILY=Spartan3E
-PART=xc3s100e-4cp132
-WORKINGDIR=E:\Yo\Documents\U\10sem\Lab digitales\Repo\Proyecto\Intento1
-LICENSE=WebPack
-USER_INFO=210802149_0_0_721
