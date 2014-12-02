@@ -1,0 +1,432 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: snake.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "snake.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "snake"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-cp132
+
+---- Source Options
+Top Module Name                    : snake
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "StaticCounter.v" in library work
+Compiling verilog file "ipcore_dir/snake_mem.v" in library work
+Module <StaticCounter> compiled
+Compiling verilog file "snake.v" in library work
+Module <snake_mem> compiled
+Module <snake> compiled
+No errors in compilation
+Analysis of file <"snake.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <snake> in library <work> with parameters.
+	H = "00000000000000000000000000100000"
+	V = "00000000000000000000000000100000"
+	addrBits = "00000000000000000000000000001010"
+	down = "00000000000000000000000000000011"
+	left = "00000000000000000000000000000010"
+	right = "00000000000000000000000000000000"
+	up = "00000000000000000000000000000001"
+	xBits = "00000000000000000000000000000101"
+	yBits = "00000000000000000000000000000101"
+
+Analyzing hierarchy for module <StaticCounter> in library <work> with parameters.
+	numLength = "00000000000000000000000000001010"
+	upTo = "00000000000000000000001111111111"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <snake>.
+	H = 32'sb00000000000000000000000000100000
+	V = 32'sb00000000000000000000000000100000
+	addrBits = 32'sb00000000000000000000000000001010
+	down = 32'sb00000000000000000000000000000011
+	left = 32'sb00000000000000000000000000000010
+	right = 32'sb00000000000000000000000000000000
+	up = 32'sb00000000000000000000000000000001
+	xBits = 32'sb00000000000000000000000000000101
+	yBits = 32'sb00000000000000000000000000000101
+WARNING:Xst:2211 - "ipcore_dir/snake_mem.v" line 63: Instantiating black box module <snake_mem>.
+Module <snake> is correct for synthesis.
+ 
+Analyzing module <StaticCounter> in library <work>.
+	Calling function <logb2>.
+	numLength = 32'sb00000000000000000000000000001010
+	upTo = 32'sb00000000000000000000001111111111
+Module <StaticCounter> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <StaticCounter>.
+    Related source file is "StaticCounter.v".
+    Found 11-bit adder for signal <$add0000> created at line 47.
+    Found 11-bit register for signal <prePowerOfTwoGen.internalCount>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <StaticCounter> synthesized.
+
+
+Synthesizing Unit <snake>.
+    Related source file is "snake.v".
+WARNING:Xst:647 - Input <shift> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <y> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1306 - Output <exists> is never assigned.
+WARNING:Xst:1306 - Output <self_col> is never assigned.
+WARNING:Xst:653 - Signal <wea> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <addrb_snake> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <addrb> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <addra_snake> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <addra> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+    Found 1-bit register for signal <body_count_enable>.
+    Found 11-bit register for signal <last_data>.
+    Found 5-bit adder carry out for signal <last_data$addsub0000> created at line 102.
+    Found 5-bit adder carry out for signal <last_data$addsub0001> created at line 103.
+    Found 7-bit subtractor for signal <last_data$sub0000> created at line 104.
+    Found 7-bit subtractor for signal <last_data$sub0001> created at line 105.
+    Found 2-bit register for signal <last_move>.
+    Found 1-bit register for signal <write_active>.
+    Found 5-bit register for signal <write_x>.
+    Found 5-bit register for signal <write_y>.
+    Summary:
+	inferred  25 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+Unit <snake> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 11-bit adder                                          : 1
+ 5-bit adder carry out                                 : 2
+ 7-bit subtractor                                      : 2
+# Registers                                            : 17
+ 1-bit register                                        : 13
+ 11-bit register                                       : 1
+ 2-bit register                                        : 1
+ 5-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/snake_mem.ngc>.
+Loading core <snake_mem> for timing and area information for instance <snake_mem_i>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 11-bit adder                                          : 1
+ 5-bit adder carry out                                 : 2
+ 5-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 1
+# Registers                                            : 36
+ Flip-Flops                                            : 36
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <snake> ...
+
+Optimizing unit <StaticCounter> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block snake, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 36
+ Flip-Flops                                            : 36
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : snake.ngr
+Top Level Output File Name         : snake
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 18
+
+Cell Usage :
+# BELS                             : 73
+#      GND                         : 2
+#      INV                         : 1
+#      LUT1                        : 10
+#      LUT2                        : 2
+#      LUT3                        : 5
+#      LUT3_D                      : 2
+#      LUT3_L                      : 2
+#      LUT4                        : 17
+#      LUT4_D                      : 3
+#      LUT4_L                      : 4
+#      MUXCY                       : 10
+#      MUXF5                       : 2
+#      VCC                         : 2
+#      XORCY                       : 11
+# FlipFlops/Latches                : 36
+#      FD                          : 4
+#      FDE                         : 13
+#      FDR                         : 1
+#      FDRE                        : 11
+#      FDS                         : 7
+# RAMS                             : 1
+#      RAMB16_S18_S18              : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 4
+#      IBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                       29  out of    960     3%  
+ Number of Slice Flip Flops:             36  out of   1920     1%  
+ Number of 4 input LUTs:                 46  out of   1920     2%  
+ Number of IOs:                          18
+ Number of bonded IOBs:                   5  out of     83     6%  
+ Number of BRAMs:                         1  out of      4    25%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 37    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.972ns (Maximum Frequency: 167.435MHz)
+   Minimum input arrival time before clock: 3.839ns
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.972ns (frequency: 167.435MHz)
+  Total number of paths / destination ports: 289 / 85
+-------------------------------------------------------------------------
+Delay:               5.972ns (Levels of Logic = 4)
+  Source:            snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
+  Destination:       last_data_5 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram to last_data_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S18_S18:CLKB->DOB0    8   2.436   0.646  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (doutb<0>)
+     end scope: 'snake_mem_i'
+     LUT4_D:I3->O          1   0.612   0.426  last_data_mux0000<3>11 (N5)
+     LUT3:I1->O            1   0.612   0.360  last_data_mux0000<5>45_SW1 (N30)
+     LUT4:I3->O            1   0.612   0.000  last_data_mux0000<5>561 (last_data_mux0000<5>56)
+     FDS:D                     0.268          last_data_5
+    ----------------------------------------
+    Total                      5.972ns (4.540ns logic, 1.432ns route)
+                                       (76.0% logic, 24.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              3.839ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       body_count_enable (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to body_count_enable
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.509  reset_IBUF (reset_IBUF)
+     LUT2:I0->O           12   0.612   0.817  _or00001 (_or0000)
+     FDR:R                     0.795          body_count_enable
+    ----------------------------------------
+    Total                      3.839ns (2.513ns logic, 1.326ns route)
+                                       (65.5% logic, 34.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.05 secs
+ 
+--> 
+
+Total memory usage is 268672 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
