@@ -5,13 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 55 </arg>Connection to input port &apos;<arg fmt="%s" index="2">reset</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 56 </arg>Connection to input port &apos;<arg fmt="%s" index="2">reset</arg>&apos; does not match port size
 </msg>
 
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Counter.v&quot; line 31 </arg>Connection to input port &apos;<arg fmt="%s" index="2">a</arg>&apos; does not match port size
-</msg>
-
-<msg type="warning" file="HDLCompilers" num="261" delta="old" ><arg fmt="%s" index="1">&quot;sound.v&quot; line 33 </arg>Connection to output port &apos;<arg fmt="%s" index="2">remainder</arg>&apos; does not match port size
 </msg>
 
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;sin_wave.v&quot; line 32 </arg>Connection to input port &apos;<arg fmt="%s" index="2">wea</arg>&apos; does not match port size
@@ -20,19 +17,19 @@
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;sin_wave.v&quot; line 34 </arg>Connection to input port &apos;<arg fmt="%s" index="2">dina</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 110 </arg>Connection to input port &apos;<arg fmt="%s" index="2">keyWidth</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 111 </arg>Connection to input port &apos;<arg fmt="%s" index="2">keyWidth</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 110 </arg>Connection to input port &apos;<arg fmt="%s" index="2">keyHeight</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 111 </arg>Connection to input port &apos;<arg fmt="%s" index="2">keyHeight</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 110 </arg>Connection to input port &apos;<arg fmt="%s" index="2">keySpace</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 111 </arg>Connection to input port &apos;<arg fmt="%s" index="2">keySpace</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 110 </arg>Connection to input port &apos;<arg fmt="%s" index="2">posX</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 111 </arg>Connection to input port &apos;<arg fmt="%s" index="2">posX</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 110 </arg>Connection to input port &apos;<arg fmt="%s" index="2">posY</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;Piano.v&quot; line 111 </arg>Connection to input port &apos;<arg fmt="%s" index="2">posY</arg>&apos; does not match port size
 </msg>
 
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;PianoKeys.v&quot; line 45 </arg>Connection to input port &apos;<arg fmt="%s" index="2">a</arg>&apos; does not match port size
@@ -223,10 +220,31 @@ It will be removed from the design.
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ps2_rx</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">outColor_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Piano</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;outColor_7&gt; </arg>
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">count_before_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_wave</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">outColor_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Piano</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;outColor_7&gt; </arg>
 </msg>
 
 </messages>

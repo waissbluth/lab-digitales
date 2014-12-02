@@ -27,6 +27,7 @@ module Piano(
 		/*output [6:0] seg,			// Display
 		output dp,
 		output [3:0] an,*/
+		output [2:0] outClk,
 		
 		output [7:0] Led,
 		output HSYNC, VSYNC,
@@ -47,7 +48,7 @@ module Piano(
 	parameter keyboardPosY = 20;
 	
 	parameter fpgaClk = 50000;
-	parameter slowClk = 4;
+	parameter slowClk = 2;
 	parameter pwmClk = 512 * 4;
 	 
 	// CLKs
@@ -104,7 +105,7 @@ module Piano(
 	wire pwm_out;
 	wire clk512;
 	ClockRatio #(fpgaClk, pwmClk) pwmClkGen(mclk, clk512);
-	pwm pwm_i(clk512, amplitude, pwm_out);
+	pwm pwm_i(mclk, amplitude, pwm_out);
 	
 	// Dibujo piano
 	PianoKeys #(bitsPosicion, bitsDimension, octaves) graphicKeys(mclk, keyWidth, keyHeight, keySpace, keyboardPosX, keyboardPosY, x_pixel, y_pixel, keys_display, colorIndex);
@@ -140,5 +141,8 @@ module Piano(
 	assign Led = {0,note};
 	assign salida_pwm = pwm_out & press;
 	assign reset = btn[0];
+	assign outClk[0] = mclk;
+	assign outClk[1] = clk512;
+	assign outClk[2] = clk4;
 	
 endmodule

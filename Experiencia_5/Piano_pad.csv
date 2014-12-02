@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Wed Nov 12 16:20:33 2014
+#Wed Nov 19 12:26:30 2014
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -21,7 +21,7 @@
 Pin Number,Signal Name,Pin Usage,Pin Name,Direction,IO Standard,IO Bank Number,Drive (mA),Slew Rate,Termination,IOB Delay,Voltage,Constraint,IO Register,Signal Integrity,
 A1,,,PROG_B,,,,,,,,,,,,
 A2,,,TDI,,,,,,,,,,,,
-A3,,DIFFM,IO_L11P_0,UNUSED,,0,,,,,,,,,
+A3,outClk<2>,IOB,IO_L11P_0,OUTPUT,LVCMOS25*,0,2,SLOW,PULLUP,,,LOCATED,NO,NONE,
 A4,,,NC,,,,,,,,,,,,
 A5,,,VCCAUX,,,,,,,,2.5,,,,
 A6,,,VCCO_0,,,0,,,,,2.50,,,,
@@ -37,7 +37,7 @@ B1,PS2C,IBUF,IO_L01N_3,INPUT,LVCMOS25*,3,,,PULLUP,NONE,,LOCATED,NO,NONE,
 B2,salida_pwm,IOB,IO_L01P_3,OUTPUT,LVCMOS25*,3,2,SLOW,PULLUP,,,LOCATED,NO,NONE,
 B3,,DIFFS,IO_L11N_0/HSWAP,UNUSED,,0,,,,,,,,,
 B4,sw<3>,IBUF,IP,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
-B5,,DIFFM,IO_L09P_0,UNUSED,,0,,,,,,,,,
+B5,outClk<0>,IOB,IO_L09P_0,OUTPUT,LVCMOS25*,0,2,SLOW,PULLUP,,,LOCATED,NO,NONE,
 B6,,DIFFM,IO_L08P_0,UNUSED,,0,,,,,,,,,
 B7,,DIFFS,IO_L07N_0/GCLK11,UNUSED,,0,,,,,,,,,
 B8,mclk,IBUF,IP_L06P_0/GCLK8,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
@@ -93,7 +93,7 @@ H13,OutBlue<1>,IOB,IO_L06P_1/A6/RHCLK4/IRDY1,OUTPUT,LVCMOS25*,1,2,SLOW,PULLUP,,,
 H14,,,GND,,,,,,,,,,,,
 J1,,,GND,,,,,,,,,,,,
 J2,,,VCCO_3,,,3,,,,,2.50,,,,
-J3,,IOB,IO,UNUSED,,3,,,,,,,,,
+J3,outClk<1>,IOB,IO,OUTPUT,LVCMOS25*,3,2,SLOW,PULLUP,,,LOCATED,NO,NONE,
 J12,,DIFFS,IO_L04N_1/A9/RHCLK1,UNUSED,,1,,,,,,,,,
 J13,OutBlue<2>,IOB,IO_L05P_1/A8/RHCLK2,OUTPUT,LVCMOS25*,1,2,SLOW,PULLUP,,,LOCATED,NO,NONE,
 J14,HSYNC,IOB,IO_L05N_1/A7/RHCLK3/TRDY1,OUTPUT,LVCMOS25*,1,2,SLOW,PULLUP,,,LOCATED,NO,NONE,

@@ -44,9 +44,9 @@ Setup/Hold to clock mclk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-PS2C        |    1.014(R)|    0.283(R)|mclk_BUFGP        |   0.000|
-PS2D        |    1.139(R)|    0.184(R)|mclk_BUFGP        |   0.000|
-btn<0>      |    2.639(R)|    0.056(R)|mclk_BUFGP        |   0.000|
+PS2C        |    1.184(R)|    0.147(R)|outClk_0_OBUF     |   0.000|
+PS2D        |    1.023(R)|    0.277(R)|outClk_0_OBUF     |   0.000|
+btn<0>      |    1.892(R)|    0.521(R)|outClk_0_OBUF     |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock mclk to Pad
@@ -54,20 +54,22 @@ Clock mclk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Led<0>      |    8.380(R)|mclk_BUFGP        |   0.000|
-Led<1>      |    6.950(R)|mclk_BUFGP        |   0.000|
-Led<2>      |    7.804(R)|mclk_BUFGP        |   0.000|
-Led<3>      |    7.787(R)|mclk_BUFGP        |   0.000|
-Led<4>      |    8.061(R)|mclk_BUFGP        |   0.000|
-OutBlue<1>  |   10.840(R)|mclk_BUFGP        |   0.000|
-OutBlue<2>  |   11.270(R)|mclk_BUFGP        |   0.000|
-OutGreen<0> |   10.300(R)|mclk_BUFGP        |   0.000|
-OutGreen<1> |   10.481(R)|mclk_BUFGP        |   0.000|
-OutGreen<2> |   10.724(R)|mclk_BUFGP        |   0.000|
-OutRed<0>   |   10.315(R)|mclk_BUFGP        |   0.000|
-OutRed<1>   |   10.494(R)|mclk_BUFGP        |   0.000|
-OutRed<2>   |   10.820(R)|mclk_BUFGP        |   0.000|
-salida_pwm  |   13.205(R)|mclk_BUFGP        |   0.000|
+Led<0>      |    7.698(R)|outClk_0_OBUF     |   0.000|
+Led<1>      |    7.032(R)|outClk_0_OBUF     |   0.000|
+Led<2>      |    7.646(R)|outClk_0_OBUF     |   0.000|
+Led<3>      |    7.556(R)|outClk_0_OBUF     |   0.000|
+Led<4>      |    7.448(R)|outClk_0_OBUF     |   0.000|
+OutBlue<1>  |   10.810(R)|outClk_0_OBUF     |   0.000|
+OutBlue<2>  |   11.184(R)|outClk_0_OBUF     |   0.000|
+OutGreen<0> |   10.055(R)|outClk_0_OBUF     |   0.000|
+OutGreen<1> |   10.523(R)|outClk_0_OBUF     |   0.000|
+OutGreen<2> |   10.731(R)|outClk_0_OBUF     |   0.000|
+OutRed<0>   |   10.485(R)|outClk_0_OBUF     |   0.000|
+OutRed<1>   |   10.744(R)|outClk_0_OBUF     |   0.000|
+OutRed<2>   |   10.529(R)|outClk_0_OBUF     |   0.000|
+outClk<1>   |   13.434(R)|outClk_0_OBUF     |   0.000|
+outClk<2>   |   12.774(R)|outClk_0_OBUF     |   0.000|
+salida_pwm  |   13.282(R)|outClk_0_OBUF     |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock mclk
@@ -75,18 +77,27 @@ Clock to Setup on destination clock mclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-mclk           |    7.367|         |         |         |
+mclk           |   16.158|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+mclk           |outClk<0>      |    8.416|
+mclk           |outClk<1>      |   11.208|
+mclk           |outClk<2>      |   11.281|
+---------------+---------------+---------+
 
-Analysis completed Wed Nov 12 16:20:37 2014 
+
+Analysis completed Wed Nov 19 12:26:35 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 173 MB
+Peak Memory Usage: 172 MB
 
 
 

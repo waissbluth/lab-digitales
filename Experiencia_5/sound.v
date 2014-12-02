@@ -27,7 +27,7 @@ module sound(
 	reg [8:0] count;
 	reg [28:0] remainder_accum;
 	
-	wire [5:0] jump;
+	wire [6:0] jump;
 	wire [28:0] remainder;
 	
 	jump jumper(note, jump, remainder);

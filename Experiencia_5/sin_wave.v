@@ -34,6 +34,8 @@ module sin_wave(
 	  .dina(0), // input [7 : 0] dina
 	  .douta(mem) // output [7 : 0] douta
 	);
+	
+	reg [8:0] count_before;
 	 
 	always @(posedge clk)
 	begin
@@ -42,14 +44,16 @@ module sin_wave(
 		else if(count <= 255)
 			addr <= 255 - count;
 		else if(count <= 383)
-			addr <= count - 383;
+			addr <= count - 256;
 		else 
 			addr <= 511 - count;
 			
-		if(count <= 255)
-			val <= 255 + mem;
+		if(count_before <= 255)
+			val <= 256 + mem;
 		else
-			val <= 255 - mem;
+			val <= 256 - mem;
+			
+		count_before <= count;
 	end	
 
 

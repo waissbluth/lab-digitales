@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: Piano.prj
@@ -159,7 +159,7 @@ Analyzing hierarchy for module <Piano> in library <work> with parameters.
 	keyboardPosY = "00000000000000000000000000010100"
 	octaves = "00000000000000000000000000000010"
 	pwmClk = "00000000000000000000100000000000"
-	slowClk = "00000000000000000000000000000100"
+	slowClk = "00000000000000000000000000000010"
 
 Analyzing hierarchy for module <Counter> in library <work> with parameters.
 	bits = "00000000000000000000000000000001"
@@ -183,16 +183,16 @@ Analyzing hierarchy for module <last_key> in library <work> with parameters.
 	num_keys = "00000000000000000000000000011000"
 
 Analyzing hierarchy for module <ClockRatio> in library <work> with parameters.
-	demRatio = "00000000000000000000000000000100"
+	demRatio = "00000000000000000000000000000010"
 	numRatio = "00000000000000001100001101010000"
-	numSize = "00000000000000000000000000010000"
+	numSize = "00000000000000000000000000010001"
 
 Analyzing hierarchy for module <sound> in library <work>.
 
 Analyzing hierarchy for module <ClockRatio> in library <work> with parameters.
 	demRatio = "00000000000000000000100000000000"
 	numRatio = "00000000000000001100001101010000"
-	numSize = "00000000000000000000000000010000"
+	numSize = "00000000000000000000000000010001"
 
 Analyzing hierarchy for module <pwm> in library <work>.
 
@@ -257,7 +257,7 @@ Analyzing top module <Piano>.
 	keyboardPosY = 32'sb00000000000000000000000000010100
 	octaves = 32'sb00000000000000000000000000000010
 	pwmClk = 32'sb00000000000000000000100000000000
-	slowClk = 32'sb00000000000000000000000000000100
+	slowClk = 32'sb00000000000000000000000000000010
 Module <Piano> is correct for synthesis.
  
 Analyzing module <Counter> in library <work>.
@@ -294,9 +294,9 @@ Analyzing module <last_key> in library <work>.
 Module <last_key> is correct for synthesis.
  
 Analyzing module <ClockRatio.1> in library <work>.
-	demRatio = 32'sb00000000000000000000000000000100
+	demRatio = 32'sb00000000000000000000000000000010
 	numRatio = 32'sb00000000000000001100001101010000
-	numSize = 32'sb00000000000000000000000000010000
+	numSize = 32'sb00000000000000000000000000010001
 Module <ClockRatio.1> is correct for synthesis.
  
 Analyzing module <sound> in library <work>.
@@ -312,7 +312,7 @@ Module <sin_wave> is correct for synthesis.
 Analyzing module <ClockRatio.2> in library <work>.
 	demRatio = 32'sb00000000000000000000100000000000
 	numRatio = 32'sb00000000000000001100001101010000
-	numSize = 32'sb00000000000000000000000000010000
+	numSize = 32'sb00000000000000000000000000010001
 Module <ClockRatio.2> is correct for synthesis.
  
 Analyzing module <pwm> in library <work>.
@@ -444,20 +444,24 @@ Unit <last_key> synthesized.
 
 Synthesizing Unit <ClockRatio_1>.
     Related source file is "ClockRatio.v".
-    Found 17-bit comparator greatequal for signal <reClk>.
-    Found 16-bit updown accumulator for signal <currrentCount>.
+    Found 17-bit updown accumulator for signal <currrentCount>.
+    Found 17-bit comparator greatequal for signal <currrentCount$cmp_ge0000> created at line 43.
+    Found 1-bit register for signal <reClk>.
     Summary:
 	inferred   1 Accumulator(s).
+	inferred   1 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <ClockRatio_1> synthesized.
 
 
 Synthesizing Unit <ClockRatio_2>.
     Related source file is "ClockRatio.v".
-    Found 17-bit comparator greatequal for signal <reClk>.
-    Found 16-bit updown accumulator for signal <currrentCount>.
+    Found 17-bit updown accumulator for signal <currrentCount>.
+    Found 17-bit comparator greatequal for signal <currrentCount$cmp_ge0000> created at line 43.
+    Found 1-bit register for signal <reClk>.
     Summary:
 	inferred   1 Accumulator(s).
+	inferred   1 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <ClockRatio_2> synthesized.
 
@@ -483,7 +487,7 @@ Unit <FullAdder> synthesized.
 
 Synthesizing Unit <jump>.
     Related source file is "jump.v".
-    Found 32x33-bit ROM for signal <note$rom0000>.
+    Found 32x36-bit ROM for signal <note$rom0000>.
     Summary:
 	inferred   1 ROM(s).
 Unit <jump> synthesized.
@@ -518,17 +522,17 @@ Synthesizing Unit <sin_wave>.
     Related source file is "sin_wave.v".
     Found 9-bit register for signal <val>.
     Found 7-bit register for signal <addr>.
-    Found 7-bit subtractor for signal <addr$addsub0000> created at line 45.
-    Found 9-bit comparator lessequal for signal <addr$cmp_le0000> created at line 40.
-    Found 9-bit comparator lessequal for signal <addr$cmp_le0001> created at line 42.
-    Found 9-bit comparator lessequal for signal <addr$cmp_le0002> created at line 44.
+    Found 9-bit comparator lessequal for signal <addr$cmp_le0000> created at line 42.
+    Found 9-bit comparator lessequal for signal <addr$cmp_le0001> created at line 44.
+    Found 9-bit comparator lessequal for signal <addr$cmp_le0002> created at line 46.
     Found 7-bit adder for signal <addr$share0000>.
-    Found 9-bit adder for signal <val$addsub0001> created at line 52.
-    Found 8-bit adder carry out for signal <val$addsub0002> created at line 50.
+    Found 9-bit register for signal <count_before>.
+    Found 9-bit comparator lessequal for signal <val$cmp_le0000> created at line 51.
+    Found 9-bit adder carry in for signal <val$mux0000>.
     Summary:
-	inferred  16 D-type flip-flop(s).
-	inferred   4 Adder/Subtractor(s).
-	inferred   3 Comparator(s).
+	inferred  25 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
 Unit <sin_wave> synthesized.
 
 
@@ -559,7 +563,7 @@ Unit <Counter> synthesized.
 Synthesizing Unit <sound>.
     Related source file is "sound.v".
     Found 9-bit up accumulator for signal <count>.
-    Found 6-bit adder for signal <count$addsub0000>.
+    Found 7-bit adder for signal <count$addsub0000>.
     Found 29-bit updown accumulator for signal <remainder_accum>.
     Found 29-bit adder for signal <remainder_accum$addsub0000>.
     Found 29-bit adder carry out for signal <remainder_accum$addsub0001> created at line 44.
@@ -635,7 +639,7 @@ WARNING:Xst:647 - Input <sw> is never used. This port will be preserved and left
 WARNING:Xst:646 - Signal <refresh> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <halverCount> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <colorId7> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-    Found 8x8-bit ROM for signal <outColor$mux0000> created at line 126.
+    Found 8x8-bit ROM for signal <outColor$mux0000> created at line 127.
     Found 8-bit register for signal <outColor>.
     Found 10-bit adder for signal <y_pixel>.
     Summary:
@@ -652,9 +656,9 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 3
  32x24-bit ROM                                         : 1
- 32x33-bit ROM                                         : 1
+ 32x36-bit ROM                                         : 1
  8x8-bit ROM                                           : 1
-# Adders/Subtractors                                   : 179
+# Adders/Subtractors                                   : 177
  10-bit adder                                          : 26
  10-bit subtractor                                     : 1
  11-bit adder                                          : 48
@@ -662,28 +666,25 @@ Macro Statistics
  29-bit adder                                          : 1
  29-bit adder carry out                                : 1
  4-bit subtractor                                      : 1
- 6-bit adder                                           : 1
- 7-bit adder                                           : 1
- 7-bit subtractor                                      : 1
- 8-bit adder carry out                                 : 1
- 9-bit adder                                           : 1
+ 7-bit adder                                           : 2
+ 9-bit adder carry in                                  : 1
 # Counters                                             : 5
  10-bit up counter                                     : 4
  9-bit up counter                                      : 1
 # Accumulators                                         : 4
- 16-bit updown accumulator                             : 2
+ 17-bit updown accumulator                             : 2
  29-bit updown accumulator                             : 1
  9-bit up accumulator                                  : 1
-# Registers                                            : 52
- 1-bit register                                        : 42
+# Registers                                            : 55
+ 1-bit register                                        : 44
  11-bit register                                       : 1
  24-bit register                                       : 2
  4-bit register                                        : 1
  5-bit register                                        : 1
  7-bit register                                        : 1
  8-bit register                                        : 3
- 9-bit register                                        : 1
-# Comparators                                          : 159
+ 9-bit register                                        : 2
+# Comparators                                          : 160
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 2
  10-bit comparator lessequal                           : 49
@@ -693,7 +694,7 @@ Macro Statistics
  17-bit comparator greatequal                          : 2
  30-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 1
- 9-bit comparator lessequal                            : 3
+ 9-bit comparator lessequal                            : 4
 # Multiplexers                                         : 1
  1-bit 32-to-1 multiplexer                             : 1
 # Xors                                                 : 154
@@ -810,9 +811,9 @@ Macro Statistics
 # RAMs                                                 : 1
  32x24-bit single-port block RAM                       : 1
 # ROMs                                                 : 2
- 32x33-bit ROM                                         : 1
+ 32x36-bit ROM                                         : 1
  8x8-bit ROM                                           : 1
-# Adders/Subtractors                                   : 179
+# Adders/Subtractors                                   : 177
  10-bit adder                                          : 26
  10-bit subtractor                                     : 1
  11-bit adder                                          : 48
@@ -820,21 +821,18 @@ Macro Statistics
  29-bit adder                                          : 1
  29-bit adder carry out                                : 1
  4-bit subtractor                                      : 1
- 6-bit adder                                           : 1
- 7-bit adder                                           : 1
- 7-bit subtractor                                      : 1
- 8-bit adder carry out                                 : 1
- 9-bit adder                                           : 1
+ 7-bit adder                                           : 2
+ 9-bit adder carry in                                  : 1
 # Counters                                             : 5
  10-bit up counter                                     : 4
  9-bit up counter                                      : 1
 # Accumulators                                         : 4
- 16-bit updown accumulator                             : 2
+ 17-bit updown accumulator                             : 2
  29-bit updown accumulator                             : 1
  9-bit up accumulator                                  : 1
-# Registers                                            : 125
- Flip-Flops                                            : 125
-# Comparators                                          : 159
+# Registers                                            : 136
+ Flip-Flops                                            : 136
+# Comparators                                          : 160
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 2
  10-bit comparator lessequal                           : 49
@@ -844,7 +842,7 @@ Macro Statistics
  17-bit comparator greatequal                          : 2
  30-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 1
- 9-bit comparator lessequal                            : 3
+ 9-bit comparator lessequal                            : 4
 # Multiplexers                                         : 1
  1-bit 32-to-1 multiplexer                             : 1
 # Xors                                                 : 154
@@ -855,6 +853,14 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <count_before_0> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_1> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_2> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_3> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_4> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_5> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_6> of sequential type is unconnected in block <sin_wave>.
+WARNING:Xst:2677 - Node <count_before_7> of sequential type is unconnected in block <sin_wave>.
 INFO:Xst:2261 - The FF/Latch <outColor_1> in Unit <Piano> is equivalent to the following FF/Latch, which will be removed : <outColor_7> 
 
 Optimizing unit <Piano> ...
@@ -900,8 +906,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 245
- Flip-Flops                                            : 245
+# Registers                                            : 250
+ Flip-Flops                                            : 250
 
 =========================================================================
 
@@ -927,44 +933,44 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 35
+# IOs                              : 38
 
 Cell Usage :
-# BELS                             : 3115
+# BELS                             : 3132
 #      GND                         : 2
-#      INV                         : 656
+#      INV                         : 661
 #      LUT1                        : 395
-#      LUT2                        : 110
+#      LUT2                        : 126
 #      LUT2_D                      : 9
-#      LUT2_L                      : 3
-#      LUT3                        : 76
+#      LUT2_L                      : 2
+#      LUT3                        : 68
 #      LUT3_D                      : 2
-#      LUT4                        : 354
-#      LUT4_D                      : 3
-#      LUT4_L                      : 24
-#      MUXCY                       : 1256
-#      MUXF5                       : 32
+#      LUT3_L                      : 1
+#      LUT4                        : 340
+#      LUT4_D                      : 2
+#      LUT4_L                      : 23
+#      MUXCY                       : 1268
+#      MUXF5                       : 29
 #      MUXF6                       : 3
 #      MUXF7                       : 1
 #      VCC                         : 2
-#      XORCY                       : 187
-# FlipFlops/Latches                : 245
-#      FD                          : 118
+#      XORCY                       : 198
+# FlipFlops/Latches                : 250
+#      FD                          : 124
 #      FDC                         : 25
-#      FDR                         : 21
+#      FDR                         : 22
 #      FDRE                        : 63
-#      FDRS                        : 11
-#      FDS                         : 3
+#      FDRS                        : 10
+#      FDS                         : 2
 #      FDSE                        : 4
 # RAMS                             : 2
 #      RAMB16_S36                  : 1
 #      RAMB16_S36_S36              : 1
 # Clock Buffers                    : 3
-#      BUFG                        : 2
-#      BUFGP                       : 1
-# IO Buffers                       : 23
-#      IBUF                        : 3
-#      OBUF                        : 20
+#      BUFG                        : 3
+# IO Buffers                       : 27
+#      IBUF                        : 4
+#      OBUF                        : 23
 =========================================================================
 
 Device utilization summary:
@@ -972,11 +978,11 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      931  out of    960    96%  
- Number of Slice Flip Flops:            245  out of   1920    12%  
- Number of 4 input LUTs:               1632  out of   1920    85%  
- Number of IOs:                          35
- Number of bonded IOBs:                  24  out of     83    28%  
+ Number of Slices:                      930  out of    960    96%  
+ Number of Slice Flip Flops:            250  out of   1920    13%  
+ Number of 4 input LUTs:               1629  out of   1920    84%  
+ Number of IOs:                          38
+ Number of bonded IOBs:                  27  out of     83    32%  
  Number of BRAMs:                         2  out of      4    50%  
  Number of GCLKs:                         3  out of     24    12%  
 
@@ -998,18 +1004,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                           | Clock buffer(FF name)                                                                                                                       | Load  |
----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-mclk                                   | BUFGP                                                                                                                                       | 141   |
-clk512(pwmClkGen/Mcompar_reClk_cy<6>:O)| NONE(*)(pwm_i/count_0)                                                                                                                      | 10    |
-clockHalver/overflow1                  | BUFG                                                                                                                                        | 41    |
-clk41(slowClkGen/Mcompar_reClk_cy<6>:O)| BUFG(*)(sound_i/siner/sin_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram)| 55    |
----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                        | Clock buffer(FF name)                                                                                                                       | Load  |
+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+mclk                                | IBUF+BUFG                                                                                                                                   | 155   |
+clockHalver/overflow1               | BUFG                                                                                                                                        | 41    |
+outClk_2_OBUF1(slowClkGen/outClk1:O)| BUFG(*)(sound_i/siner/sin_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram)| 56    |
+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -1023,10 +1027,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 10.342ns (Maximum Frequency: 96.694MHz)
+   Minimum period: 10.342ns (Maximum Frequency: 96.691MHz)
    Minimum input arrival time before clock: 2.981ns
    Maximum output required time after clock: 6.463ns
-   Maximum combinational path delay: No path found
+   Maximum combinational path delay: 5.835ns
 
 Timing Detail:
 --------------
@@ -1035,7 +1039,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
   Clock period: 8.164ns (frequency: 122.490MHz)
-  Total number of paths / destination ports: 4841 / 197
+  Total number of paths / destination ports: 5291 / 211
 -------------------------------------------------------------------------
 Delay:               8.164ns (Levels of Logic = 8)
   Source:            keyboardKeys/termoCode_5 (FF)
@@ -1050,47 +1054,16 @@ Delay:               8.164ns (Levels of Logic = 8)
      FDRE:C->Q             4   0.514   0.568  keyboardKeys/termoCode_5 (keyboardKeys/termoCode_5)
      LUT2:I1->O            4   0.612   0.529  last_key_i/key_and00061 (last_key_i/key_and0006)
      LUT4:I2->O            1   0.612   0.360  last_key_i/key_mux0000<3>12 (last_key_i/key_mux0000<3>12)
-     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>34_SW0 (N83)
+     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>34_SW0 (N76)
      LUT4:I3->O            1   0.612   0.360  last_key_i/key_mux0000<3>34 (last_key_i/key_mux0000<3>34)
-     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>79_SW0 (N85)
+     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>79_SW0 (N78)
      LUT4:I3->O            1   0.612   0.360  last_key_i/key_mux0000<3>79 (last_key_i/key_mux0000<3>79)
-     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>116_SW0 (N111)
+     LUT4_L:I3->LO         1   0.612   0.103  last_key_i/key_mux0000<3>116_SW0 (N102)
      LUT4:I3->O            1   0.612   0.000  last_key_i/key_mux0000<3>116 (last_key_i/key_mux0000<3>)
      FDSE:D                    0.268          last_key_i/key_1
     ----------------------------------------
     Total                      8.164ns (5.678ns logic, 2.486ns route)
                                        (69.6% logic, 30.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clk512'
-  Clock period: 3.863ns (frequency: 258.869MHz)
-  Total number of paths / destination ports: 63 / 10
--------------------------------------------------------------------------
-Delay:               3.863ns (Levels of Logic = 10)
-  Source:            pwm_i/count_0 (FF)
-  Destination:       pwm_i/pwm (FF)
-  Source Clock:      clk512 rising
-  Destination Clock: clk512 rising
-
-  Data Path: pwm_i/count_0 to pwm_i/pwm
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.514   0.532  pwm_i/count_0 (pwm_i/count_0)
-     LUT2:I0->O            1   0.612   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_lut<0> (pwm_i/Mcompar_pwm_cmp_gt0000_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<0> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<0>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<1> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<1>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<2> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<2>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<3> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<3>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<4> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<4>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<5> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<6> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<6>)
-     MUXCY:CI->O           1   0.051   0.000  pwm_i/Mcompar_pwm_cmp_gt0000_cy<7> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<7>)
-     MUXCY:CI->O           1   0.289   0.357  pwm_i/Mcompar_pwm_cmp_gt0000_cy<8> (pwm_i/Mcompar_pwm_cmp_gt0000_cy<8>)
-     FDR:R                     0.795          pwm_i/pwm
-    ----------------------------------------
-    Total                      3.863ns (2.974ns logic, 0.889ns route)
-                                       (77.0% logic, 23.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clockHalver/overflow1'
@@ -1118,15 +1091,15 @@ Delay:               5.580ns (Levels of Logic = 4)
                                        (55.8% logic, 44.2% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk41'
-  Clock period: 10.342ns (frequency: 96.694MHz)
-  Total number of paths / destination ports: 451737 / 71
+Timing constraint: Default period analysis for Clock 'outClk_2_OBUF1'
+  Clock period: 10.342ns (frequency: 96.691MHz)
+  Total number of paths / destination ports: 454424 / 69
 -------------------------------------------------------------------------
 Delay:               10.342ns (Levels of Logic = 61)
   Source:            sound_i/remainder_accum_0 (FF)
   Destination:       sound_i/remainder_accum_28 (FF)
-  Source Clock:      clk41 rising
-  Destination Clock: clk41 rising
+  Source Clock:      outClk_2_OBUF1 rising
+  Destination Clock: outClk_2_OBUF1 rising
 
   Data Path: sound_i/remainder_accum_0 to sound_i/remainder_accum_28
                                 Gate     Net
@@ -1142,7 +1115,7 @@ Delay:               10.342ns (Levels of Logic = 61)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<5> (sound_i/Madd_remainder_accum_addsub0001_cy<5>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<6> (sound_i/Madd_remainder_accum_addsub0001_cy<6>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<7> (sound_i/Madd_remainder_accum_addsub0001_cy<7>)
-     MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<8> (sound_i/Madd_remainder_accum_addsub0001_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<8> (sound_i/Madd_remainder_accum_addsub0001_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<9> (sound_i/Madd_remainder_accum_addsub0001_cy<9>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<10> (sound_i/Madd_remainder_accum_addsub0001_cy<10>)
      MUXCY:CI->O           1   0.051   0.000  sound_i/Madd_remainder_accum_addsub0001_cy<11> (sound_i/Madd_remainder_accum_addsub0001_cy<11>)
@@ -1163,7 +1136,7 @@ Delay:               10.342ns (Levels of Logic = 61)
      XORCY:CI->O           1   0.699   0.509  sound_i/Madd_remainder_accum_addsub0001_xor<26> (sound_i/remainder_accum_addsub0001<26>)
      LUT1:I0->O            1   0.612   0.000  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11>_rt (sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11>_rt)
      MUXCY:S->O            1   0.404   0.000  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11> (sound_i/Mcompar_remainder_accum_cmp_le0000_cy<11>)
-     MUXCY:CI->O          36   0.399   1.074  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<12> (sound_i/remainder_accum_cmp_le0000)
+     MUXCY:CI->O          37   0.399   1.074  sound_i/Mcompar_remainder_accum_cmp_le0000_cy<12> (sound_i/remainder_accum_cmp_le0000)
      INV:I->O              1   0.612   0.357  sound_i/remainder_accum_cmp_le0000_inv2_INV_0 (sound_i/remainder_accum_cmp_le0000_inv)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<0> (sound_i/Maccum_remainder_accum_cy<0>)
      MUXCY:CI->O           1   0.052   0.000  sound_i/Maccum_remainder_accum_cy<1> (sound_i/Maccum_remainder_accum_cy<1>)
@@ -1240,56 +1213,55 @@ Offset:              6.463ns (Levels of Logic = 3)
                                        (75.9% logic, 24.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk512'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              5.161ns (Levels of Logic = 2)
-  Source:            pwm_i/pwm (FF)
-  Destination:       salida_pwm (PAD)
-  Source Clock:      clk512 rising
-
-  Data Path: pwm_i/pwm to salida_pwm
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              1   0.514   0.509  pwm_i/pwm (pwm_i/pwm)
-     LUT2:I0->O            1   0.612   0.357  salida_pwm1 (salida_pwm_OBUF)
-     OBUF:I->O                 3.169          salida_pwm_OBUF (salida_pwm)
-    ----------------------------------------
-    Total                      5.161ns (4.295ns logic, 0.866ns route)
-                                       (83.2% logic, 16.8% route)
-
-=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
-  Total number of paths / destination ports: 14 / 14
+  Total number of paths / destination ports: 17 / 16
 -------------------------------------------------------------------------
-Offset:              5.172ns (Levels of Logic = 2)
-  Source:            last_key_i/press (FF)
-  Destination:       salida_pwm (PAD)
+Offset:              5.184ns (Levels of Logic = 2)
+  Source:            slowClkGen/reClk (FF)
+  Destination:       outClk<2> (PAD)
   Source Clock:      mclk rising
 
-  Data Path: last_key_i/press to salida_pwm
+  Data Path: slowClkGen/reClk to outClk<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.514   0.520  last_key_i/press (last_key_i/press)
-     LUT2:I1->O            1   0.612   0.357  salida_pwm1 (salida_pwm_OBUF)
-     OBUF:I->O                 3.169          salida_pwm_OBUF (salida_pwm)
+     FDR:C->Q              1   0.514   0.509  slowClkGen/reClk (slowClkGen/reClk)
+     LUT2:I0->O            2   0.612   0.380  slowClkGen/outClk1 (outClk_2_OBUF1)
+     OBUF:I->O                 3.169          outClk_2_OBUF (outClk<2>)
     ----------------------------------------
-    Total                      5.172ns (4.295ns logic, 0.877ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      5.184ns (4.295ns logic, 0.889ns route)
+                                       (82.9% logic, 17.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               5.835ns (Levels of Logic = 3)
+  Source:            mclk (PAD)
+  Destination:       outClk<2> (PAD)
+
+  Data Path: mclk to outClk<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.106   0.568  mclk_IBUF (outClk_0_OBUF1)
+     LUT2:I1->O            2   0.612   0.380  slowClkGen/outClk1 (outClk_2_OBUF1)
+     OBUF:I->O                 3.169          outClk_2_OBUF (outClk<2>)
+    ----------------------------------------
+    Total                      5.835ns (4.887ns logic, 0.948ns route)
+                                       (83.8% logic, 16.2% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 16.21 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 17.27 secs
  
 --> 
 
-Total memory usage is 320144 kilobytes
+Total memory usage is 319184 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   59 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :   66 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 
