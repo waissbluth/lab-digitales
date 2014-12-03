@@ -127,6 +127,7 @@ module snake
 	reg [(xBits-1):0] next_write_x;
 	reg [(yBits-1):0] next_write_y;
 	reg next_write_active;
+	reg previous_body_count_enable;
 	
 	// Movemos la serpiente
 	always @(posedge clk) begin
@@ -136,17 +137,19 @@ module snake
 			applyReset <= 1;
 			next_wea <= 0;
 			
-		end else if(body_count_enable & ~body_overflow) begin	
-			next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
-			next_write_y <= last_data[yBits:1];
-			next_write_active <= addra < length;
+		end else if(body_count_enable) begin	
+			if(~body_overflow)
+			begin
+				next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
+				next_write_y <= last_data[yBits:1];
+				next_write_active <= addra < length;
+				next_wea <= 1;
+			end
 			
-			next_wea <= 1;
-			
-			last_data <= doutb;
+			if(previous_body_count_enable) last_data <= doutb;
+			if(last_head == last_data) self_col <= 1;
 			
 			applyReset <= 0;
-			if(last_head == doutb) self_col <= 1;
 			
 		end else if(~applyReset) begin
 			case(move)
@@ -161,6 +164,7 @@ module snake
 			next_wea <= 0;
 		end
 		
+		previous_body_count_enable <= body_count_enable;
 		wea <= next_wea;
 		write_x <= next_write_x;
 		write_y <= next_write_y;
