@@ -44,9 +44,9 @@ Setup/Hold to clock mclk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-PS2C        |    0.883(R)|    0.390(R)|mclk_BUFGP        |   0.000|
-PS2D        |    1.495(R)|   -0.102(R)|mclk_BUFGP        |   0.000|
-sw<0>       |    3.777(R)|    0.443(R)|mclk_BUFGP        |   0.000|
+PS2C        |    0.617(R)|    0.601(R)|mclk_BUFGP        |   0.000|
+PS2D        |    1.066(R)|    0.242(R)|mclk_BUFGP        |   0.000|
+sw<0>       |    3.661(R)|    0.516(R)|mclk_BUFGP        |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock mclk to Pad
@@ -55,22 +55,22 @@ Clock mclk to Pad
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
 HSYNC       |    9.135(R)|mclk_BUFGP        |   0.000|
-Led<0>      |    7.932(R)|mclk_BUFGP        |   0.000|
-Led<1>      |    7.454(R)|mclk_BUFGP        |   0.000|
-Led<2>      |    7.248(R)|mclk_BUFGP        |   0.000|
-Led<3>      |    7.200(R)|mclk_BUFGP        |   0.000|
-Led<4>      |    7.224(R)|mclk_BUFGP        |   0.000|
-Led<5>      |    8.124(R)|mclk_BUFGP        |   0.000|
-Led<6>      |    7.848(R)|mclk_BUFGP        |   0.000|
-Led<7>      |    7.863(R)|mclk_BUFGP        |   0.000|
-OutBlue<1>  |   10.641(R)|mclk_BUFGP        |   0.000|
-OutBlue<2>  |   11.127(R)|mclk_BUFGP        |   0.000|
-OutGreen<0> |   10.724(R)|mclk_BUFGP        |   0.000|
-OutGreen<1> |   10.657(R)|mclk_BUFGP        |   0.000|
-OutGreen<2> |   10.486(R)|mclk_BUFGP        |   0.000|
-OutRed<0>   |   11.161(R)|mclk_BUFGP        |   0.000|
-OutRed<1>   |   10.697(R)|mclk_BUFGP        |   0.000|
-OutRed<2>   |   10.584(R)|mclk_BUFGP        |   0.000|
+Led<0>      |    7.514(R)|mclk_BUFGP        |   0.000|
+Led<1>      |    7.717(R)|mclk_BUFGP        |   0.000|
+Led<2>      |    7.203(R)|mclk_BUFGP        |   0.000|
+Led<3>      |    7.673(R)|mclk_BUFGP        |   0.000|
+Led<4>      |    7.754(R)|mclk_BUFGP        |   0.000|
+Led<5>      |    7.989(R)|mclk_BUFGP        |   0.000|
+Led<6>      |    8.021(R)|mclk_BUFGP        |   0.000|
+Led<7>      |    7.889(R)|mclk_BUFGP        |   0.000|
+OutBlue<1>  |   11.201(R)|mclk_BUFGP        |   0.000|
+OutBlue<2>  |   11.259(R)|mclk_BUFGP        |   0.000|
+OutGreen<0> |   10.805(R)|mclk_BUFGP        |   0.000|
+OutGreen<1> |   10.513(R)|mclk_BUFGP        |   0.000|
+OutGreen<2> |   10.720(R)|mclk_BUFGP        |   0.000|
+OutRed<0>   |   11.253(R)|mclk_BUFGP        |   0.000|
+OutRed<1>   |   10.722(R)|mclk_BUFGP        |   0.000|
+OutRed<2>   |   10.581(R)|mclk_BUFGP        |   0.000|
 VSYNC       |    9.136(R)|mclk_BUFGP        |   0.000|
 ------------+------------+------------------+--------+
 
@@ -79,11 +79,11 @@ Clock to Setup on destination clock mclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-mclk           |    6.681|         |         |         |
+mclk           |    6.717|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Dec 03 19:28:26 2014 
+Analysis completed Wed Dec 03 19:33:20 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
