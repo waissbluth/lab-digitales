@@ -431,6 +431,7 @@ Unit <coin> synthesized.
 
 Synthesizing Unit <snake>.
     Related source file is "snake.v".
+WARNING:Xst:646 - Signal <previous_body_count_enable> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 12-bit register for signal <last_head>.
     Found 1-bit register for signal <self_col>.
     Found 11-bit register for signal <addra>.
@@ -443,7 +444,6 @@ Synthesizing Unit <snake>.
     Found 11-bit comparator less for signal <next_write_active$cmp_lt0000> created at line 145.
     Found 6-bit register for signal <next_write_x>.
     Found 5-bit register for signal <next_write_y>.
-    Found 1-bit register for signal <previous_body_count_enable>.
     Found 6-bit subtractor for signal <read_x_m1>.
     Found 6-bit adder for signal <read_x_p1>.
     Found 5-bit subtractor for signal <read_y_m1>.
@@ -454,7 +454,7 @@ Synthesizing Unit <snake>.
     Found 6-bit register for signal <write_x>.
     Found 5-bit register for signal <write_y>.
     Summary:
-	inferred  76 D-type flip-flop(s).
+	inferred  75 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred   2 Comparator(s).
 Unit <snake> synthesized.
@@ -536,8 +536,8 @@ Macro Statistics
  2-bit up counter                                      : 1
 # Accumulators                                         : 1
  27-bit updown accumulator                             : 1
-# Registers                                            : 68
- 1-bit register                                        : 46
+# Registers                                            : 67
+ 1-bit register                                        : 45
  11-bit register                                       : 4
  12-bit register                                       : 2
  2-bit register                                        : 4
@@ -608,8 +608,8 @@ Macro Statistics
  2-bit up counter                                      : 1
 # Accumulators                                         : 1
  27-bit updown accumulator                             : 1
-# Registers                                            : 188
- Flip-Flops                                            : 188
+# Registers                                            : 187
+ Flip-Flops                                            : 187
 # Comparators                                          : 19
  10-bit comparator greatequal                          : 2
  10-bit comparator greater                             : 2
@@ -662,8 +662,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 264
- Flip-Flops                                            : 264
+# Registers                                            : 263
+ Flip-Flops                                            : 263
 
 =========================================================================
 
@@ -692,13 +692,13 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 573
+# BELS                             : 572
 #      GND                         : 3
 #      INV                         : 18
 #      LUT1                        : 88
 #      LUT2                        : 51
 #      LUT2_L                      : 2
-#      LUT3                        : 28
+#      LUT3                        : 27
 #      LUT3_D                      : 3
 #      LUT3_L                      : 2
 #      LUT4                        : 129
@@ -708,8 +708,8 @@ Cell Usage :
 #      MUXF5                       : 12
 #      VCC                         : 3
 #      XORCY                       : 102
-# FlipFlops/Latches                : 264
-#      FD                          : 38
+# FlipFlops/Latches                : 263
+#      FD                          : 37
 #      FDC                         : 25
 #      FDE                         : 67
 #      FDR                         : 44
@@ -732,9 +732,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      189  out of    960    19%  
- Number of Slice Flip Flops:            262  out of   1920    13%  
- Number of 4 input LUTs:                337  out of   1920    17%  
+ Number of Slices:                      188  out of    960    19%  
+ Number of Slice Flip Flops:            261  out of   1920    13%  
+ Number of 4 input LUTs:                336  out of   1920    17%  
  Number of IOs:                          34
  Number of bonded IOBs:                  23  out of     83    27%  
     IOB Flip Flops:                       2
@@ -762,7 +762,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-mclk                               | BUFGP                  | 226   |
+mclk                               | BUFGP                  | 225   |
 vgaClk1                            | BUFG                   | 41    |
 -----------------------------------+------------------------+-------+
 
@@ -790,7 +790,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
   Clock period: 6.733ns (frequency: 148.516MHz)
-  Total number of paths / destination ports: 5287 / 425
+  Total number of paths / destination ports: 5286 / 424
 -------------------------------------------------------------------------
 Delay:               6.733ns (Levels of Logic = 40)
   Source:            tick_gen/currrentCount_7 (FF)
@@ -915,14 +915,14 @@ Offset:              4.134ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.14 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.60 secs
  
 --> 
 
-Total memory usage is 279168 kilobytes
+Total memory usage is 278656 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   26 (   0 filtered)
+Number of warnings :   27 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 

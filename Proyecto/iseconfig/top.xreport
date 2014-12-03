@@ -1,13 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-<<<<<<< HEAD
-  <DateModified>2014-12-03T19:32:41</DateModified>
-=======
-  <DateModified>2014-12-03T19:34:19</DateModified>
->>>>>>> ef6eca9a4efe796f713d5cffac5e829d70843b52
+  <DateModified>2014-12-03T20:14:53</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2014-12-03T16:56:21</SummaryTimeStamp>
+  <SummaryTimeStamp>2014-12-03T19:58:22</SummaryTimeStamp>
   <SavedFilePath>Z:/Desktop/LabDigitales/Proyecto/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>Z:/Desktop/LabDigitales/Proyecto\</ImplementationReportsDirectory>
   <DateInitialized>2014-12-02T19:01:02</DateInitialized>
