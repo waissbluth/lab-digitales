@@ -137,19 +137,19 @@ module snake
 			applyReset <= 1;
 			next_wea <= 0;
 			
-		end else if(body_count_enable) begin	
-			if(~body_overflow)
-			begin
+		end else if(body_count_enable & ~body_overflow) begin	
+			if(~|(addr_snake)) begin
 				next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
 				next_write_y <= last_data[yBits:1];
 				next_write_active <= addra < length;
-				next_wea <= 1;
+				
 				last_data <= doutb;
+				
+				next_wea <= 1;
 			end
-			
-			if(last_head == last_data) self_col <= 1;
-			
 			applyReset <= 0;
+			
+			if(last_head == doutb) self_col <= 1; // FIX
 			
 		end else if(~applyReset) begin
 			case(move)
