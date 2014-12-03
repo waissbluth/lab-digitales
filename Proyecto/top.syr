@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: top.prj
 
@@ -118,16 +118,10 @@ Compiling verilog file "Sync.v" in library work
 Module <screen_mem_i> compiled
 Compiling verilog file "snake_game.v" in library work
 Module <Sync> compiled
-WARNING:HDLCompilers:299 - "snake_game.v" line 29 Too many digits specified in binary constant
-WARNING:HDLCompilers:299 - "snake_game.v" line 30 Too many digits specified in binary constant
-WARNING:HDLCompilers:299 - "snake_game.v" line 31 Too many digits specified in binary constant
 Compiling verilog file "ClockRatio.v" in library work
 Module <snake_game> compiled
 Compiling verilog file "top.v" in library work
 Module <ClockRatio> compiled
-WARNING:HDLCompilers:299 - "top.v" line 49 Too many digits specified in binary constant
-WARNING:HDLCompilers:299 - "top.v" line 50 Too many digits specified in binary constant
-WARNING:HDLCompilers:299 - "top.v" line 51 Too many digits specified in binary constant
 Module <top> compiled
 No errors in compilation
 Analysis of file <"top.prj"> succeeded.
@@ -137,8 +131,8 @@ Analysis of file <"top.prj"> succeeded.
 *                     Design Hierarchy Analysis                         *
 =========================================================================
 Analyzing hierarchy for module <top> in library <work> with parameters.
-	bg_color = "0010010"
-	coin_color = "1111100"
+	bg_color = "10010010"
+	coin_color = "11111100"
 	down = "00000000000000000000000000000011"
 	fpgaClk = "00000010111110101111000010000000"
 	gameClk = "00000000000000000000000000000001"
@@ -150,7 +144,7 @@ Analyzing hierarchy for module <top> in library <work> with parameters.
 	game_size_y = "00000000000000000000000000100000"
 	left = "00000000000000000000000000000010"
 	right = "00000000000000000000000000000000"
-	snake_color = "1111111"
+	snake_color = "11111111"
 	up = "00000000000000000000000000000001"
 
 Analyzing hierarchy for module <ClockRatio> in library <work> with parameters.
@@ -170,15 +164,15 @@ Analyzing hierarchy for module <snake_game> in library <work> with parameters.
 	H = "00000000000000000000000000100000"
 	V = "00000000000000000000000000100000"
 	addrBits = "00000000000000000000000000001010"
-	bg_color = "0010010"
+	bg_color = "10010010"
 	bg_index = "00000000000000000000000000000000"
-	coin_color = "1111100"
+	coin_color = "11111100"
 	coin_index = "00000000000000000000000000000010"
 	pos_x = "00000000000000000000000000001010"
 	pos_y = "00000000000000000000000000001010"
 	scale_x = "00000000000000000000000000001000"
 	scale_y = "00000000000000000000000000001000"
-	snake_color = "1111111"
+	snake_color = "11111111"
 	snake_index = "00000000000000000000000000000001"
 	xBits = "00000000000000000000000000000101"
 	yBits = "00000000000000000000000000000101"
@@ -206,8 +200,8 @@ Analyzing top module <top>.
 WARNING:Xst:863 - "top.v" line 33: Name conflict (<vsync> and <VSYNC>, renaming vsync as vsync_rnm0).
 WARNING:Xst:863 - "top.v" line 83: Name conflict (<VON> and <von>, renaming VON as von_rnm0).
 WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming hsync as hsync_rnm0).
-	bg_color = 7'b0010010
-	coin_color = 7'b1111100
+	bg_color = 8'b10010010
+	coin_color = 8'b11111100
 	down = 32'sb00000000000000000000000000000011
 	fpgaClk = 32'sb00000010111110101111000010000000
 	gameClk = 32'sb00000000000000000000000000000001
@@ -219,7 +213,7 @@ WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming 
 	game_size_y = 32'sb00000000000000000000000000100000
 	left = 32'sb00000000000000000000000000000010
 	right = 32'sb00000000000000000000000000000000
-	snake_color = 7'b1111111
+	snake_color = 8'b11111111
 	up = 32'sb00000000000000000000000000000001
 Module <top> is correct for synthesis.
  
@@ -242,15 +236,15 @@ Analyzing module <snake_game> in library <work>.
 	H = 32'sb00000000000000000000000000100000
 	V = 32'sb00000000000000000000000000100000
 	addrBits = 32'sb00000000000000000000000000001010
-	bg_color = 7'b0010010
+	bg_color = 8'b10010010
 	bg_index = 32'sb00000000000000000000000000000000
-	coin_color = 7'b1111100
+	coin_color = 8'b11111100
 	coin_index = 32'sb00000000000000000000000000000010
 	pos_x = 32'sb00000000000000000000000000001010
 	pos_y = 32'sb00000000000000000000000000001010
 	scale_x = 32'sb00000000000000000000000000001000
 	scale_y = 32'sb00000000000000000000000000001000
-	snake_color = 7'b1111111
+	snake_color = 8'b11111111
 	snake_index = 32'sb00000000000000000000000000000001
 	xBits = 32'sb00000000000000000000000000000101
 	yBits = 32'sb00000000000000000000000000000101
@@ -337,23 +331,22 @@ Synthesizing Unit <snake>.
     Related source file is "snake.v".
 WARNING:Xst:646 - Signal <write_y> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <write_x> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <read_y_p1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <read_y_m1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <read_x_p1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <read_x_m1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <halfY> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <halfX> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <d> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found 1-bit register for signal <self_col>.
     Found 1-bit register for signal <body_count_enable>.
     Found 11-bit register for signal <last_data>.
     Found 11-bit register for signal <last_head>.
     Found 2-bit register for signal <last_move>.
+    Found 5-bit subtractor for signal <read_x_m1>.
+    Found 5-bit adder for signal <read_x_p1>.
+    Found 5-bit subtractor for signal <read_y_m1>.
+    Found 5-bit adder for signal <read_y_p1>.
     Found 11-bit comparator not equal for signal <self_col$cmp_ne0000> created at line 140.
     Found 1-bit register for signal <wea>.
     Found 1-bit register for signal <write_active>.
     Summary:
 	inferred  28 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <snake> synthesized.
 
@@ -420,19 +413,21 @@ Unit <top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 7
+# Adders/Subtractors                                   : 11
  10-bit adder                                          : 3
  11-bit adder                                          : 2
  11-bit subtractor                                     : 2
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 2
 # Counters                                             : 4
  10-bit up counter                                     : 4
 # Accumulators                                         : 1
  27-bit updown accumulator                             : 1
-# Registers                                            : 43
+# Registers                                            : 44
  1-bit register                                        : 36
  10-bit register                                       : 1
  11-bit register                                       : 2
- 2-bit register                                        : 2
+ 2-bit register                                        : 3
  3-bit register                                        : 1
  7-bit register                                        : 1
 # Comparators                                          : 17
@@ -456,6 +451,8 @@ Reading core <ipcore_dir/snake_mem.ngc>.
 Reading core <ipcore_dir/screen_mem_i.ngc>.
 Loading core <snake_mem> for timing and area information for instance <snake_mem_i>.
 Loading core <screen_mem_i> for timing and area information for instance <your_instance_name>.
+WARNING:Xst:1710 - FF/Latch <last_move_0> (without init value) has a constant value of 0 in block <snake_position>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <last_move_1> (without init value) has a constant value of 0 in block <snake_position>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <screen_write_data_1> (without init value) has a constant value of 0 in block <snake_game_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <last_data_1> of sequential type is unconnected in block <snake_position>.
 WARNING:Xst:2677 - Node <last_data_2> of sequential type is unconnected in block <snake_position>.
@@ -468,22 +465,26 @@ WARNING:Xst:2677 - Node <last_data_8> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <last_data_9> of sequential type is unconnected in block <snake_position>.
 WARNING:Xst:2677 - Node <last_data_10> of sequential type is unconnected in block <snake_position>.
 WARNING:Xst:2677 - Node <state_0> of sequential type is unconnected in block <snake_game_i>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <move_0> is unconnected in block <top>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <move_1> is unconnected in block <top>.
 WARNING:Xst:2677 - Node <state_0> of sequential type is unconnected in block <snake_game>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 7
+# Adders/Subtractors                                   : 11
  10-bit adder                                          : 3
  11-bit adder                                          : 2
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 2
  8-bit subtractor                                      : 2
 # Counters                                             : 4
  10-bit up counter                                     : 4
 # Accumulators                                         : 1
  27-bit updown accumulator                             : 1
-# Registers                                            : 81
- Flip-Flops                                            : 81
+# Registers                                            : 83
+ Flip-Flops                                            : 83
 # Comparators                                          : 17
  10-bit comparator greatequal                          : 2
  10-bit comparator greater                             : 2
@@ -517,6 +518,8 @@ WARNING:Xst:2677 - Node <vgaDriver/h_9> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <vgaDriver/h_8> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vgaDriver/v_9> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vgaDriver/v_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/last_move_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/last_move_1> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/self_col> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/last_data_1> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/last_data_2> of sequential type is unconnected in block <top>.
@@ -587,9 +590,9 @@ Cell Usage :
 #      GND                         : 3
 #      INV                         : 13
 #      LUT1                        : 73
-#      LUT2                        : 20
+#      LUT2                        : 17
 #      LUT2_L                      : 1
-#      LUT3                        : 10
+#      LUT3                        : 13
 #      LUT3_D                      : 1
 #      LUT3_L                      : 1
 #      LUT4                        : 47
@@ -674,7 +677,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
   Clock period: 6.733ns (frequency: 148.516MHz)
-  Total number of paths / destination ports: 4217 / 158
+  Total number of paths / destination ports: 4220 / 157
 -------------------------------------------------------------------------
 Delay:               6.733ns (Levels of Logic = 40)
   Source:            tick_gen/currrentCount_7 (FF)
@@ -800,14 +803,14 @@ Offset:              6.056ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.75 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.19 secs
  
 --> 
 
-Total memory usage is 273280 kilobytes
+Total memory usage is 273984 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   77 (   0 filtered)
+Number of warnings :   71 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

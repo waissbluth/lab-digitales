@@ -26,9 +26,9 @@ module snake_game
 		parameter pos_y = 10,
 		parameter scale_x = 2,
 		parameter scale_y = 2,
-		parameter snake_color = 7'b111_111_11,
-		parameter coin_color = 7'b111_111_00,
-		parameter bg_color = 7'b000_000_00
+		parameter snake_color = 8'b111_111_11,
+		parameter coin_color = 8'b111_111_00,
+		parameter bg_color = 8'b000_000_00
 	)
 	(
 		input clk, reset,

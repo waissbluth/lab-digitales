@@ -46,9 +46,9 @@ module top
 	localparam game_scale_x = 8;
 	localparam game_scale_y = 8;
 	
-	localparam snake_color = 7'b111_111_11;
-	localparam coin_color = 7'b111_111_00;
-	localparam bg_color = 7'b100_100_10;
+	localparam snake_color = 8'b111_111_11;
+	localparam coin_color = 8'b111_111_00;
+	localparam bg_color = 8'b100_100_10;
 	
 	function integer logb2;
 		input integer n;

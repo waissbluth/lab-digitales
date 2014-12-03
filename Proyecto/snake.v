@@ -129,9 +129,9 @@ module snake
 	always @(posedge clk) begin
 		if(reset) begin
 			self_col <= 0;
-			last_data <= {halfX, halfY, 1};
+			last_data <= {halfX, halfY, 1'b1};
 			wea <= 1;
-		end else if(body_count_enable) begin
+		end else if(body_count_enable & ~body_overflow) begin
 			write_x <= last_data[(xBits + yBits):(yBits + 1)];
 			write_y <= last_data[yBits:1];
 			write_active <= last_data[0];
@@ -141,11 +141,11 @@ module snake
 				self_col <= 1;
 		end else begin
 			case(last_move)
-				right: last_data <= {read_x_p1, read_y, 1 };
-				up: last_data <= {read_x, read_y_p1, 1 };
-				left: last_data <= {read_x_m1, read_y, 1 };
-				down: last_data <= {read_x, read_y_m1, 1 };
-				default: last_data <= {read_x, read_y, 1 };
+				right: last_data <= {read_x_p1, read_y, 1'b1 };
+				up: last_data <= {read_x, read_y_p1, 1'b1 };
+				left: last_data <= {read_x_m1, read_y, 1'b1 };
+				down: last_data <= {read_x, read_y_m1, 1'b1 };
+				default: last_data <= {read_x, read_y, 1'b1 };
 			endcase
 			last_head <= last_data;
 			wea <= 0;
