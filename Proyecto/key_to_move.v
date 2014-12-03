@@ -25,7 +25,7 @@ module key_to_move(
 		output reg [1:0] move
 	);
 	
-	 wire [1:0] right = 0, up = 1, left = 2, down = 3;
+	 localparam right = 0, up = 1, left = 2, down = 3;
 	 
 	 reg [1:0] next_move;
 	 
@@ -43,7 +43,7 @@ module key_to_move(
 				end 
 			endcase	
 			
-			move <= next_move;
+			move <=  next_move;
 		end
 	 end
 

@@ -68,6 +68,8 @@ module top
 	assign keyboardEnable = 1;
 	wire [7:0] keyboardData;
 	wire keyRecieved;
+	
+	wire [1:0] move;
 
 	ps2_rx keyboardCtrl(mclk, reset, PS2D, PS2C, keyboardEnable, keyRecieved, keyboardData);
 	key_to_move key_to_move_i(mclk, reset, keyRecieved, keyboardData, move);

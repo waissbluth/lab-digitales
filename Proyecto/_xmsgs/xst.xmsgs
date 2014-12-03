@@ -5,16 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="261" delta="old" ><arg fmt="%s" index="1">&quot;top.v&quot; line 73 </arg>Connection to output port &apos;<arg fmt="%s" index="2">move</arg>&apos; does not match port size
-</msg>
-
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;top.v&quot; line 109 </arg>Connection to input port &apos;<arg fmt="%s" index="2">move</arg>&apos; does not match port size
-</msg>
-
 <msg type="warning" file="Xst" num="863" delta="old" >&quot;<arg fmt="%s" index="1">top.v</arg>&quot; line <arg fmt="%d" index="2">33</arg>: Name conflict (<arg fmt="%s" index="3">&lt;vsync&gt; and &lt;VSYNC&gt;, renaming vsync as vsync_rnm0</arg>).
 </msg>
 
-<msg type="warning" file="Xst" num="863" delta="old" >&quot;<arg fmt="%s" index="1">top.v</arg>&quot; line <arg fmt="%d" index="2">77</arg>: Name conflict (<arg fmt="%s" index="3">&lt;VON&gt; and &lt;von&gt;, renaming VON as von_rnm0</arg>).
+<msg type="warning" file="Xst" num="863" delta="new" >&quot;<arg fmt="%s" index="1">top.v</arg>&quot; line <arg fmt="%d" index="2">79</arg>: Name conflict (<arg fmt="%s" index="3">&lt;VON&gt; and &lt;von&gt;, renaming VON as von_rnm0</arg>).
 </msg>
 
 <msg type="warning" file="Xst" num="863" delta="old" >&quot;<arg fmt="%s" index="1">top.v</arg>&quot; line <arg fmt="%d" index="2">33</arg>: Name conflict (<arg fmt="%s" index="3">&lt;hsync&gt; and &lt;HSYNC&gt;, renaming hsync as hsync_rnm0</arg>).
@@ -71,12 +65,6 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">keyboardCtrl</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">next_move_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">key_to_move_i</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">move_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">key_to_move_i</arg>&gt;.
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">last_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">snake_position</arg>&gt;.
 </msg>
 
@@ -96,12 +84,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">last_head_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">snake</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">key_to_move_i/move_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">key_to_move_i/next_move_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">snake_game_i/snake_position/self_col</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top</arg>&gt;.
