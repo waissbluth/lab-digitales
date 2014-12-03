@@ -71,8 +71,9 @@ module snake_game
 	(
 		clk, reset,
 		move_enable, move,
+		3,
 		snake_shift,
-		x_snake, y_snake, exists,
+		x_snake, y_snake, exists_snake,
 		game_over, end_shift_snake,
 		snake_head
 	);
@@ -89,7 +90,7 @@ module snake_game
 	wire [(addrBits - 1):0] addra, addrb;
 	wire [1:0] dina, doutb;
 	
-	screen_mem_i your_instance_name
+	screen_mem_i snake_screen_mem
 	(
 	  .clka(clk), // input clka
 	  .wea(wea), // input [0 : 0] wea
@@ -179,7 +180,7 @@ module snake_game
 					screen_write_address <= screen_clear_count;
 				
 				end 2: begin
-					screen_write_enable <= 1;
+					screen_write_enable <= exists_snake;
 					screen_write_data <= snake_index;
 					screen_write_address <= y_snake*H + x_snake;
 				

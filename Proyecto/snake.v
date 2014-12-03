@@ -25,6 +25,7 @@ module snake
 		input reset,
 		input move_enable,
 		input [1:0] move,
+		input [(logb2(H*V)-1):0] length,
 		input shift,
 		
 		output [(logb2(H)-1):0] x,
@@ -32,11 +33,9 @@ module snake
 		output exists,
 		output reg self_col,
 		output end_shift,
-		output [(logb2(H) + logb2(V)):0] doutb
+		output reg [(logb2(H) + logb2(V)):0] last_head
     );
-	 reg [(logb2(H) + logb2(V)):0] last_head;
 	 
-
 	localparam xBits = logb2(H);
 	localparam yBits = logb2(V);
 	localparam addrBits = logb2(H*V);
@@ -61,25 +60,30 @@ module snake
 	reg [(yBits-1):0] write_y;
 	reg write_active;
 	
-	//wire [(xBits + yBits):0] dina, doutb;
-	wire [(xBits + yBits):0] d;
-	
-	wire [(addrBits-1):0] addra_snake;
+	wire [(xBits + yBits):0] dina, doutb;
 	
 	assign dina = {write_x, write_y, write_active};
 
-	wire [(xBits-1):0] read_x = doutb[(addrBits-1):(addrBits-xBits)];
-	wire [(yBits-1):0] read_y = doutb[(addrBits-1-xBits):(addrBits-xBits-yBits)];
+	wire [(xBits-1):0] read_x = doutb[(xBits + yBits):(yBits + 1)];
+	wire [(yBits-1):0] read_y = doutb[yBits:1];
 	wire read_active = doutb[0];
 	
 	assign x = read_x;
 	assign y = read_y;
 	assign exists = read_active;
 	
-	reg wea;
+	reg [0:0] wea;
 	
-	wire [(addrBits-1):0] addra = addra_snake;
-	wire [(addrBits-1):0] addrb = addra_snake;
+	wire [(addrBits-1):0] addr_snake;
+	reg [(addrBits-1):0] addra;
+	reg [(addrBits-1):0] addrb;
+	
+	always @(posedge clk)
+	begin
+		addrb <= addr_snake;
+		addra <= addrb;
+		
+	end
 
 	snake_mem snake_mem_i
 	(
@@ -94,8 +98,10 @@ module snake
 
 	reg body_count_enable;
 	wire body_overflow;
+	wire [(addrBits-1):0] addr_snake_count;
+	assign addr_snake = addr_snake_count;
 	
-	StaticCounter #(H*V-1) snake_body_count (clk, body_count_enable, reset | body_overflow, addra_snake, body_overflow);
+	StaticCounter #(H*V-1) snake_body_count (clk, body_count_enable, reset | body_overflow, addr_snake_count, body_overflow);
 	
 	assign end_shift = body_overflow;
 	
@@ -125,31 +131,50 @@ module snake
 	assign read_y_p1 = read_y + 1;
 	assign read_y_m1 = read_y - 1;
 	
+	reg applyReset;
+	reg next_wea;
+	reg [(xBits-1):0] next_write_x;
+	reg [(yBits-1):0] next_write_y;
+	reg next_write_active;
+	
 	// Movemos la serpiente
 	always @(posedge clk) begin
 		if(reset) begin
 			self_col <= 0;
 			last_data <= {halfX, halfY, 1'b1};
-			wea <= 1;
-		end else if(body_count_enable & ~body_overflow) begin
-			write_x <= last_data[(xBits + yBits):(yBits + 1)];
-			write_y <= last_data[yBits:1];
-			write_active <= last_data[0];
+			applyReset <= 1;
+			next_wea <= 0;
+			
+		end else if(body_count_enable & ~body_overflow) begin	
+			next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
+			next_write_y <= last_data[yBits:1];
+			next_write_active <= addra < length;
+			
+			next_wea <= 1;
+			
 			last_data <= doutb;
-			wea <= 1;
-			if(last_head == doutb)
-				self_col <= 1;
-		end else begin
+			
+			applyReset <= 0;
+			if(last_head == doutb) self_col <= 1;
+			
+		end else if(~applyReset) begin
 			case(last_move)
+				default: last_data <= {read_x, read_y_p1, 1'b1 };
 				right: last_data <= {read_x_p1, read_y, 1'b1 };
-				up: last_data <= {read_x, read_y_p1, 1'b1 };
-				left: last_data <= {read_x_m1, read_y, 1'b1 };
 				down: last_data <= {read_x, read_y_m1, 1'b1 };
-				default: last_data <= {read_x, read_y, 1'b1 };
+				left: last_data <= {read_x_m1, read_y, 1'b1 };
+			
 			endcase
-			last_head <= last_data;
-			wea <= 0;
+			
+			last_head <= {read_x, read_y, 1'b1};
+			next_wea <= 0;
 		end
+		
+		wea <= next_wea;
+		write_x <= next_write_x;
+		write_y <= next_write_y;
+		write_active <= next_write_active;
+		
 	end	
 
 endmodule

@@ -9,22 +9,22 @@ Target Device  : xc3s100e
 Target Package : cp132
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Dec 03 16:25:13 2014
+Mapped Date    : Wed Dec 03 16:55:56 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   27
+Number of warnings:   24
 Logic Utilization:
-  Number of Slice Flip Flops:           111 out of   1,920    5%
-  Number of 4 input LUTs:                94 out of   1,920    4%
+  Number of Slice Flip Flops:           176 out of   1,920    9%
+  Number of 4 input LUTs:               123 out of   1,920    6%
 Logic Distribution:
-  Number of occupied Slices:             97 out of     960   10%
-    Number of Slices containing only related logic:      97 out of      97 100%
-    Number of Slices containing unrelated logic:          0 out of      97   0%
+  Number of occupied Slices:            142 out of     960   14%
+    Number of Slices containing only related logic:     142 out of     142 100%
+    Number of Slices containing unrelated logic:          0 out of     142   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         167 out of   1,920    8%
-    Number used as logic:                94
+  Total Number of 4 input LUTs:         196 out of   1,920   10%
+    Number used as logic:               123
     Number used as a route-thru:         73
 
   The Slice Logic Distribution report is not meaningful if the design is
@@ -35,9 +35,9 @@ Logic Distribution:
   Number of RAMB16s:                      2 out of       4   50%
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                2.90
+Average Fanout of Non-Clock Nets:                2.83
 
-Peak Memory Usage:  249 MB
+Peak Memory Usage:  250 MB
 Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 
@@ -85,14 +85,7 @@ WARNING:MapLib:23 - Short on signal OutGreen<2> detected.
 WARNING:MapLib:23 - Short on signal OutGreen<2> detected.
 WARNING:MapLib:23 - Short on signal OutGreen<2> detected.
 WARNING:MapLib:23 - Short on signal OutGreen<2> detected.
-WARNING:PhysDesignRules:367 - The signal <btn<0>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<2>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<3>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
+WARNING:MapLib:23 - Short on signal OutGreen<2> detected.
 WARNING:PhysDesignRules:367 - The signal <PS2C_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <PS2D_IBUF> is incomplete. The signal
@@ -111,13 +104,15 @@ WARNING:PhysDesignRules:367 - The signal <sw<6>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sw<7>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC.PAD
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp VSYNC.PAD
    is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   OutGreen<0> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   OutGreen<1> is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutBlue<1>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutBlue<2>
-   is set but the tri state is not configured. 
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp VSYNC.PAD
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<0>
    is set but the tri state is not configured. 
@@ -125,21 +120,19 @@ WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<1>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<2>
    is set but the tri state is not configured. 
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
-   OutGreen<0> is set but the tri state is not configured. 
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
-   OutGreen<1> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC.PAD
+   is set but the tri state is not configured. 
 
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network PS2C_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 14 more times for the
-   following (max. 5 shown):
+INFO:LIT:395 - The above info message is repeated 9 more times for the following
+   (max. 5 shown):
    PS2D_IBUF,
-   btn<3>_IBUF,
-   btn<2>_IBUF,
-   btn<1>_IBUF,
-   btn<0>_IBUF
+   sw<7>_IBUF,
+   sw<6>_IBUF,
+   sw<5>_IBUF,
+   sw<4>_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -150,7 +143,7 @@ Section 4 - Removed Logic Summary
 ---------------------------------
    1 block(s) removed
    6 block(s) optimized away
-   2 signal(s) removed
+   1 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -165,9 +158,7 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
-The signal "snake_game_i/snake_position/snake_mem_i/doutb<10>" is sourceless and
-has been removed.
-The signal "snake_game_i/your_instance_name/doutb<1>" is sourceless and has been
+The signal "snake_game_i/snake_screen_mem/doutb<1>" is sourceless and has been
 removed.
 Unused block "OutGreen<2>_PULLUP" (PULLUP) removed.
 
@@ -177,8 +168,8 @@ GND 		XST_GND
 VCC 		XST_VCC
 GND 		snake_game_i/snake_position/snake_mem_i/XST_GND
 VCC 		snake_game_i/snake_position/snake_mem_i/XST_VCC
-GND 		snake_game_i/your_instance_name/XST_GND
-VCC 		snake_game_i/your_instance_name/XST_VCC
+GND 		snake_game_i/snake_screen_mem/XST_GND
+VCC 		snake_game_i/snake_screen_mem/XST_VCC
 
 To enable printing of redundant blocks removed and signals merged, set the
 detailed map report option and rerun map.

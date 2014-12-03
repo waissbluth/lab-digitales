@@ -65,17 +65,20 @@ module top
 	ClockRatio #(fpgaClk, gameClk) tick_gen (mclk, reset, gameTick);
 	
 	/* Calculo move */
-	reg [1:0] move;
+	reg [1:0] move, move_next;
+	wire move_enable = |btn;
 	
 	always @(posedge mclk) begin
-		if(btn < 2)
-			move <= right;
-		else if(btn < 4)
-			move <= left;
-		else if(btn < 8)
-			move <= up;
+		if(btn > 7)
+			move_next <= down;
+		else if(btn > 3)
+			move_next <= up;
+		else if(btn > 1)
+			move_next <= left;
 		else
-			move <= down;
+			move_next <= right;
+			
+		move <= {(2){|(move_next ^ move)}} & move_next | {(2){~|(move_next ^ move)}} & move;
 	end
 	
 	/* Driver pantalla */

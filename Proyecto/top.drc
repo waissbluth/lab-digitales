@@ -1,18 +1,10 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Dec 03 16:25:29 2014
+Wed Dec 03 16:56:12 2014
 
 drc -z top.ncd top.pcf
 
-WARNING:PhysDesignRules:367 - The signal <btn<0>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<2>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<3>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <PS2C_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <PS2D_IBUF> is incomplete. The signal
@@ -31,13 +23,15 @@ WARNING:PhysDesignRules:367 - The signal <sw<6>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sw<7>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC.PAD
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp VSYNC.PAD
    is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   OutGreen<0> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   OutGreen<1> is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutBlue<1>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutBlue<2>
-   is set but the tri state is not configured. 
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp VSYNC.PAD
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<0>
    is set but the tri state is not configured. 
@@ -45,9 +39,7 @@ WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<1>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<2>
    is set but the tri state is not configured. 
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
-   OutGreen<0> is set but the tri state is not configured. 
-WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
-   OutGreen<1> is set but the tri state is not configured. 
-DRC detected 0 errors and 22 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC.PAD
+   is set but the tri state is not configured. 
+DRC detected 0 errors and 18 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
