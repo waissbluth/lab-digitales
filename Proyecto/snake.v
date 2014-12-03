@@ -19,16 +19,20 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module snake
-#(parameter H = 32, parameter V = 32)
-(		input clk,
+	#(parameter H = 32, parameter V = 32)
+	(	
+		input clk,
 		input reset,
 		input move_enable,
-		input shift,
 		input [1:0] move,
+		input shift,
+		
 		output [(logb2(H)-1):0] x,
 		output [(logb2(V)-1):0] y,
 		output exists,
-		output reg self_col
+		output reg self_col,
+		output end_shift,
+		output reg [(logb2(H) + logb2(V)):0] last_head
     );
 
 	localparam xBits = logb2(H);
@@ -64,7 +68,8 @@ module snake
 	assign y = read_y;
 	assign exists = read_active;
 	
-	snake_mem snake_mem_i (
+	snake_mem snake_mem_i
+	(
 	  .clka(clk), // input clka
 	  .wea(wea), // input [0 : 0] wea
 	  .addra(addra), // input [9 : 0] addra
@@ -78,15 +83,18 @@ module snake
 	wire body_overflow;
 	
 	StaticCounter #(H*V-1) snake_body_count (clk, body_count_enable, reset | body_overflow, addra_snake, body_overflow);
+	
+	assign end_shift = body_overflow;
+	
 	//Recorremos la serpiente
 	always @(posedge clk) begin
 		if(reset | body_overflow)
 			body_count_enable <= 0;
-		else 
+		else if(shift)
 			body_count_enable <= 1;	
 	end	
 	
-	reg [(xBits + yBits):0] last_data, last_head;
+	reg [(xBits + yBits):0] last_data;
 	
 	// Calculo de la velocidad en base a botones
 	

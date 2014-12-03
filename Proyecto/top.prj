@@ -1,4 +1,0 @@
-verilog work "StaticCounter.v"
-verilog work "ipcore_dir/snake_mem.v"
-verilog work "snake.v"
-verilog work "top.v"
