@@ -38,9 +38,9 @@ module snake_game
 		input [9:0] eval_x, eval_y,
 
 		output game_over,
-		output [6:0] out_color,
+		output [7:0] out_color,
 		output reg color_valid,
-		output [10:0] snake_head
+		output [10:0] tmp
 	);
 	 
 	function integer logb2;
@@ -64,7 +64,7 @@ module snake_game
 	wire [(xBits-1):0] x_snake;
 	wire [(yBits-1):0] y_snake;
 	wire exists_snake, end_shift_snake;
-	//wire [(xBits + yBits):0] snake_head;
+	wire [(xBits + yBits):0] snake_head;
 	reg snake_shift;
 
 	snake #(H, V) snake_position
@@ -120,6 +120,20 @@ module snake_game
 	wire [9:0] local_y = (eval_y - pos_y)/scale_y;
 	assign screen_read_address = local_y[(yBits - 1):0]*H + local_x[(xBits - 1):0];
 	
+	/*  TAIL! */
+	
+	reg [(logb2(H)-1):0] snake_tail_x;
+	reg [(logb2(V)-1):0] snake_tail_y;
+	
+	/* COIN! */
+	
+	wire [(logb2(H)-1):0] coin_x;
+	wire [(logb2(V)-1):0] coin_y;
+	wire coin_exists;
+	wire point;
+	coin #(H, V) coin_i(clk, reset, x_snake, y_snake, exists_snake, snake_shift, snake_tail_x, snake_tail_y, coin_x, coin_y, coin_exists, point);
+	
+	
 	/* Calculo color_valid */
 	always @(posedge clk) begin
 		if(reset) color_valid <= 0;
@@ -157,10 +171,13 @@ module snake_game
 		end
 	end
 	
-	/* Estado 3: Dibujar moneda(s) TODO */
+	/* Estado 3: Dibujar moneda(s) */
 	
+
 	/* Maquina de estados */
 	reg [1:0] state;
+	reg previous_exist_tail;
+	
 	always @(posedge clk) begin
 		if(reset) begin
 			state <= 0;
@@ -168,7 +185,8 @@ module snake_game
 		end else begin
 			if(gameTick) state <= 1;
 			else if(clear_overflow) state <= 2;
-			else if(end_shift_snake) state <= 0;
+			else if(end_shift_snake) state <= 3;
+			else if(state == 3) state <= 0;
 			
 			case (state)
 				default:
@@ -183,17 +201,28 @@ module snake_game
 					screen_write_enable <= exists_snake;
 					screen_write_data <= snake_index;
 					screen_write_address <= y_snake*H + x_snake;
+					if(previous_exist_tail && ~exists_snake) begin
+						snake_tail_x <= x_snake;
+						snake_tail_y <= y_snake;
+					end
 				
+				end 3: begin
+					screen_write_enable <= coin_exists;
+					screen_write_data <= coin_index;
+					screen_write_address <= coin_y*H + coin_x;
 				end
 			endcase
+			previous_exist_tail <= exists_snake;
 		end
 	end
 	
 	/* Calculo color salida */
-	wire curr_index = screen_read_data;
-	assign out_color = 	{(7){curr_index == bg_index}} & bg_color |
-								{(7){curr_index == coin_index}} & coin_color |
-								{(7){curr_index == snake_index}} & snake_color;
+	wire [1:0] curr_index = screen_read_data;
+	assign out_color = 	{(8){curr_index == bg_index}} & bg_color |
+								{(8){curr_index == coin_index}} & coin_color |
+								{(8){curr_index == snake_index}} & snake_color;
+								
+	assign tmp = {coin_x, coin_y,coin_exists};
 	
 
 endmodule

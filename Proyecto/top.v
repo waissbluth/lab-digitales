@@ -47,7 +47,7 @@ module top
 	localparam game_scale_y = 8;
 	
 	localparam snake_color = 8'b111_111_11;
-	localparam coin_color = 8'b111_111_00;
+	localparam coin_color = 8'b001_111_01;
 	localparam bg_color = 8'b100_100_10;
 	
 	function integer logb2;
@@ -90,16 +90,16 @@ module top
 	
 	Sync vgaDriver(vgaClk, 1'b0, eval_x, tmp_y, hsync, vsync, von, refresh);
 	assign eval_y = 479 - tmp_y;
-	reg [6:0] outColor;
+	reg [7:0] outColor;
 	
-	assign OutRed = outColor[6:4];
-	assign OutGreen = outColor[3:2];
+	assign OutRed = outColor[7:5];
+	assign OutGreen = outColor[4:2];
 	assign OutBlue[2:1] = outColor[1:0];
 	assign OutBlue[0] = 0;
 	
 	/* Instancia zona de juego */
 	wire game_over;
-	wire [6:0] snake_game_color;
+	wire [7:0] snake_game_color;
 	wire snake_game_color_valid;
 	
 	wire [10:0] tmp;
