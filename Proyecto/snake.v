@@ -144,9 +144,9 @@ module snake
 				next_write_y <= last_data[yBits:1];
 				next_write_active <= addra < length;
 				next_wea <= 1;
+				last_data <= doutb;
 			end
 			
-			if(previous_body_count_enable) last_data <= doutb;
 			if(last_head == last_data) self_col <= 1;
 			
 			applyReset <= 0;
