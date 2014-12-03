@@ -181,10 +181,12 @@ module snake_game
 	
 	/* Estado 3: Dibujar moneda(s) */
 	
-
 	/* Maquina de estados */
 	reg [1:0] state;
 	reg previous_exist_tail;
+	
+	/* Test counter*/
+	reg [1:0] test_counter;
 	
 	always @(posedge clk) begin
 		if(reset) begin
@@ -204,15 +206,18 @@ module snake_game
 					screen_write_enable <= 1;
 					screen_write_data <= bg_index;
 					screen_write_address <= screen_clear_count;
+					test_counter <= snake_index; //*
 				
 				end 2: begin
 					screen_write_enable <= exists_snake;
-					screen_write_data <= snake_index;
+					//screen_write_data <= snake_index; //*
+					screen_write_data <= test_counter;
 					screen_write_address <= y_snake*H + x_snake;
 					if(previous_exist_tail && ~exists_snake) begin
 						snake_tail_x <= x_snake;
 						snake_tail_y <= y_snake;
 					end
+					test_counter <= test_counter + 1;
 				
 				end 3: begin
 					screen_write_enable <= coin_exists;
