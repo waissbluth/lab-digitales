@@ -1,0 +1,29 @@
+Command line:
+   ClockRatio_tf_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49245
+
+Tue Dec 02 22:24:14 2014
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 663.38 Meg
+
+ Total Signals          : 17
+ Total Nets             : 16
+ Total Signal Drivers   : 8
+ Total Blocks           : 4
+ Total Primitive Blocks : 2
+ Total Processes        : 12
+ Total Traceable Variables  : 27
+ Total Scalar Nets and Variables : 286
+Total Line Count : 38
+
+ Total Simulation Time: 66.6748 sec
+
+ Current Memory Usage: 663.38 Meg
+
+Tue Dec 02 22:38:55 2014
+

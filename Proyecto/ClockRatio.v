@@ -21,6 +21,7 @@
 module ClockRatio
 	#(	parameter numRatio = 25000000, parameter demRatio = 22050)
 	( 	input clk,
+		input reset,
 		output outClk);
 		
 	localparam numSize = logb2(numRatio) + 1;
@@ -39,8 +40,9 @@ module ClockRatio
 	
 	always @(posedge clk)
 	begin
-		
-		if(currrentCount >= numRatio) begin
+		if(reset)
+			currrentCount <= 0;
+		else if(currrentCount >= numRatio) begin
 			currrentCount <= currrentCount - (numRatio - demRatio);
 			reClk <= 1;
 		end else begin
@@ -49,7 +51,7 @@ module ClockRatio
 		end
 	end
 	
-	assign outClk = reClk & clk;
+	assign outClk = reClk;
 
 
 

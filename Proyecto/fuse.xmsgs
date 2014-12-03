@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 121: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 122: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 123: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 124: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 125: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake_game.v" Line 29: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">7</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake_game.v" Line 30: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">7</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/top.v" Line 49: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">7</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/top.v" Line 50: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">7</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/top.v" Line 51: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">7</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 121: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 122: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 123: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 124: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 125: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 75: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"Z:/Desktop/LabDigitales/Proyecto/snake.v" Line 78: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addrb</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+</messages>
+

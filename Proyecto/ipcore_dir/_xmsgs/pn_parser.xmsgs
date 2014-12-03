@@ -8,7 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/Repo/Proyecto/ipcore_dir/screen_mem_i.v&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Proyecto/ipcore_dir/screen_mem_i.v&quot; into library work</arg>
 </msg>
 
 </messages>

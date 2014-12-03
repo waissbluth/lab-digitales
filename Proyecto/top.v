@@ -36,15 +36,15 @@ module top
 	
 	localparam right = 0, up = 1, left = 2, down = 3;
 	
-	localparam fpgaClk = 50000000;
+	localparam fpgaClk = 50_000_000;
 	localparam gameClk = 1;
 	
 	localparam game_size_x = 32;
 	localparam game_size_y = 32;
 	localparam game_pos_x = 10;
 	localparam game_pos_y = 10;
-	localparam game_scale_x = 2;
-	localparam game_scale_y = 2;
+	localparam game_scale_x = 8;
+	localparam game_scale_y = 8;
 	
 	localparam snake_color = 7'b111_111_11;
 	localparam coin_color = 7'b111_111_00;
@@ -61,7 +61,8 @@ module top
 	
 	wire reset = sw[0];
 	wire gameTick;
-	ClockRatio #(fpgaClk, gameClk) tick_gen (mclk, gameTick);
+	
+	ClockRatio #(fpgaClk, gameClk) tick_gen (mclk, reset, gameTick);
 	
 	/* Calculo move */
 	reg [1:0] move;
@@ -129,10 +130,18 @@ module top
 		HSYNC <= hsync;
 		VSYNC <= vsync;
 	end
+	
+	reg ticked;
+	always @(posedge mclk)
+		if(reset)
+			ticked <= 0;
+		else if(gameTick)
+			ticked <= ~ticked ;
 
-	assign Led[1] = game_over;
+	//assign Led[1] = game_over;
 	assign Led[0] = reset;
-	assign Led[7:2] = 0;
+	assign Led[1] = ticked;
+	assign Led[7:2] = snake_game_color;
 
 endmodule
 
