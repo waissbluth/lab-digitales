@@ -8,11 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<<<<<<< HEAD
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Proyecto/key_to_move.v&quot; into library work</arg>
-=======
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/Yo/Documents/U/10sem/Lab digitales/lab-digitales/Proyecto/snake_game.v&quot; into library work</arg>
->>>>>>> ef6eca9a4efe796f713d5cffac5e829d70843b52
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;Z:/Desktop/LabDigitales/Proyecto/snake_game.v&quot; into library work</arg>
 </msg>
 
 </messages>
