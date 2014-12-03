@@ -29,12 +29,14 @@ module coin
 		
 		input [(logb2(H)-1):0] snake_tail_x,
 		input [(logb2(V)-1):0] snake_tail_y,
-
+		
+		input [(logb2(H)-1):0] snake_head_x,
+		input [(logb2(V)-1):0] snake_head_y,
 		
 		output reg [(logb2(H)-1):0] x,
 		output reg [(logb2(V)-1):0] y,
 		output reg exists,
-		output point
+		output reg point
     );
 	 
 	function integer logb2;
@@ -53,7 +55,9 @@ module coin
 		if(reset) begin
 			exists <= 0;
 			state_count <= 0;
+			point <= 0;
 		end else if(~exists) begin
+			point <= 0;
 			if(shift_snake)
 				state_count <=  state_count + 1;
 			if(state_count == 2'b11) begin
@@ -62,8 +66,13 @@ module coin
 				exists <= 1;
 			end
 		end else begin
-			//Interséctame
+			if(x == snake_head_x && y == snake_head_y) begin
+				point <= 1;
+				exists <= 0;
+			end
 		end
+		
+		
 	 end
 
 

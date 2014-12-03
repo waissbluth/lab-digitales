@@ -66,12 +66,14 @@ module snake_game
 	wire exists_snake, end_shift_snake;
 	wire [(xBits + yBits):0] snake_head;
 	reg snake_shift;
+	
+	reg [(addrBits-1):0] length;
 
 	snake #(H, V) snake_position
 	(
 		clk, reset,
 		move_enable, move,
-		3,
+		length,
 		snake_shift,
 		x_snake, y_snake, exists_snake,
 		game_over, end_shift_snake,
@@ -131,7 +133,19 @@ module snake_game
 	wire [(logb2(V)-1):0] coin_y;
 	wire coin_exists;
 	wire point;
-	coin #(H, V) coin_i(clk, reset, x_snake, y_snake, exists_snake, snake_shift, snake_tail_x, snake_tail_y, coin_x, coin_y, coin_exists, point);
+	coin #(H, V) coin_i(
+		clk, reset, x_snake, y_snake, exists_snake, snake_shift,
+		snake_tail_x, snake_tail_y,
+		snake_head[(xBits + yBits):(yBits+1)], snake_head[yBits:1],
+		coin_x, coin_y, coin_exists, point
+		);
+	always @(posedge clk) begin
+		if(reset)
+			length <= 3;
+		else if(point)
+			length <= length + 1;
+	end
+	
 	
 	
 	/* Calculo color_valid */
@@ -139,10 +153,10 @@ module snake_game
 		if(reset) color_valid <= 0;
 		
 		else begin
-			if(	eval_x >= pos_x & eval_x < scale_x*H + pos_x &
-					eval_y >= pos_y & eval_y < scale_y*V + pos_y)
-				color_valid <= 1;
-			else color_valid <= 0;
+			color_valid <= eval_x >= pos_x &
+								eval_x < scale_x*H + pos_x &
+								eval_y >= pos_y &
+								eval_y < scale_y*V + pos_y;
 			
 		end
 	end
@@ -162,13 +176,7 @@ module snake_game
 	
 	/* Estado 2: Dibujar serpiente */
 	always @(posedge clk) begin
-		if(clear_overflow) begin
-			snake_shift <= 1;
-			
-		end else begin
-			snake_shift <= 0;
-			
-		end
+		snake_shift <= clear_overflow;
 	end
 	
 	/* Estado 3: Dibujar moneda(s) */
@@ -222,7 +230,7 @@ module snake_game
 								{(8){curr_index == coin_index}} & coin_color |
 								{(8){curr_index == snake_index}} & snake_color;
 								
-	assign tmp = {coin_x, coin_y,coin_exists};
+	assign tmp = {0, length};
 	
 
 endmodule
