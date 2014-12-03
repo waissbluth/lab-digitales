@@ -98,6 +98,8 @@ module top
 	wire game_over;
 	wire [6:0] snake_game_color;
 	wire snake_game_color_valid;
+	
+	wire [10:0] tmp;
 
 	snake_game
 	#(
@@ -115,7 +117,8 @@ module top
 
 		game_over,
 		snake_game_color,
-		snake_game_color_valid
+		snake_game_color_valid,
+		tmp
 	);
 	
 	always @(posedge mclk)
@@ -139,9 +142,11 @@ module top
 			ticked <= ~ticked ;
 
 	//assign Led[1] = game_over;
-	assign Led[0] = reset;
-	assign Led[1] = ticked;
-	assign Led[7:2] = snake_game_color;
+	//assign Led[0] = reset;
+	//assign Led[1] = ticked;
+	//assign Led[3:2] = max_steel;
+	//assign Led[7:0] = snake_game_color;
+	assign Led[7:0] =  tmp[7:0];
 
 endmodule
 

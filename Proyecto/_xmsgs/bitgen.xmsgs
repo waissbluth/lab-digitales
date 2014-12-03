@@ -71,23 +71,5 @@
 <msg type="warning" file="PhysDesignRules" num="781" delta="old" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">OutGreen&lt;1&gt;</arg> is set but the tri state is not configured. 
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="812" delta="old" >Dangling pin &lt;<arg fmt="%s" index="1">DOB6</arg>&gt; on block:&lt;<arg fmt="%s" index="2">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B</arg>&gt;:&lt;<arg fmt="%s" index="3">RAMB16_RAMB16B</arg>&gt;.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="812" delta="old" >Dangling pin &lt;<arg fmt="%s" index="1">DOB7</arg>&gt; on block:&lt;<arg fmt="%s" index="2">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B</arg>&gt;:&lt;<arg fmt="%s" index="3">RAMB16_RAMB16B</arg>&gt;.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="812" delta="old" >Dangling pin &lt;<arg fmt="%s" index="1">DOB12</arg>&gt; on block:&lt;<arg fmt="%s" index="2">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B</arg>&gt;:&lt;<arg fmt="%s" index="3">RAMB16_RAMB16B</arg>&gt;.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="812" delta="old" >Dangling pin &lt;<arg fmt="%s" index="1">DOB13</arg>&gt; on block:&lt;<arg fmt="%s" index="2">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B</arg>&gt;:&lt;<arg fmt="%s" index="3">RAMB16_RAMB16B</arg>&gt;.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="812" delta="old" >Dangling pin &lt;<arg fmt="%s" index="1">DOB14</arg>&gt; on block:&lt;<arg fmt="%s" index="2">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B</arg>&gt;:&lt;<arg fmt="%s" index="3">RAMB16_RAMB16B</arg>&gt;.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="812" delta="old" >Dangling pin &lt;<arg fmt="%s" index="1">DOB15</arg>&gt; on block:&lt;<arg fmt="%s" index="2">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B</arg>&gt;:&lt;<arg fmt="%s" index="3">RAMB16_RAMB16B</arg>&gt;.
-</msg>
-
 </messages>
 

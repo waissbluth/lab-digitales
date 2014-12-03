@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Dec 02 22:54:41 2014
+Tue Dec 02 23:57:12 2014
 
 drc -z top.ncd top.pcf
 
@@ -49,29 +49,5 @@ WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
    OutGreen<0> is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
    OutGreen<1> is set but the tri state is not configured. 
-WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
-   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
-   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18
-   x18.ram.B>:<RAMB16_RAMB16B>.
-WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
-   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
-   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18
-   x18.ram.B>:<RAMB16_RAMB16B>.
-WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
-   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
-   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18
-   x18.ram.B>:<RAMB16_RAMB16B>.
-WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
-   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
-   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18
-   x18.ram.B>:<RAMB16_RAMB16B>.
-WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
-   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
-   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18
-   x18.ram.B>:<RAMB16_RAMB16B>.
-WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
-   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
-   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18
-   x18.ram.B>:<RAMB16_RAMB16B>.
-DRC detected 0 errors and 28 warnings.  Please see the previously displayed
+DRC detected 0 errors and 22 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

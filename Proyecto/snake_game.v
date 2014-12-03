@@ -39,7 +39,8 @@ module snake_game
 
 		output game_over,
 		output [6:0] out_color,
-		output reg color_valid
+		output reg color_valid,
+		output [10:0] snake_head
 	);
 	 
 	function integer logb2;
@@ -63,7 +64,7 @@ module snake_game
 	wire [(xBits-1):0] x_snake;
 	wire [(yBits-1):0] y_snake;
 	wire exists_snake, end_shift_snake;
-	wire [(xBits + yBits):0] snake_head;
+	//wire [(xBits + yBits):0] snake_head;
 	reg snake_shift;
 
 	snake #(H, V) snake_position

@@ -32,14 +32,21 @@ module snake
 		output exists,
 		output reg self_col,
 		output end_shift,
-		output reg [(logb2(H) + logb2(V)):0] last_head
+		output [(logb2(H) + logb2(V)):0] doutb
     );
+	 reg [(logb2(H) + logb2(V)):0] last_head;
+	 
 
 	localparam xBits = logb2(H);
 	localparam yBits = logb2(V);
 	localparam addrBits = logb2(H*V);
 	
 	localparam right = 0, up = 1, left = 2, down = 3;
+
+	wire [(xBits-1):0] halfX;
+	wire [(yBits-1):0] halfY;
+	assign halfX = H/2;
+	assign halfY = V/2;
 
 	function integer logb2;
 		input integer n;
@@ -54,9 +61,10 @@ module snake
 	reg [(yBits-1):0] write_y;
 	reg write_active;
 	
-	wire [(xBits + yBits):0] dina, doutb;
+	//wire [(xBits + yBits):0] dina, doutb;
+	wire [(xBits + yBits):0] d;
 	
-	wire [(addrBits-1):0] addra_snake, addrb_snake;
+	wire [(addrBits-1):0] addra_snake;
 	
 	assign dina = {write_x, write_y, write_active};
 
@@ -68,6 +76,11 @@ module snake
 	assign y = read_y;
 	assign exists = read_active;
 	
+	reg wea;
+	
+	wire [(addrBits-1):0] addra = addra_snake;
+	wire [(addrBits-1):0] addrb = addra_snake;
+
 	snake_mem snake_mem_i
 	(
 	  .clka(clk), // input clka
@@ -104,27 +117,38 @@ module snake
 			last_move <= move;
 	end
 	
+	wire [(xBits-1):0] read_x_p1, read_x_m1;
+	wire [(yBits-1):0] read_y_p1, read_y_m1;
+	
+	assign read_x_p1 = read_x + 1;
+	assign read_x_m1 = read_x - 1;
+	assign read_y_p1 = read_y + 1;
+	assign read_y_m1 = read_y - 1;
+	
 	// Movemos la serpiente
 	always @(posedge clk) begin
 		if(reset) begin
 			self_col <= 0;
-			write_x <= H/2;
-			write_y <= V/2;
-			write_active <= 1;
+			last_data <= {halfX, halfY, 1};
+			wea <= 1;
 		end else if(body_count_enable) begin
-			{write_x, write_y, write_active} <= last_data;
+			write_x <= last_data[(xBits + yBits):(yBits + 1)];
+			write_y <= last_data[yBits:1];
+			write_active <= last_data[0];
 			last_data <= doutb;
+			wea <= 1;
 			if(last_head == doutb)
 				self_col <= 1;
 		end else begin
 			case(last_move)
-				right: last_data <= {read_x + 1, read_y, 1 };
-				up: last_data <= {read_x, read_y + 1, 1 };
-				left: last_data <= {read_x - 1, read_y, 1 };
-				down: last_data <= {read_x, read_y - 1, 1 };
+				right: last_data <= {read_x_p1, read_y, 1 };
+				up: last_data <= {read_x, read_y_p1, 1 };
+				left: last_data <= {read_x_m1, read_y, 1 };
+				down: last_data <= {read_x, read_y_m1, 1 };
 				default: last_data <= {read_x, read_y, 1 };
 			endcase
 			last_head <= last_data;
+			wea <= 0;
 		end
 	end	
 
