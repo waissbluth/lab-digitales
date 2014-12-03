@@ -62,5 +62,8 @@
 <msg type="warning" file="PhysDesignRules" num="781" delta="old" ><arg fmt="%s" index="1">PULLUP</arg> on an active net. <arg fmt="%s" index="2">PULLUP</arg> of comp <arg fmt="%s" index="3">HSYNC.PAD</arg> is set but the tri state is not configured. 
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="1063" delta="old" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp9x9.ram.A</arg>&gt;:&lt;<arg fmt="%s" index="2">RAMB16_RAMB16A</arg>&gt;.  The block is configured to use an input parity pins. There is a dangling output parity pin.
+</msg>
+
 </messages>
 

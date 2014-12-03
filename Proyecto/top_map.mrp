@@ -9,35 +9,35 @@ Target Device  : xc3s100e
 Target Package : cp132
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Dec 03 18:25:06 2014
+Mapped Date    : Wed Dec 03 18:36:02 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   19
+Number of warnings:   20
 Logic Utilization:
-  Number of Slice Flip Flops:           218 out of   1,920   11%
-  Number of 4 input LUTs:               162 out of   1,920    8%
+  Number of Slice Flip Flops:           236 out of   1,920   12%
+  Number of 4 input LUTs:               190 out of   1,920    9%
 Logic Distribution:
-  Number of occupied Slices:            181 out of     960   18%
-    Number of Slices containing only related logic:     181 out of     181 100%
-    Number of Slices containing unrelated logic:          0 out of     181   0%
+  Number of occupied Slices:            202 out of     960   21%
+    Number of Slices containing only related logic:     202 out of     202 100%
+    Number of Slices containing unrelated logic:          0 out of     202   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         244 out of   1,920   12%
-    Number used as logic:               162
-    Number used as a route-thru:         82
+  Total Number of 4 input LUTs:         278 out of   1,920   14%
+    Number used as logic:               190
+    Number used as a route-thru:         88
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
   Number of bonded IOBs:                 34 out of      83   40%
     IOB Flip Flops:                       2
-  Number of RAMB16s:                      2 out of       4   50%
+  Number of RAMB16s:                      3 out of       4   75%
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                2.73
+Average Fanout of Non-Clock Nets:                2.84
 
-Peak Memory Usage:  249 MB
+Peak Memory Usage:  250 MB
 Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 
@@ -118,6 +118,12 @@ WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<2>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC.PAD
    is set but the tri state is not configured. 
+WARNING:PhysDesignRules:1063 - Issue with pin connections and/or configuration
+   on
+   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
+   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp9x
+   9.ram.A>:<RAMB16_RAMB16A>.  The block is configured to use an input parity
+   pins. There is a dangling output parity pin.
 
 Section 3 - Informational
 -------------------------

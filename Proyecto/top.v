@@ -37,9 +37,9 @@ module top
 	localparam right = 0, up = 1, left = 2, down = 3;
 	
 	localparam fpgaClk = 50_000_000;
-	localparam gameClk = 1;
+	localparam gameClk = 5;
 	
-	localparam game_size_x = 32;
+	localparam game_size_x = 64;
 	localparam game_size_y = 32;
 	localparam game_pos_x = 10;
 	localparam game_pos_y = 10;
@@ -48,7 +48,8 @@ module top
 	
 	localparam snake_color = 8'b111_111_11;
 	localparam coin_color = 8'b001_111_01;
-	localparam bg_color = 8'b100_100_10;
+	localparam bg_box_color = 8'b100_100_10;
+	localparam bg_color = 8'b010_010_01;
 	
 	function integer logb2;
 		input integer n;
@@ -109,7 +110,7 @@ module top
 		game_size_x, game_size_y,
 		game_pos_x, game_pos_y,
 		game_scale_x, game_scale_y,
-		snake_color, coin_color, bg_color
+		snake_color, coin_color, bg_box_color
 	)
 	snake_game_i
 	(
@@ -127,7 +128,10 @@ module top
 	always @(posedge mclk)
 	begin
 		VON <= von;
-		if(VON) outColor <= snake_game_color;
+		if(VON) begin
+			if(snake_game_color_valid) outColor <= snake_game_color;
+			else outColor <= bg_color;
+			end
 		else outColor <= 0;
 	end
 	
@@ -137,12 +141,6 @@ module top
 		VSYNC <= vsync;
 	end
 	
-	reg ticked;
-	always @(posedge mclk)
-		if(reset)
-			ticked <= 0;
-		else if(gameTick)
-			ticked <= ~ticked ;
 
 	//assign Led[1] = game_over;
 	//assign Led[0] = reset;

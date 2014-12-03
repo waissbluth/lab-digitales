@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Dec 03 18:25:25 2014
+Wed Dec 03 18:36:20 2014
 
 drc -z top.ncd top.pcf
 
@@ -43,5 +43,11 @@ WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp OutRed<2>
    is set but the tri state is not configured. 
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp HSYNC.PAD
    is set but the tri state is not configured. 
-DRC detected 0 errors and 19 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:1063 - Issue with pin connections and/or configuration
+   on
+   block:<snake_game_i/snake_position/snake_mem_i/U0/xst_blk_mem_generator/gnati
+   vebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp9x
+   9.ram.A>:<RAMB16_RAMB16A>.  The block is configured to use an input parity
+   pins. There is a dangling output parity pin.
+DRC detected 0 errors and 20 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

@@ -48,17 +48,17 @@ module snake_mem(
 
 input clka;
 input [0 : 0] wea;
-input [9 : 0] addra;
-input [10 : 0] dina;
+input [10 : 0] addra;
+input [11 : 0] dina;
 input clkb;
-input [9 : 0] addrb;
-output [10 : 0] doutb;
+input [10 : 0] addrb;
+output [11 : 0] doutb;
 
 // synthesis translate_off
 
   BLK_MEM_GEN_V7_3 #(
-    .C_ADDRA_WIDTH(10),
-    .C_ADDRB_WIDTH(10),
+    .C_ADDRA_WIDTH(11),
+    .C_ADDRB_WIDTH(11),
     .C_ALGORITHM(1),
     .C_AXI_ID_WIDTH(4),
     .C_AXI_SLAVE_TYPE(0),
@@ -93,10 +93,10 @@ output [10 : 0] doutb;
     .C_MEM_TYPE(1),
     .C_MUX_PIPELINE_STAGES(0),
     .C_PRIM_TYPE(1),
-    .C_READ_DEPTH_A(1024),
-    .C_READ_DEPTH_B(1024),
-    .C_READ_WIDTH_A(11),
-    .C_READ_WIDTH_B(11),
+    .C_READ_DEPTH_A(2048),
+    .C_READ_DEPTH_B(2048),
+    .C_READ_WIDTH_A(12),
+    .C_READ_WIDTH_B(12),
     .C_RST_PRIORITY_A("CE"),
     .C_RST_PRIORITY_B("CE"),
     .C_RST_TYPE("SYNC"),
@@ -111,12 +111,12 @@ output [10 : 0] doutb;
     .C_USE_SOFTECC(0),
     .C_WEA_WIDTH(1),
     .C_WEB_WIDTH(1),
-    .C_WRITE_DEPTH_A(1024),
-    .C_WRITE_DEPTH_B(1024),
+    .C_WRITE_DEPTH_A(2048),
+    .C_WRITE_DEPTH_B(2048),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_MODE_B("WRITE_FIRST"),
-    .C_WRITE_WIDTH_A(11),
-    .C_WRITE_WIDTH_B(11),
+    .C_WRITE_WIDTH_A(12),
+    .C_WRITE_WIDTH_B(12),
     .C_XDEVICEFAMILY("spartan3e")
   )
   inst (
