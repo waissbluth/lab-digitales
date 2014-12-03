@@ -23,7 +23,6 @@ module snake
 	(	
 		input clk,
 		input reset,
-		input move_enable,
 		input [1:0] move,
 		input [(logb2(H*V)-1):0] length,
 		input shift,
@@ -115,14 +114,6 @@ module snake
 	
 	reg [(xBits + yBits):0] last_data;
 	
-	// Calculo de la velocidad en base a botones
-	
-	reg [1:0] last_move;
-	always @(posedge clk) begin
-		if(move_enable)
-			last_move <= move;
-	end
-	
 	wire [(xBits-1):0] read_x_p1, read_x_m1;
 	wire [(yBits-1):0] read_y_p1, read_y_m1;
 	
@@ -158,7 +149,7 @@ module snake
 			if(last_head == doutb) self_col <= 1;
 			
 		end else if(~applyReset) begin
-			case(last_move)
+			case(move)
 				default: last_data <= {read_x, read_y_p1, 1'b1 };
 				right: last_data <= {read_x_p1, read_y, 1'b1 };
 				down: last_data <= {read_x, read_y_m1, 1'b1 };

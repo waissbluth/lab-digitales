@@ -120,8 +120,12 @@ Compiling verilog file "Sync.v" in library work
 Module <coin> compiled
 Compiling verilog file "snake_game.v" in library work
 Module <Sync> compiled
-Compiling verilog file "ClockRatio.v" in library work
+Compiling verilog file "ps2_rx.v" in library work
 Module <snake_game> compiled
+Compiling verilog file "key_to_move.v" in library work
+Module <ps2_rx> compiled
+Compiling verilog file "ClockRatio.v" in library work
+Module <key_to_move> compiled
 Compiling verilog file "top.v" in library work
 Module <ClockRatio> compiled
 Module <top> compiled
@@ -136,7 +140,6 @@ Analyzing hierarchy for module <top> in library <work> with parameters.
 	bg_box_color = "10010010"
 	bg_color = "01001001"
 	coin_color = "00111101"
-	down = "00000000000000000000000000000011"
 	fpgaClk = "00000010111110101111000010000000"
 	gameClk = "00000000000000000000000000000101"
 	game_pos_x = "00000000000000000000000000001010"
@@ -145,15 +148,19 @@ Analyzing hierarchy for module <top> in library <work> with parameters.
 	game_scale_y = "00000000000000000000000000001000"
 	game_size_x = "00000000000000000000000001000000"
 	game_size_y = "00000000000000000000000000100000"
-	left = "00000000000000000000000000000010"
-	right = "00000000000000000000000000000000"
 	snake_color = "11111111"
-	up = "00000000000000000000000000000001"
 
 Analyzing hierarchy for module <ClockRatio> in library <work> with parameters.
 	demRatio = "00000000000000000000000000000101"
 	numRatio = "00000010111110101111000010000000"
 	numSize = "00000000000000000000000000011011"
+
+Analyzing hierarchy for module <ps2_rx> in library <work> with parameters.
+	dps = "01"
+	idle = "00"
+	load = "10"
+
+Analyzing hierarchy for module <key_to_move> in library <work>.
 
 Analyzing hierarchy for module <Sync> in library <work> with parameters.
 	BP_h = "00000000000000000000000010010000"
@@ -205,12 +212,11 @@ Analyzing hierarchy for module <coin> in library <work> with parameters.
 =========================================================================
 Analyzing top module <top>.
 WARNING:Xst:863 - "top.v" line 33: Name conflict (<vsync> and <VSYNC>, renaming vsync as vsync_rnm0).
-WARNING:Xst:863 - "top.v" line 87: Name conflict (<VON> and <von>, renaming VON as von_rnm0).
+WARNING:Xst:863 - "top.v" line 77: Name conflict (<VON> and <von>, renaming VON as von_rnm0).
 WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming hsync as hsync_rnm0).
 	bg_box_color = 8'b10010010
 	bg_color = 8'b01001001
 	coin_color = 8'b00111101
-	down = 32'sb00000000000000000000000000000011
 	fpgaClk = 32'sb00000010111110101111000010000000
 	gameClk = 32'sb00000000000000000000000000000101
 	game_pos_x = 32'sb00000000000000000000000000001010
@@ -219,10 +225,7 @@ WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming 
 	game_scale_y = 32'sb00000000000000000000000000001000
 	game_size_x = 32'sb00000000000000000000000001000000
 	game_size_y = 32'sb00000000000000000000000000100000
-	left = 32'sb00000000000000000000000000000010
-	right = 32'sb00000000000000000000000000000000
 	snake_color = 8'b11111111
-	up = 32'sb00000000000000000000000000000001
 Module <top> is correct for synthesis.
  
 Analyzing module <ClockRatio> in library <work>.
@@ -230,6 +233,15 @@ Analyzing module <ClockRatio> in library <work>.
 	numRatio = 32'sb00000010111110101111000010000000
 	numSize = 32'sb00000000000000000000000000011011
 Module <ClockRatio> is correct for synthesis.
+ 
+Analyzing module <ps2_rx> in library <work>.
+	dps = 2'b01
+	idle = 2'b00
+	load = 2'b10
+Module <ps2_rx> is correct for synthesis.
+ 
+Analyzing module <key_to_move> in library <work>.
+Module <key_to_move> is correct for synthesis.
  
 Analyzing module <Sync> in library <work>.
 	BP_h = 32'sb00000000000000000000000010010000
@@ -260,7 +272,7 @@ Analyzing module <snake_game> in library <work>.
 	snake_index = 32'sb00000000000000000000000000000001
 	xBits = 32'sb00000000000000000000000000000110
 	yBits = 32'sb00000000000000000000000000000101
-WARNING:Xst:2211 - "ipcore_dir/screen_mem_i.v" line 95: Instantiating black box module <screen_mem_i>.
+WARNING:Xst:2211 - "ipcore_dir/screen_mem_i.v" line 94: Instantiating black box module <screen_mem_i>.
 Module <snake_game> is correct for synthesis.
  
 Analyzing module <snake> in library <work>.
@@ -278,7 +290,7 @@ Analyzing module <snake> in library <work>.
 	up = 32'sb00000000000000000000000000000001
 	xBits = 32'sb00000000000000000000000000000110
 	yBits = 32'sb00000000000000000000000000000101
-WARNING:Xst:2211 - "ipcore_dir/snake_mem.v" line 88: Instantiating black box module <snake_mem>.
+WARNING:Xst:2211 - "ipcore_dir/snake_mem.v" line 87: Instantiating black box module <snake_mem>.
 Module <snake> is correct for synthesis.
  
 Analyzing module <StaticCounter> in library <work>.
@@ -317,6 +329,43 @@ Synthesizing Unit <ClockRatio>.
 	inferred   1 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <ClockRatio> synthesized.
+
+
+Synthesizing Unit <ps2_rx>.
+    Related source file is "ps2_rx.v".
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11-bit register for signal <b_reg>.
+    Found 1-bit register for signal <f_ps2c_reg>.
+    Found 8-bit register for signal <filter_reg>.
+    Found 4-bit subtractor for signal <n_next$addsub0000> created at line 103.
+    Found 4-bit register for signal <n_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ps2_rx> synthesized.
+
+
+Synthesizing Unit <key_to_move>.
+    Related source file is "key_to_move.v".
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit register for signal <move>.
+    Found 2-bit register for signal <next_move>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <key_to_move> synthesized.
 
 
 Synthesizing Unit <Sync>.
@@ -382,23 +431,22 @@ WARNING:Xst:646 - Signal <last_data<0>> is assigned but never used. This unconne
     Found 1-bit register for signal <applyReset>.
     Found 1-bit register for signal <body_count_enable>.
     Found 12-bit register for signal <last_data>.
-    Found 2-bit register for signal <last_move>.
     Found 1-bit register for signal <next_wea>.
     Found 1-bit register for signal <next_write_active>.
-    Found 11-bit comparator less for signal <next_write_active$cmp_lt0000> created at line 151.
+    Found 11-bit comparator less for signal <next_write_active$cmp_lt0000> created at line 142.
     Found 6-bit register for signal <next_write_x>.
     Found 5-bit register for signal <next_write_y>.
     Found 6-bit subtractor for signal <read_x_m1>.
     Found 6-bit adder for signal <read_x_p1>.
     Found 5-bit subtractor for signal <read_y_m1>.
     Found 5-bit adder for signal <read_y_p1>.
-    Found 12-bit comparator not equal for signal <self_col$cmp_ne0000> created at line 158.
+    Found 12-bit comparator not equal for signal <self_col$cmp_ne0000> created at line 149.
     Found 1-bit register for signal <wea<0>>.
     Found 1-bit register for signal <write_active>.
     Found 6-bit register for signal <write_x>.
     Found 5-bit register for signal <write_y>.
     Summary:
-	inferred  77 D-type flip-flop(s).
+	inferred  75 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred   2 Comparator(s).
 Unit <snake> synthesized.
@@ -412,13 +460,13 @@ WARNING:Xst:646 - Signal <local_x<9:6>> is assigned but never used. This unconne
     Using one-hot encoding for signal <state>.
     Found 1-bit register for signal <color_valid>.
     Found 1-bit register for signal <clear_count_enable>.
-    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0000> created at line 156.
-    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0001> created at line 156.
-    Found 10-bit comparator less for signal <color_valid$cmp_lt0000> created at line 156.
-    Found 10-bit comparator less for signal <color_valid$cmp_lt0001> created at line 156.
+    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0000> created at line 155.
+    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0001> created at line 155.
+    Found 10-bit comparator less for signal <color_valid$cmp_lt0000> created at line 155.
+    Found 10-bit comparator less for signal <color_valid$cmp_lt0001> created at line 155.
     Found 11-bit up counter for signal <length>.
-    Found 11-bit subtractor for signal <local_x$sub0000> created at line 121.
-    Found 11-bit subtractor for signal <local_y$sub0000> created at line 122.
+    Found 11-bit subtractor for signal <local_x$sub0000> created at line 120.
+    Found 11-bit subtractor for signal <local_y$sub0000> created at line 121.
     Found 1-bit register for signal <previous_exist_tail>.
     Found 11-bit adder for signal <screen_read_address>.
     Found 11-bit register for signal <screen_write_address>.
@@ -439,29 +487,20 @@ Unit <snake_game> synthesized.
 
 Synthesizing Unit <top>.
     Related source file is "top.v".
-WARNING:Xst:647 - Input <PS2C> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <PS2D> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sw<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <tmp<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <tmp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <refresh> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <game_over> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 1-bit register for signal <HSYNC>.
     Found 1-bit register for signal <VSYNC>.
     Found 10-bit adder for signal <eval_y>.
-    Found 2-bit register for signal <move>.
-    Found 1-bit xor2 for signal <move$xor0000> created at line 82.
-    Found 1-bit xor2 for signal <move$xor0001> created at line 82.
-    Found 2-bit register for signal <move_next>.
-    Found 4-bit comparator greater for signal <move_next$cmp_gt0000> created at line 73.
-    Found 4-bit comparator greater for signal <move_next$cmp_gt0001> created at line 75.
-    Found 4-bit comparator greater for signal <move_next$cmp_gt0002> created at line 77.
     Found 8-bit register for signal <outColor>.
     Found 1-bit register for signal <vgaClk>.
     Found 1-bit register for signal <von_rnm0>.
     Summary:
-	inferred  16 D-type flip-flop(s).
+	inferred  12 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   3 Comparator(s).
 Unit <top> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -470,11 +509,12 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 11
+# Adders/Subtractors                                   : 12
  10-bit adder                                          : 1
  11-bit adder                                          : 2
  11-bit subtractor                                     : 2
  12-bit adder                                          : 2
+ 4-bit subtractor                                      : 1
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
  6-bit adder                                           : 1
@@ -485,16 +525,16 @@ Macro Statistics
  2-bit up counter                                      : 1
 # Accumulators                                         : 1
  27-bit updown accumulator                             : 1
-# Registers                                            : 63
- 1-bit register                                        : 44
- 11-bit register                                       : 3
+# Registers                                            : 66
+ 1-bit register                                        : 45
+ 11-bit register                                       : 4
  12-bit register                                       : 2
- 2-bit register                                        : 4
- 4-bit register                                        : 1
+ 2-bit register                                        : 3
+ 4-bit register                                        : 2
  5-bit register                                        : 4
  6-bit register                                        : 4
- 8-bit register                                        : 1
-# Comparators                                          : 22
+ 8-bit register                                        : 2
+# Comparators                                          : 19
  10-bit comparator greatequal                          : 2
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 4
@@ -503,13 +543,10 @@ Macro Statistics
  11-bit comparator less                                : 3
  12-bit comparator not equal                           : 1
  27-bit comparator greatequal                          : 1
- 4-bit comparator greater                              : 3
  5-bit comparator equal                                : 1
  5-bit comparator not equal                            : 1
  6-bit comparator equal                                : 1
  6-bit comparator not equal                            : 1
-# Xors                                                 : 2
- 1-bit xor2                                            : 2
 
 =========================================================================
 
@@ -517,13 +554,26 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <keyboardCtrl/state_reg/FSM> on signal <state_reg[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+-------------------
 Reading core <ipcore_dir/snake_mem.ngc>.
 Reading core <ipcore_dir/screen_mem_i.ngc>.
 Loading core <snake_mem> for timing and area information for instance <snake_mem_i>.
 Loading core <screen_mem_i> for timing and area information for instance <snake_screen_mem>.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <keyboardCtrl>.
+WARNING:Xst:2677 - Node <next_move_1> of sequential type is unconnected in block <key_to_move_i>.
+WARNING:Xst:2677 - Node <move_1> of sequential type is unconnected in block <key_to_move_i>.
 WARNING:Xst:2677 - Node <last_data_0> of sequential type is unconnected in block <snake_position>.
 WARNING:Xst:2677 - Node <last_head_0> of sequential type is unconnected in block <snake_position>.
 WARNING:Xst:2677 - Node <state_0> of sequential type is unconnected in block <snake_game_i>.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx>.
 WARNING:Xst:2677 - Node <last_data_0> of sequential type is unconnected in block <snake>.
 WARNING:Xst:2677 - Node <state_0> of sequential type is unconnected in block <snake_game>.
 
@@ -531,10 +581,12 @@ WARNING:Xst:2677 - Node <state_0> of sequential type is unconnected in block <sn
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 11
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 12
  10-bit adder                                          : 1
  11-bit adder                                          : 2
  12-bit adder                                          : 2
+ 4-bit subtractor                                      : 1
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
  6-bit adder                                           : 1
@@ -547,9 +599,9 @@ Macro Statistics
  2-bit up counter                                      : 1
 # Accumulators                                         : 1
  27-bit updown accumulator                             : 1
-# Registers                                            : 163
- Flip-Flops                                            : 163
-# Comparators                                          : 22
+# Registers                                            : 184
+ Flip-Flops                                            : 184
+# Comparators                                          : 19
  10-bit comparator greatequal                          : 2
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 4
@@ -558,13 +610,10 @@ Macro Statistics
  11-bit comparator less                                : 3
  12-bit comparator not equal                           : 1
  27-bit comparator greatequal                          : 1
- 4-bit comparator greater                              : 3
  5-bit comparator equal                                : 1
  5-bit comparator not equal                            : 1
  6-bit comparator equal                                : 1
  6-bit comparator not equal                            : 1
-# Xors                                                 : 2
- 1-bit xor2                                            : 2
 
 =========================================================================
 
@@ -575,6 +624,10 @@ WARNING:Xst:1710 - FF/Latch <last_head_0> (without init value) has a constant va
 
 Optimizing unit <top> ...
 
+Optimizing unit <ps2_rx> ...
+
+Optimizing unit <key_to_move> ...
+
 Optimizing unit <Sync> ...
 
 Optimizing unit <StaticCounter> ...
@@ -584,6 +637,8 @@ Optimizing unit <coin> ...
 Optimizing unit <snake> ...
 
 Optimizing unit <snake_game> ...
+WARNING:Xst:2677 - Node <key_to_move_i/move_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <key_to_move_i/next_move_1> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/self_col> of sequential type is unconnected in block <top>.
 
 Mapping all equations...
@@ -591,7 +646,7 @@ Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <outColor_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <outColor_5> 
 INFO:Xst:2261 - The FF/Latch <outColor_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <outColor_7> 
 INFO:Xst:2261 - The FF/Latch <outColor_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <outColor_3> 
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 17.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 18.
 
 Final Macro Processing ...
 
@@ -599,8 +654,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 238
- Flip-Flops                                            : 238
+# Registers                                            : 259
+ Flip-Flops                                            : 259
 
 =========================================================================
 
@@ -629,38 +684,38 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 514
+# BELS                             : 545
 #      GND                         : 3
 #      INV                         : 19
 #      LUT1                        : 88
-#      LUT2                        : 48
-#      LUT2_L                      : 1
-#      LUT3                        : 22
-#      LUT3_D                      : 1
-#      LUT3_L                      : 3
-#      LUT4                        : 94
-#      LUT4_D                      : 3
-#      LUT4_L                      : 5
+#      LUT2                        : 49
+#      LUT2_L                      : 2
+#      LUT3                        : 26
+#      LUT3_D                      : 4
+#      LUT4                        : 114
+#      LUT4_D                      : 5
+#      LUT4_L                      : 8
 #      MUXCY                       : 116
 #      MUXF5                       : 6
 #      VCC                         : 3
 #      XORCY                       : 102
-# FlipFlops/Latches                : 238
-#      FD                          : 39
+# FlipFlops/Latches                : 259
+#      FD                          : 37
+#      FDC                         : 25
 #      FDE                         : 63
 #      FDR                         : 44
 #      FDRE                        : 81
 #      FDRS                        : 1
 #      FDRSE                       : 1
-#      FDS                         : 4
+#      FDS                         : 2
 #      FDSE                        : 5
 # RAMS                             : 3
 #      RAMB16_S9_S9                : 3
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 24
-#      IBUF                        : 5
+# IO Buffers                       : 22
+#      IBUF                        : 3
 #      OBUF                        : 19
 =========================================================================
 
@@ -669,11 +724,11 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      162  out of    960    16%  
- Number of Slice Flip Flops:            236  out of   1920    12%  
- Number of 4 input LUTs:                284  out of   1920    14%  
+ Number of Slices:                      180  out of    960    18%  
+ Number of Slice Flip Flops:            257  out of   1920    13%  
+ Number of 4 input LUTs:                315  out of   1920    16%  
  Number of IOs:                          34
- Number of bonded IOBs:                  25  out of     83    30%  
+ Number of bonded IOBs:                  23  out of     83    27%  
     IOB Flip Flops:                       2
  Number of BRAMs:                         3  out of      4    75%  
  Number of GCLKs:                         2  out of     24     8%  
@@ -699,21 +754,25 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-mclk                               | BUFGP                  | 200   |
+mclk                               | BUFGP                  | 221   |
 vgaClk1                            | BUFG                   | 41    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+sw<0>                              | IBUF                   | 25    |
+-----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -5
 
    Minimum period: 6.733ns (Maximum Frequency: 148.516MHz)
-   Minimum input arrival time before clock: 4.583ns
-   Maximum output required time after clock: 4.134ns
+   Minimum input arrival time before clock: 4.589ns
+   Maximum output required time after clock: 4.285ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -723,7 +782,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
   Clock period: 6.733ns (frequency: 148.516MHz)
-  Total number of paths / destination ports: 4849 / 394
+  Total number of paths / destination ports: 5220 / 418
 -------------------------------------------------------------------------
 Delay:               6.733ns (Levels of Logic = 40)
   Source:            tick_gen/currrentCount_7 (FF)
@@ -783,34 +842,34 @@ Delay:               6.733ns (Levels of Logic = 40)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'vgaClk1'
-  Clock period: 5.441ns (frequency: 183.790MHz)
+  Clock period: 5.368ns (frequency: 186.298MHz)
   Total number of paths / destination ports: 1000 / 111
 -------------------------------------------------------------------------
-Delay:               5.441ns (Levels of Logic = 4)
-  Source:            vgaDriver/vc_7 (FF)
+Delay:               5.368ns (Levels of Logic = 4)
+  Source:            vgaDriver/vc_3 (FF)
   Destination:       vgaDriver/v_9 (FF)
   Source Clock:      vgaClk1 rising
   Destination Clock: vgaClk1 rising
 
-  Data Path: vgaDriver/vc_7 to vgaDriver/v_9
+  Data Path: vgaDriver/vc_3 to vgaDriver/v_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             3   0.514   0.603  vgaDriver/vc_7 (vgaDriver/vc_7)
-     LUT3_D:I0->LO         1   0.612   0.130  vgaDriver/vc_and000011 (N53)
-     LUT3:I2->O            2   0.612   0.410  vgaDriver/von_cmp_lt000126 (vgaDriver/von_cmp_lt000126)
-     LUT3_L:I2->LO         1   0.612   0.103  vgaDriver/von_cmp_lt0001232 (vgaDriver/von_cmp_lt0001)
+     FDRE:C->Q             5   0.514   0.607  vgaDriver/vc_3 (vgaDriver/vc_3)
+     LUT4_L:I1->LO         1   0.612   0.103  vgaDriver/von_cmp_lt0001219 (vgaDriver/von_cmp_lt0001219)
+     LUT4:I3->O            1   0.612   0.360  vgaDriver/von_cmp_lt0001233_SW0 (N36)
+     LUT4_D:I3->LO         1   0.612   0.103  vgaDriver/von_cmp_lt0001233 (N52)
      LUT4:I3->O           10   0.612   0.750  vgaDriver/v_not00011 (vgaDriver/v_not0001)
      FDRE:CE                   0.483          vgaDriver/v_0
     ----------------------------------------
-    Total                      5.441ns (3.445ns logic, 1.996ns route)
-                                       (63.3% logic, 36.7% route)
+    Total                      5.368ns (3.445ns logic, 1.923ns route)
+                                       (64.2% logic, 35.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mclk'
-  Total number of paths / destination ports: 161 / 152
+  Total number of paths / destination ports: 148 / 148
 -------------------------------------------------------------------------
-Offset:              4.583ns (Levels of Logic = 2)
+Offset:              4.589ns (Levels of Logic = 2)
   Source:            sw<0> (PAD)
   Destination:       snake_game_i/snake_position/body_count_enable (FF)
   Destination Clock: mclk rising
@@ -819,43 +878,43 @@ Offset:              4.583ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            66   1.106   1.234  sw_0_IBUF (sw_0_IBUF)
+     IBUF:I->O            91   1.106   1.241  sw_0_IBUF (sw_0_IBUF)
      LUT2:I0->O           13   0.612   0.836  snake_game_i/snake_position/_or00001 (snake_game_i/snake_position/_or0000)
      FDRE:R                    0.795          snake_game_i/snake_position/body_count_enable
     ----------------------------------------
-    Total                      4.583ns (2.513ns logic, 2.070ns route)
+    Total                      4.589ns (2.513ns logic, 2.076ns route)
                                        (54.8% logic, 45.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
   Total number of paths / destination ports: 18 / 18
 -------------------------------------------------------------------------
-Offset:              4.134ns (Levels of Logic = 1)
-  Source:            snake_game_i/length_7 (FF)
-  Destination:       Led<7> (PAD)
+Offset:              4.285ns (Levels of Logic = 1)
+  Source:            keyboardCtrl/b_reg_4 (FF)
+  Destination:       Led<3> (PAD)
   Source Clock:      mclk rising
 
-  Data Path: snake_game_i/length_7 to Led<7>
+  Data Path: keyboardCtrl/b_reg_4 to Led<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             3   0.514   0.451  snake_game_i/length_7 (snake_game_i/length_7)
-     OBUF:I->O                 3.169          Led_7_OBUF (Led<7>)
+     FDC:C->Q              7   0.514   0.602  keyboardCtrl/b_reg_4 (keyboardCtrl/b_reg_4)
+     OBUF:I->O                 3.169          Led_3_OBUF (Led<3>)
     ----------------------------------------
-    Total                      4.134ns (3.683ns logic, 0.451ns route)
-                                       (89.1% logic, 10.9% route)
+    Total                      4.285ns (3.683ns logic, 0.602ns route)
+                                       (86.0% logic, 14.0% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.63 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.52 secs
  
 --> 
 
-Total memory usage is 277120 kilobytes
+Total memory usage is 278848 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   25 (   0 filtered)
+Number of warnings :   33 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 

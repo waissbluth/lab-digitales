@@ -33,7 +33,6 @@ module snake_game
 	(
 		input clk, reset,
 		input gameTick,
-		input move_enable,
 		input [1:0] move,
 		input [9:0] eval_x, eval_y,
 
@@ -72,7 +71,7 @@ module snake_game
 	snake #(H, V) snake_position
 	(
 		clk, reset,
-		move_enable, move,
+		move,
 		length,
 		snake_shift,
 		x_snake, y_snake, exists_snake,

@@ -9,17 +9,13 @@ Target Device  : xc3s100e
 Target Package : cp132
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Dec 03 18:36:02 2014
+Mapped Date    : Wed Dec 03 19:24:30 2014
 
 Mapping design into LUTs...
 Running directed packing...
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
-WARNING:PhysDesignRules:367 - The signal <PS2C_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <PS2D_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sw<1>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sw<2>_IBUF> is incomplete. The signal
@@ -33,6 +29,14 @@ WARNING:PhysDesignRules:367 - The signal <sw<5>_IBUF> is incomplete. The signal
 WARNING:PhysDesignRules:367 - The signal <sw<6>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <sw<7>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <btn<0>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <btn<2>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <btn<3>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp VSYNC.PAD
    is set but the tri state is not configured. 
@@ -66,17 +70,17 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:   20
+Number of warnings:   22
 Logic Utilization:
-  Number of Slice Flip Flops:           236 out of   1,920   12%
-  Number of 4 input LUTs:               190 out of   1,920    9%
+  Number of Slice Flip Flops:           257 out of   1,920   13%
+  Number of 4 input LUTs:               221 out of   1,920   11%
 Logic Distribution:
-  Number of occupied Slices:            202 out of     960   21%
-    Number of Slices containing only related logic:     202 out of     202 100%
-    Number of Slices containing unrelated logic:          0 out of     202   0%
+  Number of occupied Slices:            222 out of     960   23%
+    Number of Slices containing only related logic:     222 out of     222 100%
+    Number of Slices containing unrelated logic:          0 out of     222   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         278 out of   1,920   14%
-    Number used as logic:               190
+  Total Number of 4 input LUTs:         309 out of   1,920   16%
+    Number used as logic:               221
     Number used as a route-thru:         88
 
   The Slice Logic Distribution report is not meaningful if the design is
@@ -87,9 +91,9 @@ Logic Distribution:
   Number of RAMB16s:                      3 out of       4   75%
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                2.84
+Average Fanout of Non-Clock Nets:                2.93
 
-Peak Memory Usage:  250 MB
+Peak Memory Usage:  249 MB
 Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 

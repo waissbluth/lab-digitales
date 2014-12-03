@@ -34,8 +34,6 @@ module top
 		output [2:0] OutRed, OutGreen, OutBlue
 	);
 	
-	localparam right = 0, up = 1, left = 2, down = 3;
-	
 	localparam fpgaClk = 50_000_000;
 	localparam gameClk = 5;
 	
@@ -65,22 +63,14 @@ module top
 	
 	ClockRatio #(fpgaClk, gameClk) tick_gen (mclk, reset, gameTick);
 	
-	/* Calculo move */
-	reg [1:0] move, move_next;
-	wire move_enable = |btn;
-	
-	always @(posedge mclk) begin
-		if(btn > 7)
-			move_next <= down;
-		else if(btn > 3)
-			move_next <= up;
-		else if(btn > 1)
-			move_next <= left;
-		else
-			move_next <= right;
-			
-		move <= {(2){|(move_next ^ move)}} & move_next | {(2){~|(move_next ^ move)}} & move;
-	end
+	/* Desde el teclado */
+	wire keyboardEnable;
+	assign keyboardEnable = 1;
+	wire [7:0] keyboardData;
+	wire keyRecieved;
+
+	ps2_rx keyboardCtrl(mclk, reset, PS2D, PS2C, keyboardEnable, keyRecieved, keyboardData);
+	key_to_move key_to_move_i(mclk, reset, keyRecieved, keyboardData, move);
 	
 	/* Driver pantalla */
 	wire [9:0] eval_x, eval_y, tmp_y;
@@ -116,7 +106,7 @@ module top
 	(
 		mclk, reset,
 		gameTick,
-		move_enable, move,
+		move,
 		eval_x, eval_y,
 
 		game_over,
@@ -147,7 +137,7 @@ module top
 	//assign Led[1] = ticked;
 	//assign Led[3:2] = max_steel;
 	//assign Led[7:0] = snake_game_color;
-	assign Led[7:0] =  tmp[7:0];
+	assign Led[7:0] =  keyboardData;
 
 endmodule
 
