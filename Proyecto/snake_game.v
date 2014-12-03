@@ -206,7 +206,7 @@ module snake_game
 					screen_write_enable <= 1;
 					screen_write_data <= bg_index;
 					screen_write_address <= screen_clear_count;
-					test_counter <= snake_index; //*
+					test_counter <= 3; //*
 				
 				end 2: begin
 					screen_write_enable <= exists_snake;
@@ -217,7 +217,7 @@ module snake_game
 						snake_tail_x <= x_snake;
 						snake_tail_y <= y_snake;
 					end
-					test_counter <= test_counter + 1;
+					test_counter <= snake_index;
 				
 				end 3: begin
 					screen_write_enable <= coin_exists;
