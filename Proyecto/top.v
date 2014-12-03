@@ -139,7 +139,7 @@ module top
 	//assign Led[1] = ticked;
 	//assign Led[3:2] = max_steel;
 	//assign Led[7:0] = snake_game_color;
-	assign Led[7:0] =  keyboardData;
+	assign Led[7:0] =  tmp;
 
 endmodule
 
