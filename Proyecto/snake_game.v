@@ -39,7 +39,7 @@ module snake_game
 		output game_over,
 		output [7:0] out_color,
 		output reg color_valid,
-		output [10:0] tmp
+		output [(logb2(H*V)-1):0] score
 	);
 	 
 	function integer logb2;
@@ -233,8 +233,9 @@ module snake_game
 	assign out_color = 	{(8){curr_index == bg_index}} & bg_color |
 								{(8){curr_index == coin_index}} & coin_color |
 								{(8){curr_index == snake_index}} & snake_color;
-								
-	assign tmp = {0, length};
+						
+	// TODO t
+	assign score = length;
 	
 
 endmodule

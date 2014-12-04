@@ -48,6 +48,7 @@ module top
 	localparam coin_color = 8'b001_111_01;
 	localparam bg_box_color = 8'b100_100_10;
 	localparam bg_color = 8'b010_010_01;
+	localparam score_color = 8'b110_000_01;
 	
 	function integer logb2;
 		input integer n;
@@ -95,7 +96,7 @@ module top
 	wire [7:0] snake_game_color;
 	wire snake_game_color_valid;
 	
-	wire [10:0] tmp;
+	wire [(logb2(game_size_x*game_size_y)-1):0] score;
 
 	snake_game
 	#(
@@ -114,14 +115,20 @@ module top
 		game_over,
 		snake_game_color,
 		snake_game_color_valid,
-		tmp
+		score
 	);
+	
+	/* Score */
+	wire score_color_valid;
+
+	score_print #(game_size_x, game_size_y, 2, 2) score_print_i (mclk, score, eval_x, eval_y, 20, 320, score_color_valid);
 	
 	always @(posedge mclk)
 	begin
 		VON <= von;
 		if(VON) begin
-			if(snake_game_color_valid) outColor <= snake_game_color;
+			if(score_color_valid) outColor <= score_color;
+			else if(snake_game_color_valid) outColor <= snake_game_color;
 			else outColor <= bg_color;
 			end
 		else outColor <= 0;
@@ -139,7 +146,7 @@ module top
 	//assign Led[1] = ticked;
 	//assign Led[3:2] = max_steel;
 	//assign Led[7:0] = snake_game_color;
-	assign Led[7:0] =  tmp;
+	assign Led[7:0] =  score;
 
 endmodule
 
