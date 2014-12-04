@@ -50,8 +50,19 @@ module coin
 	 
 	 reg [1:0] state_count;
 	 
+	 reg [(logb2(H)):0] count_x ;
+	 reg [(logb2(V)):0] count_y ;
+	 
 	 
 	 always @(posedge clk) begin
+		if(count_x > H + H/7 + 3)
+			count_x <= 0;
+		else
+			count_x <= count_x + 5;
+		if(count_y > V + V/5 + 7)
+			count_y <= 0;
+		else
+			count_y <= count_y + 3;
 		if(reset) begin
 			exists <= 0;
 			state_count <= 0;
@@ -61,9 +72,12 @@ module coin
 			if(shift_snake)
 				state_count <=  state_count + 1;
 			if(state_count == 2'b11) begin
-				x <= snake_tail_x;
-				y <= snake_tail_y;
+				//x <= snake_tail_x;
+				//y <= snake_tail_y;
+				x <= count_x;
+				y <= count_y;
 				exists <= 1;
+				state_count <= 0;
 			end
 		end else begin
 			if(x == snake_head_x && y == snake_head_y) begin

@@ -60,7 +60,7 @@ module top
 		end
 	endfunction
 	
-	wire reset = sw[0];
+	wire reset = sw[7];
 	wire gameTick;
 	
 	ClockRatio #(fpgaClk, gameClk) tick_gen (mclk, reset, gameTick);

@@ -69,6 +69,10 @@ module snake_game
 	reg snake_shift;
 	
 	reg [(addrBits-1):0] length;
+	
+	// Cola
+	wire [(logb2(H)-1):0] snake_tail_x;
+	wire [(logb2(V)-1):0] snake_tail_y;
 
 	snake #(H, V) snake_position
 	(
@@ -125,8 +129,8 @@ module snake_game
 	
 	/*  TAIL! */
 	
-	reg [(logb2(H)-1):0] snake_tail_x;
-	reg [(logb2(V)-1):0] snake_tail_y;
+	//reg [(logb2(H)-1):0] snake_tail_x;
+	//reg [(logb2(V)-1):0] snake_tail_y;
 	
 	/* COIN! */
 	
@@ -216,10 +220,10 @@ module snake_game
 					screen_write_data <= snake_index; //*
 					//screen_write_data <= test_counter;
 					screen_write_address <= y_snake*H + x_snake;
-					if(previous_exist_tail && ~exists_snake) begin
-						snake_tail_x <= x_snake;
-						snake_tail_y <= y_snake;
-					end
+					//if(previous_exist_tail && ~exists_snake) begin
+					//	snake_tail_x <= x_snake;
+					//	snake_tail_y <= y_snake;
+					//end
 					test_counter <= test_counter + 1;
 				
 				end 3: begin

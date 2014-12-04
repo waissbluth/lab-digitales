@@ -327,10 +327,12 @@ Analyzing module <snake_game> in library <work>.
 	snake_index = 32'sb00000000000000000000000000000001
 	xBits = 32'sb00000000000000000000000000000110
 	yBits = 32'sb00000000000000000000000000000101
-WARNING:Xst:2211 - "ipcore_dir/screen_mem_i.v" line 96: Instantiating black box module <screen_mem_i>.
+WARNING:Xst:2211 - "ipcore_dir/screen_mem_i.v" line 100: Instantiating black box module <screen_mem_i>.
 Module <snake_game> is correct for synthesis.
  
 Analyzing module <snake> in library <work>.
+	Calling function <logb2>.
+	Calling function <logb2>.
 	Calling function <logb2>.
 	Calling function <logb2>.
 	Calling function <logb2>.
@@ -346,7 +348,7 @@ Analyzing module <snake> in library <work>.
 	up = 32'sb00000000000000000000000000000001
 	xBits = 32'sb00000000000000000000000000000110
 	yBits = 32'sb00000000000000000000000000000101
-WARNING:Xst:2211 - "ipcore_dir/snake_mem.v" line 93: Instantiating black box module <snake_mem>.
+WARNING:Xst:2211 - "ipcore_dir/snake_mem.v" line 96: Instantiating black box module <snake_mem>.
 Module <snake> is correct for synthesis.
  
 Analyzing module <StaticCounter> in library <work>.
@@ -356,6 +358,8 @@ Analyzing module <StaticCounter> in library <work>.
 Module <StaticCounter> is correct for synthesis.
  
 Analyzing module <coin> in library <work>.
+	Calling function <logb2>.
+	Calling function <logb2>.
 	Calling function <logb2>.
 	Calling function <logb2>.
 	Calling function <logb2>.
@@ -489,6 +493,8 @@ Unit <StaticCounter> synthesized.
 
 Synthesizing Unit <coin>.
     Related source file is "coin.v".
+WARNING:Xst:647 - Input <snake_tail_x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <snake_tail_y> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <snake_x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <snake_y> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <snake_exists> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -496,15 +502,20 @@ WARNING:Xst:647 - Input <snake_exists> is never used. This port will be preserve
     Found 6-bit register for signal <x>.
     Found 5-bit register for signal <y>.
     Found 1-bit register for signal <exists>.
-    Found 6-bit comparator not equal for signal <exists$cmp_ne0001> created at line 69.
-    Found 5-bit comparator not equal for signal <exists$cmp_ne0002> created at line 69.
-    Found 6-bit comparator equal for signal <point$cmp_eq0000> created at line 69.
-    Found 5-bit comparator equal for signal <point$cmp_eq0001> created at line 69.
+    Found 7-bit up accumulator for signal <count_x>.
+    Found 7-bit comparator greater for signal <count_x$cmp_gt0000> created at line 58.
+    Found 6-bit up accumulator for signal <count_y>.
+    Found 6-bit comparator greater for signal <count_y$cmp_gt0000> created at line 62.
+    Found 6-bit comparator not equal for signal <exists$cmp_ne0001> created at line 84.
+    Found 5-bit comparator not equal for signal <exists$cmp_ne0002> created at line 84.
+    Found 6-bit comparator equal for signal <point$cmp_eq0000> created at line 84.
+    Found 5-bit comparator equal for signal <point$cmp_eq0001> created at line 84.
     Found 2-bit up counter for signal <state_count>.
     Summary:
 	inferred   1 Counter(s).
+	inferred   2 Accumulator(s).
 	inferred  13 D-type flip-flop(s).
-	inferred   4 Comparator(s).
+	inferred   6 Comparator(s).
 Unit <coin> synthesized.
 
 
@@ -538,18 +549,20 @@ Synthesizing Unit <snake>.
     Related source file is "snake.v".
 WARNING:Xst:646 - Signal <previous_last_head<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <previous_body_count_enable> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 6-bit register for signal <snake_tail_x>.
+    Found 5-bit register for signal <snake_tail_y>.
     Found 12-bit register for signal <last_head>.
     Found 1-bit register for signal <self_col>.
     Found 11-bit register for signal <addra>.
     Found 11-bit register for signal <addrb>.
     Found 1-bit register for signal <applyReset>.
     Found 1-bit register for signal <body_count_enable>.
-    Found 11-bit comparator greatequal for signal <exists$cmp_ge0000> created at line 74.
+    Found 11-bit comparator greatequal for signal <exists$cmp_ge0000> created at line 77.
     Found 12-bit register for signal <last_data>.
-    Found 11-bit comparator lessequal for signal <last_data$cmp_le0000> created at line 157.
+    Found 11-bit comparator lessequal for signal <last_data$cmp_le0000> created at line 160.
     Found 1-bit register for signal <next_wea>.
     Found 1-bit register for signal <next_write_active>.
-    Found 11-bit comparator less for signal <next_write_active$cmp_lt0000> created at line 160.
+    Found 11-bit comparator less for signal <next_write_active$cmp_lt0000> created at line 163.
     Found 6-bit register for signal <next_write_x>.
     Found 5-bit register for signal <next_write_y>.
     Found 12-bit register for signal <previous_last_head>.
@@ -557,13 +570,13 @@ WARNING:Xst:646 - Signal <previous_body_count_enable> is assigned but never used
     Found 6-bit adder for signal <read_x_p1>.
     Found 5-bit subtractor for signal <read_y_m1>.
     Found 5-bit adder for signal <read_y_p1>.
-    Found 12-bit comparator not equal for signal <self_col$cmp_ne0000> created at line 168.
+    Found 12-bit comparator not equal for signal <self_col$cmp_ne0000> created at line 176.
     Found 1-bit register for signal <wea<0>>.
     Found 1-bit register for signal <write_active>.
     Found 6-bit register for signal <write_x>.
     Found 5-bit register for signal <write_y>.
     Summary:
-	inferred  87 D-type flip-flop(s).
+	inferred  98 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
 Unit <snake> synthesized.
@@ -609,16 +622,18 @@ Unit <FontPrint> synthesized.
 
 Synthesizing Unit <snake_game>.
     Related source file is "snake_game.v".
+WARNING:Xst:653 - Signal <snake_tail_y> is used but never assigned. This sourceless signal will be automatically connected to value 00000.
+WARNING:Xst:653 - Signal <snake_tail_x> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
 WARNING:Xst:646 - Signal <snake_head<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <previous_exist_tail> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <local_y<9:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <local_x<9:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <coin_exists> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 5                                              |
     | Transitions        | 20                                             |
     | Inputs             | 3                                              |
-    | Outputs            | 5                                              |
+    | Outputs            | 4                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | reset                     (positive)           |
     | Reset type         | synchronous                                    |
@@ -628,28 +643,25 @@ WARNING:Xst:646 - Signal <coin_exists> is assigned but never used. This unconnec
     -----------------------------------------------------------------------
     Found 1-bit register for signal <color_valid>.
     Found 1-bit register for signal <clear_count_enable>.
-    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0000> created at line 158.
-    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0001> created at line 158.
-    Found 10-bit comparator less for signal <color_valid$cmp_lt0000> created at line 158.
-    Found 10-bit comparator less for signal <color_valid$cmp_lt0001> created at line 158.
+    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0000> created at line 162.
+    Found 10-bit comparator greatequal for signal <color_valid$cmp_ge0001> created at line 162.
+    Found 10-bit comparator less for signal <color_valid$cmp_lt0000> created at line 162.
+    Found 10-bit comparator less for signal <color_valid$cmp_lt0001> created at line 162.
     Found 11-bit up counter for signal <length>.
-    Found 11-bit subtractor for signal <local_x$sub0000> created at line 122.
-    Found 11-bit subtractor for signal <local_y$sub0000> created at line 123.
-    Found 1-bit register for signal <previous_exist_tail>.
+    Found 11-bit subtractor for signal <local_x$sub0000> created at line 126.
+    Found 11-bit subtractor for signal <local_y$sub0000> created at line 127.
     Found 11-bit adder for signal <screen_read_address>.
     Found 11-bit register for signal <screen_write_address>.
     Found 11-bit adder for signal <screen_write_address$addsub0000>.
     Found 2-bit register for signal <screen_write_data>.
     Found 1-bit register for signal <screen_write_enable>.
     Found 1-bit register for signal <snake_shift>.
-    Found 6-bit register for signal <snake_tail_x>.
-    Found 5-bit register for signal <snake_tail_y>.
     Found 2-bit register for signal <test_counter>.
-    Found 2-bit adder for signal <test_counter$addsub0000> created at line 223.
+    Found 2-bit adder for signal <test_counter$addsub0000> created at line 227.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   1 Counter(s).
-	inferred  31 D-type flip-flop(s).
+	inferred  19 D-type flip-flop(s).
 	inferred   5 Adder/Subtractor(s).
 	inferred   4 Comparator(s).
 Unit <snake_game> synthesized.
@@ -690,7 +702,7 @@ Unit <score_print> synthesized.
 Synthesizing Unit <top>.
     Related source file is "top.v".
 WARNING:Xst:647 - Input <btn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <sw<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw<6:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <refresh> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <game_over> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 1-bit register for signal <HSYNC>.
@@ -731,10 +743,12 @@ Macro Statistics
  10-bit up counter                                     : 4
  11-bit up counter                                     : 1
  2-bit up counter                                      : 1
-# Accumulators                                         : 1
+# Accumulators                                         : 3
  27-bit updown accumulator                             : 1
-# Registers                                            : 69
- 1-bit register                                        : 45
+ 6-bit up accumulator                                  : 1
+ 7-bit up accumulator                                  : 1
+# Registers                                            : 68
+ 1-bit register                                        : 44
  10-bit register                                       : 1
  11-bit register                                       : 5
  12-bit register                                       : 3
@@ -744,7 +758,7 @@ Macro Statistics
  6-bit register                                        : 4
  7-bit register                                        : 1
  8-bit register                                        : 2
-# Comparators                                          : 35
+# Comparators                                          : 37
  10-bit comparator greatequal                          : 3
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 15
@@ -758,7 +772,9 @@ Macro Statistics
  5-bit comparator equal                                : 1
  5-bit comparator not equal                            : 1
  6-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
  6-bit comparator not equal                            : 1
+ 7-bit comparator greater                              : 1
 # Xors                                                 : 3
  1-bit xor2                                            : 3
 
@@ -847,11 +863,13 @@ Macro Statistics
  10-bit up counter                                     : 4
  11-bit up counter                                     : 1
  2-bit up counter                                      : 1
-# Accumulators                                         : 1
+# Accumulators                                         : 3
  27-bit updown accumulator                             : 1
-# Registers                                            : 210
- Flip-Flops                                            : 210
-# Comparators                                          : 35
+ 6-bit up accumulator                                  : 1
+ 7-bit up accumulator                                  : 1
+# Registers                                            : 209
+ Flip-Flops                                            : 209
+# Comparators                                          : 37
  10-bit comparator greatequal                          : 3
  10-bit comparator greater                             : 2
  10-bit comparator less                                : 15
@@ -865,7 +883,9 @@ Macro Statistics
  5-bit comparator equal                                : 1
  5-bit comparator not equal                            : 1
  6-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
  6-bit comparator not equal                            : 1
+ 7-bit comparator greater                              : 1
 # Xors                                                 : 3
  1-bit xor2                                            : 3
 
@@ -906,11 +926,22 @@ Optimizing unit <snake_game> ...
 Optimizing unit <score_print> ...
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/self_col> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/last_data_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_x_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_x_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_x_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_x_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_x_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_x_5> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <snake_game_i/snake_position/last_head_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_4> of sequential type is unconnected in block <top>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 56.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 57.
 
 Final Macro Processing ...
 
@@ -918,8 +949,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 288
- Flip-Flops                                            : 288
+# Registers                                            : 289
+ Flip-Flops                                            : 289
 
 =========================================================================
 
@@ -948,25 +979,25 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 2000
+# BELS                             : 2009
 #      GND                         : 3
-#      INV                         : 64
+#      INV                         : 66
 #      LUT1                        : 184
-#      LUT2                        : 319
-#      LUT3                        : 74
+#      LUT2                        : 331
+#      LUT3                        : 70
 #      LUT3_L                      : 1
-#      LUT4                        : 285
+#      LUT4                        : 293
 #      LUT4_D                      : 1
 #      LUT4_L                      : 3
 #      MUXCY                       : 509
-#      MUXF5                       : 48
+#      MUXF5                       : 39
 #      VCC                         : 3
 #      XORCY                       : 506
-# FlipFlops/Latches                : 288
+# FlipFlops/Latches                : 289
 #      FD                          : 37
 #      FDC                         : 25
-#      FDE                         : 65
-#      FDR                         : 47
+#      FDE                         : 53
+#      FDR                         : 60
 #      FDRE                        : 95
 #      FDRS                        : 4
 #      FDRSE                       : 2
@@ -988,9 +1019,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      502  out of    960    52%  
- Number of Slice Flip Flops:            286  out of   1920    14%  
- Number of 4 input LUTs:                931  out of   1920    48%  
+ Number of Slices:                      511  out of    960    53%  
+ Number of Slice Flip Flops:            287  out of   1920    14%  
+ Number of 4 input LUTs:                949  out of   1920    49%  
  Number of IOs:                          34
  Number of bonded IOBs:                  23  out of     83    27%  
     IOB Flip Flops:                       2
@@ -1018,7 +1049,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-mclk                               | BUFGP                  | 251   |
+mclk                               | BUFGP                  | 252   |
 vgaClk1                            | BUFG                   | 41    |
 -----------------------------------+------------------------+-------+
 
@@ -1027,7 +1058,7 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-sw<0>                              | IBUF                   | 25    |
+sw<7>                              | IBUF                   | 25    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -1035,7 +1066,7 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 104.433ns (Maximum Frequency: 9.576MHz)
-   Minimum input arrival time before clock: 5.237ns
+   Minimum input arrival time before clock: 4.592ns
    Maximum output required time after clock: 4.182ns
    Maximum combinational path delay: No path found
 
@@ -1046,7 +1077,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
   Clock period: 104.433ns (frequency: 9.576MHz)
-  Total number of paths / destination ports: 38071999719880518000000000000000000000 / 461
+  Total number of paths / destination ports: 38071999719880518000000000000000000000 / 466
 -------------------------------------------------------------------------
 Delay:               104.433ns (Levels of Logic = 324)
   Source:            snake_game_i/length_10 (FF)
@@ -1415,24 +1446,23 @@ Delay:               5.497ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mclk'
-  Total number of paths / destination ports: 159 / 159
+  Total number of paths / destination ports: 147 / 147
 -------------------------------------------------------------------------
-Offset:              5.237ns (Levels of Logic = 3)
-  Source:            sw<0> (PAD)
-  Destination:       snake_game_i/snake_tail_y_4 (FF)
+Offset:              4.592ns (Levels of Logic = 2)
+  Source:            sw<7> (PAD)
+  Destination:       snake_game_i/snake_position/body_count_enable (FF)
   Destination Clock: mclk rising
 
-  Data Path: sw<0> to snake_game_i/snake_tail_y_4
+  Data Path: sw<7> to snake_game_i/snake_position/body_count_enable
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           102   1.106   1.244  sw_0_IBUF (sw_0_IBUF)
-     LUT4:I0->O            1   0.612   0.387  snake_game_i/snake_tail_x_not0001_SW1 (N125)
-     LUT4:I2->O           11   0.612   0.793  snake_game_i/snake_tail_x_not0001 (snake_game_i/snake_tail_x_not0001)
-     FDE:CE                    0.483          snake_game_i/snake_tail_x_0
+     IBUF:I->O           100   1.106   1.243  sw_7_IBUF (sw_7_IBUF)
+     LUT2:I0->O           13   0.612   0.836  snake_game_i/snake_position/_or00001 (snake_game_i/snake_position/_or0000)
+     FDRE:R                    0.795          snake_game_i/snake_position/body_count_enable
     ----------------------------------------
-    Total                      5.237ns (2.813ns logic, 2.424ns route)
-                                       (53.7% logic, 46.3% route)
+    Total                      4.592ns (2.513ns logic, 2.079ns route)
+                                       (54.7% logic, 45.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
@@ -1457,13 +1487,13 @@ Offset:              4.182ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.35 secs
+Total CPU time to Xst completion: 13.49 secs
  
 --> 
 
-Total memory usage is 292608 kilobytes
+Total memory usage is 293568 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   42 (   0 filtered)
+Number of warnings :   58 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

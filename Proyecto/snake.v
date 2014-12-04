@@ -32,7 +32,10 @@ module snake
 		output exists,
 		output reg self_col,
 		output end_shift,
-		output reg [(logb2(H) + logb2(V)):0] last_head
+		output reg [(logb2(H) + logb2(V)):0] last_head,
+				
+		output reg [(logb2(H)-1):0] snake_tail_x,
+		output reg [(logb2(V)-1):0] snake_tail_y
     );
 	 
 	localparam xBits = logb2(H);
@@ -158,6 +161,11 @@ module snake
 				next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
 				next_write_y <= last_data[yBits:1];
 				next_write_active <= addra < length;
+				if(next_write_active & addra >= length ) begin
+					snake_tail_x <= last_data[(xBits + yBits):(yBits + 1)];
+					snake_tail_y <= last_data[yBits:1];
+				end
+					
 				last_data <= doutb;
 				next_wea <= 1;
 				
