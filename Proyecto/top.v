@@ -39,8 +39,8 @@ module top
 	
 	localparam game_size_x = 64;
 	localparam game_size_y = 32;
-	localparam game_pos_x = 10;
-	localparam game_pos_y = 10;
+	localparam game_pos_x = 64;
+	localparam game_pos_y = 64;
 	localparam game_scale_x = 8;
 	localparam game_scale_y = 8;
 	
@@ -131,13 +131,14 @@ module top
 			score_display <= score - 3;
 	
 
-	score_print #(game_size_x, game_size_y, 4, 1) score_print_i (mclk, score_display, game_over, eval_x, eval_y, 20, 320, score_color_valid);
+	score_print #(game_size_x, game_size_y, 4, 1) score_print_i (mclk, score_display, game_over, eval_x, eval_y, 68, 352, score_color_valid);
 	
 	always @(posedge mclk)
 	begin
 		VON <= von;
 		if(VON) begin
-			if(score_color_valid) outColor <= score_color;
+			if(game_over & score_color_valid) outColor <= score_color;
+			else if(score_color_valid) outColor <= ~score_color;
 			else if(snake_game_color_valid) outColor <= snake_game_color;
 			else outColor <= bg_color;
 			end

@@ -154,8 +154,8 @@ Analyzing hierarchy for module <top> in library <work> with parameters.
 	coin_color = "00111101"
 	fpgaClk = "00000010111110101111000010000000"
 	gameClk = "00000000000000000000000000001010"
-	game_pos_x = "00000000000000000000000000001010"
-	game_pos_y = "00000000000000000000000000001010"
+	game_pos_x = "00000000000000000000000001000000"
+	game_pos_y = "00000000000000000000000001000000"
 	game_scale_x = "00000000000000000000000000001000"
 	game_scale_y = "00000000000000000000000000001000"
 	game_size_x = "00000000000000000000000001000000"
@@ -196,8 +196,8 @@ Analyzing hierarchy for module <snake_game> in library <work> with parameters.
 	bg_index = "00000000000000000000000000000000"
 	coin_color = "00111101"
 	coin_index = "00000000000000000000000000000010"
-	pos_x = "00000000000000000000000000001010"
-	pos_y = "00000000000000000000000000001010"
+	pos_x = "00000000000000000000000001000000"
+	pos_y = "00000000000000000000000001000000"
 	scale_x = "00000000000000000000000000001000"
 	scale_y = "00000000000000000000000000001000"
 	snake_color = "11111111"
@@ -266,8 +266,8 @@ WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming 
 	coin_color = 8'b00111101
 	fpgaClk = 32'sb00000010111110101111000010000000
 	gameClk = 32'sb00000000000000000000000000001010
-	game_pos_x = 32'sb00000000000000000000000000001010
-	game_pos_y = 32'sb00000000000000000000000000001010
+	game_pos_x = 32'sb00000000000000000000000001000000
+	game_pos_y = 32'sb00000000000000000000000001000000
 	game_scale_x = 32'sb00000000000000000000000000001000
 	game_scale_y = 32'sb00000000000000000000000000001000
 	game_size_x = 32'sb00000000000000000000000001000000
@@ -318,8 +318,8 @@ Analyzing module <snake_game> in library <work>.
 	bg_index = 32'sb00000000000000000000000000000000
 	coin_color = 8'b00111101
 	coin_index = 32'sb00000000000000000000000000000010
-	pos_x = 32'sb00000000000000000000000000001010
-	pos_y = 32'sb00000000000000000000000000001010
+	pos_x = 32'sb00000000000000000000000001000000
+	pos_y = 32'sb00000000000000000000000001000000
 	scale_x = 32'sb00000000000000000000000000001000
 	scale_y = 32'sb00000000000000000000000000001000
 	snake_color = 8'b11111111
@@ -982,7 +982,7 @@ WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_4> of sequenti
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 63.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 62.
 
 Final Macro Processing ...
 
@@ -1020,26 +1020,27 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 2179
+# BELS                             : 2141
 #      GND                         : 3
-#      INV                         : 76
+#      INV                         : 79
 #      LUT1                        : 186
-#      LUT2                        : 336
-#      LUT3                        : 95
-#      LUT3_L                      : 2
-#      LUT4                        : 375
-#      LUT4_L                      : 7
+#      LUT2                        : 315
+#      LUT3                        : 105
+#      LUT3_L                      : 3
+#      LUT4                        : 348
+#      LUT4_D                      : 1
+#      LUT4_L                      : 8
 #      MUXCY                       : 529
-#      MUXF5                       : 50
+#      MUXF5                       : 44
 #      VCC                         : 3
 #      XORCY                       : 517
 # FlipFlops/Latches                : 306
 #      FD                          : 39
 #      FDC                         : 25
 #      FDE                         : 63
-#      FDR                         : 71
+#      FDR                         : 74
 #      FDRE                        : 89
-#      FDRS                        : 4
+#      FDRS                        : 1
 #      FDS                         : 7
 #      FDSE                        : 8
 # RAMS                             : 4
@@ -1058,9 +1059,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      576  out of    960    60%  
+ Number of Slices:                      557  out of    960    58%  
  Number of Slice Flip Flops:            304  out of   1920    15%  
- Number of 4 input LUTs:               1077  out of   1920    56%  
+ Number of 4 input LUTs:               1045  out of   1920    54%  
  Number of IOs:                          34
  Number of bonded IOBs:                  23  out of     83    27%  
     IOB Flip Flops:                       2
@@ -1104,9 +1105,9 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 106.218ns (Maximum Frequency: 9.415MHz)
+   Minimum period: 105.968ns (Maximum Frequency: 9.437MHz)
    Minimum input arrival time before clock: 4.592ns
-   Maximum output required time after clock: 4.759ns
+   Maximum output required time after clock: 4.760ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1115,16 +1116,16 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
-  Clock period: 106.218ns (frequency: 9.415MHz)
-  Total number of paths / destination ports: 84612692386948594000000000000000000000 / 515
+  Clock period: 105.968ns (frequency: 9.437MHz)
+  Total number of paths / destination ports: 76988310106797438000000000000000000000 / 512
 -------------------------------------------------------------------------
-Delay:               106.218ns (Levels of Logic = 325)
+Delay:               105.968ns (Levels of Logic = 326)
   Source:            score_display_10 (FF)
-  Destination:       score_print_i/char_2 (FF)
+  Destination:       score_print_i/char_3 (FF)
   Source Clock:      mclk rising
   Destination Clock: mclk rising
 
-  Data Path: score_display_10 to score_print_i/char_2
+  Data Path: score_display_10 to score_print_i/char_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1189,7 +1190,7 @@ Delay:               106.218ns (Levels of Logic = 325)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<8> (score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<9> (score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<10> (score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<10>)
-     XORCY:CI->O          13   0.699   0.905  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[9]_cycleOp<11>)
+     XORCY:CI->O          10   0.699   0.819  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[9]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_lut<4> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_lut<4>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<4> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<4>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<5> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<5>)
@@ -1198,7 +1199,7 @@ Delay:               106.218ns (Levels of Logic = 325)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<8> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<9> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<10> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<10>)
-     XORCY:CI->O          11   0.699   0.862  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[10]_cycleOp<11>)
+     XORCY:CI->O          10   0.699   0.819  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[10]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_lut<4> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_lut<4>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<4> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<4>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<5> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<5>)
@@ -1207,7 +1208,7 @@ Delay:               106.218ns (Levels of Logic = 325)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<8> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<9> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<10> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<10>)
-     XORCY:CI->O          10   0.699   0.819  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_xor<11> (score_print_i/a3div/Madd_defaultCase.preRemainder_lut<11>)
+     XORCY:CI->O          11   0.699   0.862  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_xor<11> (score_print_i/a3div/Madd_defaultCase.preRemainder_lut<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a3div/Madd_defaultCase.preRemainder_lut<3> (score_print_i/a3div/Madd_defaultCase.preRemainder_lut<3>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a3div/Madd_defaultCase.preRemainder_cy<3> (score_print_i/a3div/Madd_defaultCase.preRemainder_cy<3>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.preRemainder_cy<4> (score_print_i/a3div/Madd_defaultCase.preRemainder_cy<4>)
@@ -1293,7 +1294,7 @@ Delay:               106.218ns (Levels of Logic = 325)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_cy<8> (score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_cy<9> (score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_cy<10> (score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_cy<10>)
-     XORCY:CI->O          12   0.699   0.886  score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a2div/defaultCase_boothStep[9]_cycleOp<11>)
+     XORCY:CI->O          11   0.699   0.862  score_print_i/a2div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a2div/defaultCase_boothStep[9]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[10].cycleOp_lut<3> (score_print_i/a2div/Madd_defaultCase.boothStep[10].cycleOp_lut<3>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[10].cycleOp_cy<3> (score_print_i/a2div/Madd_defaultCase.boothStep[10].cycleOp_cy<3>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[10].cycleOp_cy<4> (score_print_i/a2div/Madd_defaultCase.boothStep[10].cycleOp_cy<4>)
@@ -1313,7 +1314,7 @@ Delay:               106.218ns (Levels of Logic = 325)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_cy<8> (score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_cy<9> (score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_cy<10> (score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_cy<10>)
-     XORCY:CI->O           8   0.699   0.712  score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_xor<11> (score_print_i/a2div/Madd_defaultCase.preRemainder_lut<11>)
+     XORCY:CI->O           6   0.699   0.638  score_print_i/a2div/Madd_defaultCase.boothStep[11].cycleOp_xor<11> (score_print_i/a2div/Madd_defaultCase.preRemainder_lut<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a2div/Madd_defaultCase.preRemainder_lut<2> (score_print_i/a2div/Madd_defaultCase.preRemainder_lut<2>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a2div/Madd_defaultCase.preRemainder_cy<2> (score_print_i/a2div/Madd_defaultCase.preRemainder_cy<2>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a2div/Madd_defaultCase.preRemainder_cy<3> (score_print_i/a2div/Madd_defaultCase.preRemainder_cy<3>)
@@ -1426,7 +1427,7 @@ Delay:               106.218ns (Levels of Logic = 325)
      MUXCY:CI->O           1   0.052   0.000  score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_cy<8> (score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.052   0.000  score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_cy<9> (score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.052   0.000  score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_cy<10> (score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_cy<10>)
-     XORCY:CI->O          13   0.699   0.905  score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a1div/defaultCase_boothStep[9]_cycleOp<11>)
+     XORCY:CI->O          12   0.699   0.886  score_print_i/a1div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a1div/defaultCase_boothStep[9]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a1div/Madd_defaultCase.boothStep[10].cycleOp_lut<2> (score_print_i/a1div/Madd_defaultCase.boothStep[10].cycleOp_lut<2>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a1div/Madd_defaultCase.boothStep[10].cycleOp_cy<2> (score_print_i/a1div/Madd_defaultCase.boothStep[10].cycleOp_cy<2>)
      MUXCY:CI->O           1   0.052   0.000  score_print_i/a1div/Madd_defaultCase.boothStep[10].cycleOp_cy<3> (score_print_i/a1div/Madd_defaultCase.boothStep[10].cycleOp_cy<3>)
@@ -1451,13 +1452,14 @@ Delay:               106.218ns (Levels of Logic = 325)
      XORCY:CI->O           4   0.699   0.568  score_print_i/a1div/Madd_defaultCase.boothStep[11].cycleOp_xor<11> (score_print_i/a1div/defaultCase_boothStep[11]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_lut<1> (score_print_i/a1div/Madd_defaultCase.preRemainder_lut<1>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_cy<1> (score_print_i/a1div/Madd_defaultCase.preRemainder_cy<1>)
-     XORCY:CI->O           3   0.699   0.454  score_print_i/a1div/Madd_defaultCase.preRemainder_xor<2> (score_print_i/a1div/defaultCase_preRemainder<2>)
-     LUT4:I3->O            1   0.612   0.387  score_print_i/char_mux0000<4>94 (score_print_i/char_mux0000<4>94)
-     LUT4:I2->O            1   0.612   0.000  score_print_i/char_mux0000<4>3531 (score_print_i/char_mux0000<4>353)
-     FDS:D                     0.268          score_print_i/char_2
+     MUXCY:CI->O           0   0.052   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_cy<2> (score_print_i/a1div/Madd_defaultCase.preRemainder_cy<2>)
+     XORCY:CI->O           2   0.699   0.383  score_print_i/a1div/Madd_defaultCase.preRemainder_xor<3> (score_print_i/a1div/defaultCase_preRemainder<3>)
+     LUT4:I3->O            1   0.612   0.360  score_print_i/char_mux0000<3>139 (score_print_i/char_mux0000<3>139)
+     LUT4:I3->O            1   0.612   0.000  score_print_i/char_mux0000<3>233 (score_print_i/char_mux0000<3>)
+     FD:D                      0.268          score_print_i/char_3
     ----------------------------------------
-    Total                    106.218ns (77.939ns logic, 28.279ns route)
-                                       (73.4% logic, 26.6% route)
+    Total                    105.968ns (77.991ns logic, 27.977ns route)
+                                       (73.6% logic, 26.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'vgaClk1'
@@ -1508,7 +1510,7 @@ Offset:              4.592ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
   Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
-Offset:              4.759ns (Levels of Logic = 1)
+Offset:              4.760ns (Levels of Logic = 1)
   Source:            snake_game_i/snake_position/self_col (FF)
   Destination:       Led<0> (PAD)
   Source Clock:      mclk rising
@@ -1517,21 +1519,21 @@ Offset:              4.759ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            42   0.514   1.076  snake_game_i/snake_position/self_col (snake_game_i/snake_position/self_col)
+     FDRE:C->Q            48   0.514   1.077  snake_game_i/snake_position/self_col (snake_game_i/snake_position/self_col)
      OBUF:I->O                 3.169          Led_0_OBUF (Led<0>)
     ----------------------------------------
-    Total                      4.759ns (3.683ns logic, 1.076ns route)
+    Total                      4.760ns (3.683ns logic, 1.077ns route)
                                        (77.4% logic, 22.6% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 15.16 secs
+Total CPU time to Xst completion: 14.95 secs
  
 --> 
 
-Total memory usage is 296896 kilobytes
+Total memory usage is 295872 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   50 (   0 filtered)
