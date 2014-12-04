@@ -121,7 +121,7 @@ module top
 	/* Score */
 	wire score_color_valid;
 
-	score_print #(game_size_x, game_size_y, 2, 2) score_print_i (mclk, score, eval_x, eval_y, 20, 320, score_color_valid);
+	score_print #(game_size_x, game_size_y, 4, 1) score_print_i (mclk, score, eval_x, eval_y, 20, 320, score_color_valid);
 	
 	always @(posedge mclk)
 	begin

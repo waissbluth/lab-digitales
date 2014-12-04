@@ -22,7 +22,7 @@ module score_print #(
 		parameter H = 32,
 		parameter V = 32,
 		parameter size = 2,
-		parameter spacing = 2
+		parameter spacing = 1
 )(		
 		input clk,
 		input [(logb2(H*V)-1):0] score,
