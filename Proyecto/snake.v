@@ -62,20 +62,16 @@ module snake
 	wire [(xBits + yBits):0] dina, doutb;
 	
 	assign dina = {write_x, write_y, write_active};
-
-	wire [(xBits-1):0] read_x = doutb[(xBits + yBits):(yBits + 1)];
-	wire [(yBits-1):0] read_y = doutb[yBits:1];
-	wire read_active = doutb[0];
-	
-	assign x = read_x;
-	assign y = read_y;
-	assign exists = read_active;
-	
 	reg [0:0] wea;
 	
 	wire [(addrBits-1):0] addr_snake;
 	reg [(addrBits-1):0] addra;
 	reg [(addrBits-1):0] addrb;
+
+	localparam h_index = 5;
+
+	wire read_active = doutb[0];
+	assign exists = read_active & (addrb >= h_index);
 	
 	always @(posedge clk)
 	begin
@@ -83,6 +79,16 @@ module snake
 		addra <= addrb;
 		
 	end
+
+	reg [(xBits + yBits):0] previous_last_head;
+	wire [(xBits-1):0] read_x = doutb[(xBits + yBits):(yBits + 1)] & {(xBits){addrb != h_index}} | previous_last_head[(xBits + yBits):(yBits + 1)] & {(xBits){addrb == h_index}};
+	wire [(yBits-1):0] read_y = doutb[yBits:1] & {(xBits){addrb != h_index}} | previous_last_head[yBits:1] & {(xBits){addrb == h_index}};
+
+	
+	assign x = read_x;
+	assign y = read_y;
+
+
 
 	snake_mem snake_mem_i
 	(
@@ -117,10 +123,10 @@ module snake
 	wire [(xBits-1):0] read_x_p1, read_x_m1;
 	wire [(yBits-1):0] read_y_p1, read_y_m1;
 	
-	assign read_x_p1 = read_x + 1;
-	assign read_x_m1 = read_x - 1;
-	assign read_y_p1 = read_y + 1;
-	assign read_y_m1 = read_y - 1;
+	assign read_x_p1 = last_head[(xBits + yBits):(yBits + 1)] + 1;
+	assign read_x_m1 = last_head[(xBits + yBits):(yBits + 1)] - 1;
+	assign read_y_p1 = last_head[yBits:1] + 1;
+	assign read_y_m1 = last_head[yBits:1] - 1;
 	
 	reg applyReset;
 	reg next_wea;
@@ -129,38 +135,48 @@ module snake
 	reg next_write_active;
 	reg previous_body_count_enable;
 	
+
 	// Movemos la serpiente
 	always @(posedge clk) begin
 		if(reset) begin
 			self_col <= 0;
 			last_data <= {halfX, halfY, 1'b1};
+			previous_last_head <= {halfX, halfY, 1'b1};
 			applyReset <= 1;
 			next_wea <= 0;
 			
 		end else if(body_count_enable & ~body_overflow) begin	
-			if(~|(addr_snake)) begin
+			if(addr_snake == 2) begin
 				next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
 				next_write_y <= last_data[yBits:1];
 				next_write_active <= addra < length;
-				
-				last_data <= doutb;
-				
 				next_wea <= 1;
+				last_data <= doutb;
+				last_head <= last_data;
+				previous_last_head <= last_head;
+			end else if(addr_snake > 2) begin
+				next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
+				next_write_y <= last_data[yBits:1];
+				next_write_active <= addra < length;
+				last_data <= doutb;
+				next_wea <= 1;
+				
 			end
+			
 			applyReset <= 0;
 			
 			if(last_head == doutb) self_col <= 1; // FIX
 			
 		end else if(~applyReset) begin
 			case(move)
-				default: last_data <= {read_x, read_y_p1, 1'b1 };
-				right: last_data <= {read_x_p1, read_y, 1'b1 };
-				down: last_data <= {read_x, read_y_m1, 1'b1 };
-				left: last_data <= {read_x_m1, read_y, 1'b1 };
+				default: last_data <= {last_head[(xBits + yBits):(yBits + 1)], read_y_p1, 1'b1 };
+				right: last_data <= {read_x_p1, last_head[yBits:1], 1'b1 };
+				down: last_data <= {last_head[(xBits + yBits):(yBits + 1)], read_y_m1, 1'b1 };
+				left: last_data <= {read_x_m1, last_head[yBits:1], 1'b1 };
 			
 			endcase
 			
-			last_head <= {read_x, read_y, 1'b1};
+			
 			next_wea <= 0;
 		end
 		

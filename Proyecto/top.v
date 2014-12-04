@@ -35,7 +35,7 @@ module top
 	);
 	
 	localparam fpgaClk = 50_000_000;
-	localparam gameClk = 5;
+	localparam gameClk = 10;
 	
 	localparam game_size_x = 64;
 	localparam game_size_y = 32;
@@ -44,6 +44,7 @@ module top
 	localparam game_scale_x = 8;
 	localparam game_scale_y = 8;
 	
+	localparam snake_head_color = 8'b111_000_11;
 	localparam snake_color = 8'b111_111_11;
 	localparam coin_color = 8'b001_111_01;
 	localparam bg_box_color = 8'b100_100_10;
@@ -103,7 +104,7 @@ module top
 		game_size_x, game_size_y,
 		game_pos_x, game_pos_y,
 		game_scale_x, game_scale_y,
-		snake_color, coin_color, bg_box_color
+		snake_head_color, snake_color, coin_color, bg_box_color
 	)
 	snake_game_i
 	(

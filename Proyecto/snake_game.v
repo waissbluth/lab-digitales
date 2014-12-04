@@ -26,13 +26,14 @@ module snake_game
 		parameter pos_y = 10,
 		parameter scale_x = 2,
 		parameter scale_y = 2,
+		parameter snake_head_color = 8'b111_000_11,
 		parameter snake_color = 8'b111_111_11,
 		parameter coin_color = 8'b111_111_00,
 		parameter bg_color = 8'b000_000_00
 	)
 	(
 		input clk, reset,
-		input gameTick,
+		input gameTickIn,
 		input [1:0] move,
 		input [9:0] eval_x, eval_y,
 
@@ -58,6 +59,7 @@ module snake_game
 	localparam bg_index = 0;
 	localparam snake_index = 1;
 	localparam coin_index = 2;
+	localparam snake_head_index = 3;
 	
 	/* Posicion, movimiento y colisión serpiente */
 	wire [(xBits-1):0] x_snake;
@@ -145,7 +147,8 @@ module snake_game
 			length <= length + 1;
 	end
 	
-	
+   /* Crece pa 'elante */
+	wire gameTick = point | gameTickIn;
 	
 	/* Calculo color_valid */
 	always @(posedge clk) begin
@@ -181,7 +184,7 @@ module snake_game
 	/* Estado 3: Dibujar moneda(s) */
 	
 	/* Maquina de estados */
-	reg [1:0] state;
+	reg [2:0] state;
 	reg previous_exist_tail;
 	
 	/* Test counter*/
@@ -195,7 +198,8 @@ module snake_game
 			if(gameTick) state <= 1;
 			else if(clear_overflow) state <= 2;
 			else if(end_shift_snake) state <= 3;
-			else if(state == 3) state <= 0;
+			else if(state == 3) state <= 4;
+			else if(state == 4) state <= 0;
 			
 			case (state)
 				default:
@@ -209,8 +213,8 @@ module snake_game
 				
 				end 2: begin
 					screen_write_enable <= exists_snake;
-					//screen_write_data <= snake_index; //*
-					screen_write_data <= test_counter;
+					screen_write_data <= snake_index; //*
+					//screen_write_data <= test_counter;
 					screen_write_address <= y_snake*H + x_snake;
 					if(previous_exist_tail && ~exists_snake) begin
 						snake_tail_x <= x_snake;
@@ -222,6 +226,10 @@ module snake_game
 					screen_write_enable <= coin_exists;
 					screen_write_data <= coin_index;
 					screen_write_address <= coin_y*H + coin_x;
+				end 4: begin
+					screen_write_enable <= 1;
+					screen_write_data <= snake_head_index;
+					screen_write_address <=  snake_head[yBits:1]*H + snake_head[yBits + xBits:yBits+1];
 				end
 			endcase
 			previous_exist_tail <= exists_snake;
@@ -232,6 +240,7 @@ module snake_game
 	wire [1:0] curr_index = screen_read_data;
 	assign out_color = 	{(8){curr_index == bg_index}} & bg_color |
 								{(8){curr_index == coin_index}} & coin_color |
+								{(8){curr_index == snake_head_index}} & snake_head_color |
 								{(8){curr_index == snake_index}} & snake_color;
 						
 	// TODO t
