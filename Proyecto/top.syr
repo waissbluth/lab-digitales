@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: top.prj
 
@@ -154,7 +154,6 @@ Analyzing hierarchy for module <top> in library <work> with parameters.
 	bg_color_paused = "01001011"
 	coin_color = "00111101"
 	fpgaClk = "00000010111110101111000010000000"
-	gameClk = "00000000000000000000000000001010"
 	game_pos_x = "00000000000000000000000001000000"
 	game_pos_y = "00000000000000000000000001000000"
 	game_scale_x = "00000000000000000000000000001000"
@@ -166,7 +165,6 @@ Analyzing hierarchy for module <top> in library <work> with parameters.
 	snake_head_color = "11100011"
 
 Analyzing hierarchy for module <ClockRatio> in library <work> with parameters.
-	demRatio = "00000000000000000000000000001010"
 	numRatio = "00000010111110101111000010000000"
 	numSize = "00000000000000000000000000011011"
 
@@ -258,8 +256,9 @@ Analyzing hierarchy for module <font_rom> in library <work>.
 =========================================================================
 Analyzing top module <top>.
 WARNING:Xst:863 - "top.v" line 33: Name conflict (<vsync> and <VSYNC>, renaming vsync as vsync_rnm0).
-WARNING:Xst:863 - "top.v" line 92: Name conflict (<VON> and <von>, renaming VON as von_rnm0).
+WARNING:Xst:863 - "top.v" line 95: Name conflict (<VON> and <von>, renaming VON as von_rnm0).
 WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming hsync as hsync_rnm0).
+	Calling function <logb2>.
 	Calling function <logb2>.
 	Calling function <logb2>.
 	bg_box_color = 8'b10010010
@@ -267,7 +266,6 @@ WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming 
 	bg_color_paused = 8'b01001011
 	coin_color = 8'b00111101
 	fpgaClk = 32'sb00000010111110101111000010000000
-	gameClk = 32'sb00000000000000000000000000001010
 	game_pos_x = 32'sb00000000000000000000000001000000
 	game_pos_y = 32'sb00000000000000000000000001000000
 	game_scale_x = 32'sb00000000000000000000000000001000
@@ -280,7 +278,7 @@ WARNING:Xst:863 - "top.v" line 33: Name conflict (<hsync> and <HSYNC>, renaming 
 Module <top> is correct for synthesis.
  
 Analyzing module <ClockRatio> in library <work>.
-	demRatio = 32'sb00000000000000000000000000001010
+	Calling function <logb2>.
 	numRatio = 32'sb00000010111110101111000010000000
 	numSize = 32'sb00000000000000000000000000011011
 Module <ClockRatio> is correct for synthesis.
@@ -416,11 +414,13 @@ Performing bidirectional port resolution...
 Synthesizing Unit <ClockRatio>.
     Related source file is "ClockRatio.v".
     Found 27-bit updown accumulator for signal <currrentCount>.
-    Found 27-bit comparator greatequal for signal <currrentCount$cmp_ge0000> created at line 45.
+    Found 27-bit adder for signal <currrentCount$addsub0000> created at line 47.
+    Found 27-bit comparator greatequal for signal <currrentCount$cmp_ge0000> created at line 46.
     Found 1-bit register for signal <reClk>.
     Summary:
 	inferred   1 Accumulator(s).
 	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <ClockRatio> synthesized.
 
@@ -754,16 +754,18 @@ WARNING:Xst:646 - Signal <refresh> is assigned but never used. This unconnected 
     Found 1-bit register for signal <HSYNC>.
     Found 1-bit register for signal <VSYNC>.
     Found 10-bit adder for signal <eval_y>.
+    Found 26-bit register for signal <gameClk>.
+    Found 9-bit adder carry out for signal <gameClk$addsub0000> created at line 143.
     Found 8-bit register for signal <outColor>.
     Found 1-bit register for signal <playing>.
     Found 11-bit register for signal <score_display>.
-    Found 11-bit comparator less for signal <score_display$cmp_lt0000> created at line 139.
-    Found 11-bit subtractor for signal <score_display$sub0000> created at line 142.
+    Found 11-bit comparator less for signal <score_display$cmp_lt0000> created at line 147.
+    Found 11-bit subtractor for signal <score_display$sub0000> created at line 150.
     Found 1-bit register for signal <vgaClk>.
     Found 1-bit register for signal <von_rnm0>.
     Summary:
-	inferred  24 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
+	inferred  50 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <top> synthesized.
 
@@ -775,13 +777,14 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  2048x8-bit ROM                                        : 1
-# Adders/Subtractors                                   : 74
+# Adders/Subtractors                                   : 76
  10-bit adder                                          : 1
  11-bit adder                                          : 2
  11-bit subtractor                                     : 5
  12-bit adder                                          : 50
  12-bit subtractor                                     : 1
  14-bit subtractor                                     : 3
+ 27-bit adder                                          : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
  4-bit adder                                           : 1
@@ -790,6 +793,7 @@ Macro Statistics
  5-bit subtractor                                      : 1
  6-bit adder                                           : 5
  6-bit subtractor                                      : 1
+ 9-bit adder carry out                                 : 1
 # Counters                                             : 6
  10-bit up counter                                     : 4
  11-bit up counter                                     : 1
@@ -798,12 +802,13 @@ Macro Statistics
  27-bit updown accumulator                             : 1
  6-bit up accumulator                                  : 1
  7-bit up accumulator                                  : 1
-# Registers                                            : 71
+# Registers                                            : 72
  1-bit register                                        : 46
  10-bit register                                       : 1
  11-bit register                                       : 6
  12-bit register                                       : 3
  2-bit register                                        : 3
+ 26-bit register                                       : 1
  4-bit register                                        : 1
  5-bit register                                        : 4
  6-bit register                                        : 4
@@ -861,8 +866,25 @@ Loading core <snake_mem> for timing and area information for instance <snake_mem
 Loading core <screen_mem_i> for timing and area information for instance <snake_screen_mem>.
 INFO:Xst:2261 - The FF/Latch <posXChar_7> in Unit <score_print_i> is equivalent to the following 2 FFs/Latches, which will be removed : <posXChar_8> <posXChar_9> 
 WARNING:Xst:1710 - FF/Latch <posXChar_7> (without init value) has a constant value of 0 in block <score_print_i>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_25> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_24> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_23> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_22> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_21> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_20> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_19> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_18> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_17> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_16> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_15> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_14> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_13> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_12> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <gameClk_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <keyboardCtrl>.
 WARNING:Xst:2677 - Node <previous_last_head_0> of sequential type is unconnected in block <snake_position>.
+WARNING:Xst:2404 -  FFs/Latches <gameClk<25:10>> (without init value) have a constant value of 0 in block <top>.
 WARNING:Xst:2404 -  FFs/Latches <posXChar<9:7>> (without init value) have a constant value of 0 in block <score_print>.
 
 Synthesizing (advanced) Unit <font_rom>.
@@ -893,12 +915,13 @@ Macro Statistics
 # FSMs                                                 : 2
 # RAMs                                                 : 1
  2048x8-bit single-port block RAM                      : 1
-# Adders/Subtractors                                   : 74
+# Adders/Subtractors                                   : 76
  10-bit adder                                          : 1
  11-bit adder                                          : 2
  11-bit subtractor                                     : 3
  12-bit adder                                          : 50
  12-bit subtractor                                     : 4
+ 27-bit adder                                          : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
  4-bit adder                                           : 1
@@ -908,6 +931,7 @@ Macro Statistics
  6-bit adder                                           : 5
  6-bit subtractor                                      : 1
  8-bit subtractor                                      : 1
+ 9-bit adder carry out                                 : 1
  9-bit subtractor                                      : 1
 # Counters                                             : 6
  10-bit up counter                                     : 4
@@ -917,8 +941,8 @@ Macro Statistics
  27-bit updown accumulator                             : 1
  6-bit up accumulator                                  : 1
  7-bit up accumulator                                  : 1
-# Registers                                            : 219
- Flip-Flops                                            : 219
+# Registers                                            : 229
+ Flip-Flops                                            : 229
 # Comparators                                          : 81
  10-bit comparator greatequal                          : 30
  10-bit comparator greater                             : 2
@@ -946,6 +970,8 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <top> ...
+
+Optimizing unit <ClockRatio> ...
 
 Optimizing unit <ps2_rx> ...
 
@@ -984,7 +1010,7 @@ WARNING:Xst:2677 - Node <snake_game_i/snake_position/snake_tail_y_4> of sequenti
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 62.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 65.
 
 Final Macro Processing ...
 
@@ -992,8 +1018,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 306
- Flip-Flops                                            : 306
+# Registers                                            : 316
+ Flip-Flops                                            : 316
 
 =========================================================================
 
@@ -1022,28 +1048,28 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 2144
+# BELS                             : 2195
 #      GND                         : 3
-#      INV                         : 80
-#      LUT1                        : 184
-#      LUT2                        : 316
-#      LUT3                        : 107
-#      LUT3_L                      : 3
-#      LUT4                        : 350
+#      INV                         : 87
+#      LUT1                        : 181
+#      LUT2                        : 306
+#      LUT3                        : 118
+#      LUT3_L                      : 2
+#      LUT4                        : 371
 #      LUT4_D                      : 1
-#      LUT4_L                      : 8
-#      MUXCY                       : 528
-#      MUXF5                       : 44
+#      LUT4_L                      : 7
+#      MUXCY                       : 540
+#      MUXF5                       : 47
 #      VCC                         : 3
-#      XORCY                       : 517
-# FlipFlops/Latches                : 306
-#      FD                          : 39
+#      XORCY                       : 529
+# FlipFlops/Latches                : 316
+#      FD                          : 47
 #      FDC                         : 25
 #      FDE                         : 61
-#      FDR                         : 75
+#      FDR                         : 76
 #      FDRE                        : 90
 #      FDRS                        : 1
-#      FDS                         : 7
+#      FDS                         : 8
 #      FDSE                        : 8
 # RAMS                             : 4
 #      RAMB16_S9                   : 1
@@ -1061,9 +1087,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      559  out of    960    58%  
- Number of Slice Flip Flops:            304  out of   1920    15%  
- Number of 4 input LUTs:               1049  out of   1920    54%  
+ Number of Slices:                      573  out of    960    59%  
+ Number of Slice Flip Flops:            314  out of   1920    16%  
+ Number of 4 input LUTs:               1073  out of   1920    55%  
  Number of IOs:                          34
  Number of bonded IOBs:                  23  out of     83    27%  
     IOB Flip Flops:                       2
@@ -1091,7 +1117,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-mclk                               | BUFGP                  | 269   |
+mclk                               | BUFGP                  | 279   |
 vgaClk1                            | BUFG                   | 41    |
 -----------------------------------+------------------------+-------+
 
@@ -1107,9 +1133,9 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 105.968ns (Maximum Frequency: 9.437MHz)
-   Minimum input arrival time before clock: 4.592ns
-   Maximum output required time after clock: 4.547ns
+   Minimum period: 107.197ns (Maximum Frequency: 9.329MHz)
+   Minimum input arrival time before clock: 6.008ns
+   Maximum output required time after clock: 4.533ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1118,10 +1144,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mclk'
-  Clock period: 105.968ns (frequency: 9.437MHz)
-  Total number of paths / destination ports: 76988310106797438000000000000000000000 / 514
+  Clock period: 107.197ns (frequency: 9.329MHz)
+  Total number of paths / destination ports: 92649989711513146000000000000000000000 / 581
 -------------------------------------------------------------------------
-Delay:               105.968ns (Levels of Logic = 326)
+Delay:               107.197ns (Levels of Logic = 327)
   Source:            score_display_10 (FF)
   Destination:       score_print_i/char_3 (FF)
   Source Clock:      mclk rising
@@ -1131,7 +1157,7 @@ Delay:               105.968ns (Levels of Logic = 326)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.514   0.509  score_display_10 (score_display_10)
+     FDR:C->Q              3   0.514   0.603  score_display_10 (score_display_10)
      LUT1:I0->O            1   0.612   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[1].cycleOp_cy<0>_rt (score_print_i/a3div/Madd_defaultCase.boothStep[1].cycleOp_cy<0>_rt)
      MUXCY:S->O            0   0.404   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[1].cycleOp_cy<0> (score_print_i/a3div/Madd_defaultCase.boothStep[1].cycleOp_cy<0>)
      XORCY:CI->O           1   0.699   0.509  score_print_i/a3div/Madd_defaultCase.boothStep[1].cycleOp_xor<1> (score_print_i/a3div/Madd_defaultCase.boothStep[2].cycleOp_lut<2>)
@@ -1192,7 +1218,7 @@ Delay:               105.968ns (Levels of Logic = 326)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<8> (score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<9> (score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<10> (score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_cy<10>)
-     XORCY:CI->O          10   0.699   0.819  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[9]_cycleOp<11>)
+     XORCY:CI->O          11   0.699   0.862  score_print_i/a3div/Madd_defaultCase.boothStep[9].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[9]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_lut<4> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_lut<4>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<4> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<4>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<5> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<5>)
@@ -1201,7 +1227,7 @@ Delay:               105.968ns (Levels of Logic = 326)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<8> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<8>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<9> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<9>)
      MUXCY:CI->O           0   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<10> (score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_cy<10>)
-     XORCY:CI->O          10   0.699   0.819  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[10]_cycleOp<11>)
+     XORCY:CI->O          11   0.699   0.862  score_print_i/a3div/Madd_defaultCase.boothStep[10].cycleOp_xor<11> (score_print_i/a3div/defaultCase_boothStep[10]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_lut<4> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_lut<4>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<4> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<4>)
      MUXCY:CI->O           1   0.051   0.000  score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<5> (score_print_i/a3div/Madd_defaultCase.boothStep[11].cycleOp_cy<5>)
@@ -1454,65 +1480,67 @@ Delay:               105.968ns (Levels of Logic = 326)
      XORCY:CI->O           4   0.699   0.568  score_print_i/a1div/Madd_defaultCase.boothStep[11].cycleOp_xor<11> (score_print_i/a1div/defaultCase_boothStep[11]_cycleOp<11>)
      LUT2:I1->O            1   0.612   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_lut<1> (score_print_i/a1div/Madd_defaultCase.preRemainder_lut<1>)
      MUXCY:S->O            1   0.404   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_cy<1> (score_print_i/a1div/Madd_defaultCase.preRemainder_cy<1>)
-     MUXCY:CI->O           0   0.052   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_cy<2> (score_print_i/a1div/Madd_defaultCase.preRemainder_cy<2>)
+     MUXCY:CI->O           0   0.051   0.000  score_print_i/a1div/Madd_defaultCase.preRemainder_cy<2> (score_print_i/a1div/Madd_defaultCase.preRemainder_cy<2>)
      XORCY:CI->O           2   0.699   0.383  score_print_i/a1div/Madd_defaultCase.preRemainder_xor<3> (score_print_i/a1div/defaultCase_preRemainder<3>)
-     LUT4:I3->O            1   0.612   0.360  score_print_i/char_mux0000<3>139 (score_print_i/char_mux0000<3>139)
-     LUT4:I3->O            1   0.612   0.000  score_print_i/char_mux0000<3>233 (score_print_i/char_mux0000<3>)
+     LUT4:I3->O            2   0.612   0.380  score_print_i/char_mux0000<3>98 (score_print_i/char_mux0000<3>98)
+     MUXF5:S->O            1   0.641   0.387  score_print_i/char_mux0000<3>139_SW0 (N115)
+     LUT4:I2->O            1   0.612   0.000  score_print_i/char_mux0000<3>233 (score_print_i/char_mux0000<3>)
      FD:D                      0.268          score_print_i/char_3
     ----------------------------------------
-    Total                    105.968ns (77.991ns logic, 27.977ns route)
-                                       (73.6% logic, 26.4% route)
+    Total                    107.197ns (78.632ns logic, 28.565ns route)
+                                       (73.4% logic, 26.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'vgaClk1'
-  Clock period: 5.497ns (frequency: 181.914MHz)
+  Clock period: 5.580ns (frequency: 179.208MHz)
   Total number of paths / destination ports: 1090 / 111
 -------------------------------------------------------------------------
-Delay:               5.497ns (Levels of Logic = 4)
-  Source:            vgaDriver/vc_8 (FF)
+Delay:               5.580ns (Levels of Logic = 4)
+  Source:            vgaDriver/vc_4 (FF)
   Destination:       vgaDriver/v_9 (FF)
   Source Clock:      vgaClk1 rising
   Destination Clock: vgaClk1 rising
 
-  Data Path: vgaDriver/vc_8 to vgaDriver/v_9
+  Data Path: vgaDriver/vc_4 to vgaDriver/v_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             5   0.514   0.607  vgaDriver/vc_8 (vgaDriver/vc_8)
-     LUT3:I1->O            1   0.612   0.509  vgaDriver/von_cmp_gt000112 (vgaDriver/von_cmp_gt000112)
-     LUT3:I0->O            3   0.612   0.520  vgaDriver/von_cmp_gt0001113 (vgaDriver/von_cmp_gt00012)
-     LUT3:I1->O            1   0.612   0.000  vgaDriver/v_not000112 (vgaDriver/v_not000111)
+     FDRE:C->Q             5   0.514   0.690  vgaDriver/vc_4 (vgaDriver/vc_4)
+     LUT4:I0->O            1   0.612   0.426  vgaDriver/von_cmp_gt000117 (vgaDriver/von_cmp_gt000117)
+     LUT3:I1->O            3   0.612   0.603  vgaDriver/von_cmp_gt0001113 (vgaDriver/von_cmp_gt00012)
+     LUT3:I0->O            1   0.612   0.000  vgaDriver/v_not000112 (vgaDriver/v_not000111)
      MUXF5:I0->O          10   0.278   0.750  vgaDriver/v_not00011_f5 (vgaDriver/v_not0001)
      FDRE:CE                   0.483          vgaDriver/v_0
     ----------------------------------------
-    Total                      5.497ns (3.111ns logic, 2.386ns route)
-                                       (56.6% logic, 43.4% route)
+    Total                      5.580ns (3.111ns logic, 2.469ns route)
+                                       (55.8% logic, 44.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mclk'
   Total number of paths / destination ports: 151 / 151
 -------------------------------------------------------------------------
-Offset:              4.592ns (Levels of Logic = 2)
+Offset:              6.008ns (Levels of Logic = 3)
   Source:            sw<7> (PAD)
-  Destination:       snake_game_i/snake_position/body_count_enable (FF)
+  Destination:       snake_game_i/snake_position/next_write_active (FF)
   Destination Clock: mclk rising
 
-  Data Path: sw<7> to snake_game_i/snake_position/body_count_enable
+  Data Path: sw<7> to snake_game_i/snake_position/next_write_active
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           103   1.106   1.244  sw_7_IBUF (sw_7_IBUF)
-     LUT2:I0->O           13   0.612   0.836  snake_game_i/snake_position/_or00001 (snake_game_i/snake_position/_or0000)
-     FDRE:R                    0.795          snake_game_i/snake_position/body_count_enable
+     IBUF:I->O            59   1.106   1.232  sw_7_IBUF (sw_7_IBUF)
+     LUT4:I0->O           46   0.612   1.146  _or00002 (_or0000)
+     LUT4:I1->O           12   0.612   0.817  snake_game_i/snake_position/next_write_x_not00011 (snake_game_i/snake_position/next_write_x_not0001)
+     FDE:CE                    0.483          snake_game_i/snake_position/next_write_active
     ----------------------------------------
-    Total                      4.592ns (2.513ns logic, 2.079ns route)
-                                       (54.7% logic, 45.3% route)
+    Total                      6.008ns (2.813ns logic, 3.195ns route)
+                                       (46.8% logic, 53.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
   Total number of paths / destination ports: 18 / 18
 -------------------------------------------------------------------------
-Offset:              4.547ns (Levels of Logic = 1)
+Offset:              4.533ns (Levels of Logic = 1)
   Source:            keyboardCtrl/b_reg_3 (FF)
   Destination:       Led<2> (PAD)
   Source Clock:      mclk rising
@@ -1521,23 +1549,23 @@ Offset:              4.547ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.514   0.864  keyboardCtrl/b_reg_3 (keyboardCtrl/b_reg_3)
+     FDC:C->Q             14   0.514   0.850  keyboardCtrl/b_reg_3 (keyboardCtrl/b_reg_3)
      OBUF:I->O                 3.169          Led_2_OBUF (Led<2>)
     ----------------------------------------
-    Total                      4.547ns (3.683ns logic, 0.864ns route)
-                                       (81.0% logic, 19.0% route)
+    Total                      4.533ns (3.683ns logic, 0.850ns route)
+                                       (81.2% logic, 18.8% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.80 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.05 secs
  
 --> 
 
-Total memory usage is 296448 kilobytes
+Total memory usage is 297664 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   50 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 

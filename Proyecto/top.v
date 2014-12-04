@@ -35,7 +35,7 @@ module top
 	);
 	
 	localparam fpgaClk = 50_000_000;
-	localparam gameClk = 10;
+	//localparam gameClk = 10;
 	
 	localparam game_size_x = 64;
 	localparam game_size_y = 32;
@@ -64,7 +64,10 @@ module top
 	wire reset = sw[7];
 	wire gameTick;
 	
-	ClockRatio #(fpgaClk, gameClk) tick_gen (mclk, reset, gameTick);
+	reg [(logb2(fpgaClk)-1):0] gameClk;
+	
+	
+	ClockRatio #(fpgaClk) tick_gen (mclk, reset, gameClk, gameTick);
 	
 	/* Desde el teclado */
 	wire keyboardEnable;
@@ -119,7 +122,7 @@ module top
 	)
 	snake_game_i
 	(
-		mclk, reset,
+		mclk, reset | ((keyboardData == 8'b0010_1001 & keyRecieved) & game_over),
 		gameTick & ~game_over & playing,
 		move,
 		eval_x, eval_y,
@@ -130,10 +133,15 @@ module top
 		score
 	);
 	
+
 	/* Score */
 	wire score_color_valid;
 	
 	reg [(logb2(game_size_x*game_size_y)-1):0] score_display;
+	
+		always @(posedge mclk) begin
+		gameClk <= 10 + score_display/4;
+	end
 	
 	always @(posedge mclk)
 		if(score < 3)

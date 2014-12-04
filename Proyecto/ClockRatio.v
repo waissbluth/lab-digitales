@@ -19,9 +19,10 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module ClockRatio
-	#(	parameter numRatio = 25000000, parameter demRatio = 22050)
+	#(	parameter numRatio = 25000000)
 	( 	input clk,
 		input reset,
+		input [logb2(numRatio)-1:0] demRatio,
 		output outClk);
 		
 	localparam numSize = logb2(numRatio) + 1;
