@@ -34,6 +34,7 @@ module score_print #(
     );
 	 
 	 localparam score_bits = logb2(H*V);
+	 localparam width = 8;
 	 
 	function integer logb2;
 		input integer n;
@@ -44,8 +45,8 @@ module score_print #(
 		end
 	endfunction
 	
-	wire [2:0] subsX;
-	wire [3:0] subsY;
+	wire [9:0] subsX;
+	wire [9:0] subsY;
 	
 	assign subsX = (evalX - posX)/size;
 	assign subsY = (evalY - posY)/size;
@@ -79,10 +80,41 @@ module score_print #(
 
 
 	always @(posedge clk) begin
-		if(subsX < 8 + spacing) begin
+		if(subsX < 1*width + spacing) begin //S
 			char <= 83;
 			posXChar <= 0;
+		end else if(subsX < 2*(width + spacing)) begin //C
+			char <= 67;
+			posXChar <= 1*(width + spacing);
+		end else if(subsX < 3*(width + spacing)) begin //O
+			char <= 79;
+			posXChar <= 2*(width + spacing);
+		end else if(subsX < 4*(width + spacing)) begin //R
+			char <= 82;
+			posXChar <= 3*(width + spacing);
+		end else if(subsX < 5*(width + spacing)) begin //E
+			char <= 69;
+			posXChar <= 4*(width + spacing);
+		end else if(subsX < 6*(width + spacing)) begin //:
+			char <= 58;
+			posXChar <= 5*(width + spacing);
+		end else if(subsX < 7*(width + spacing)) begin // ' '
+			char <= 32;
+			posXChar <= 6*(width + spacing);
+		end else if(subsX < 8*(width + spacing)) begin // a3
+			char <= 48 + a3;
+			posXChar <= 7*(width + spacing);
+		end else if(subsX < 9*(width + spacing)) begin // a2
+			char <= 48 + a2;
+			posXChar <= 8*(width + spacing);
+		end else if(subsX < 10*(width + spacing)) begin // a1
+			char <= 48 + a1;
+			posXChar <= 9*(width + spacing);
+		end else if(subsX < 11*(width + spacing)) begin // a0
+			char <= 48 + a0;
+			posXChar <= 10*(width + spacing);
 		end
+		
 	end
 
 endmodule
