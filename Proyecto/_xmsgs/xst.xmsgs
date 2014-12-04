@@ -119,9 +119,6 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">keyboardCtrl</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">last_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">snake_position</arg>&gt;.
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">last_head_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">snake_position</arg>&gt;.
 </msg>
 
@@ -153,9 +150,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">snake_game_i/snake_position/self_col</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">snake_game_i/snake_position/last_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">snake_game_i/snake_position/snake_tail_x_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top</arg>&gt;.

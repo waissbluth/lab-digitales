@@ -160,7 +160,7 @@ module snake
 			end else if(addr_snake > 2) begin
 				next_write_x <= last_data[(xBits + yBits):(yBits + 1)];
 				next_write_y <= last_data[yBits:1];
-				next_write_active <= addra < length;
+				next_write_active <= (addra < length) & last_data[0];
 				if(next_write_active & addra >= length ) begin
 					snake_tail_x <= last_data[(xBits + yBits):(yBits + 1)];
 					snake_tail_y <= last_data[yBits:1];

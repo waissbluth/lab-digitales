@@ -217,8 +217,8 @@ module snake_game
 				
 				end 2: begin
 					screen_write_enable <= exists_snake;
-					screen_write_data <= snake_index; //*
-					//screen_write_data <= test_counter;
+					//screen_write_data <= snake_index; //*
+					screen_write_data <= test_counter;
 					screen_write_address <= y_snake*H + x_snake;
 					//if(previous_exist_tail && ~exists_snake) begin
 					//	snake_tail_x <= x_snake;
