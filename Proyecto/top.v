@@ -49,6 +49,7 @@ module top
 	localparam coin_color = 8'b001_111_01;
 	localparam bg_box_color = 8'b100_100_10;
 	localparam bg_color = 8'b010_010_01;
+	localparam bg_color_paused = 8'b010_010_11;
 	localparam score_color = 8'b110_000_01;
 	
 	function integer logb2;
@@ -74,7 +75,17 @@ module top
 	wire [1:0] move;
 
 	ps2_rx keyboardCtrl(mclk, reset, PS2D, PS2C, keyboardEnable, keyRecieved, keyboardData);
-	key_to_move key_to_move_i(mclk, reset, keyRecieved, keyboardData, move);
+	key_to_move key_to_move_i(mclk, reset, keyRecieved, keyboardData, gameTick, move, move_enable);
+	
+	/* Play + Pause */
+	reg playing;
+	
+	always @(posedge mclk) begin
+		if(reset | (keyboardData == 8'b0010_1001 & keyRecieved))
+			playing <= 0;
+		else if(move_enable)
+			playing <= 1;
+	end
 	
 	/* Driver pantalla */
 	wire [9:0] eval_x, eval_y, tmp_y;
@@ -109,7 +120,7 @@ module top
 	snake_game_i
 	(
 		mclk, reset,
-		gameTick & ~game_over,
+		gameTick & ~game_over & playing,
 		move,
 		eval_x, eval_y,
 
@@ -140,8 +151,9 @@ module top
 			if(game_over & score_color_valid) outColor <= score_color;
 			else if(score_color_valid) outColor <= ~score_color;
 			else if(snake_game_color_valid) outColor <= snake_game_color;
+			else if (~game_over & ~playing) outColor <= bg_color_paused;
 			else outColor <= bg_color;
-			end
+		end
 		else outColor <= 0;
 	end
 	
@@ -157,7 +169,7 @@ module top
 	//assign Led[1] = ticked;
 	//assign Led[3:2] = max_steel;
 	//assign Led[7:0] = snake_game_color;
-	assign Led[7:0] =  {0, game_over};
+	assign Led[7:0] = keyboardData;
 
 endmodule
 

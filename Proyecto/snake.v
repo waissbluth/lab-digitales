@@ -71,7 +71,7 @@ module snake
 	reg [(addrBits-1):0] addra;
 	reg [(addrBits-1):0] addrb;
 
-	localparam h_index = 5;
+	localparam h_index = 3;
 
 	wire read_active = doutb[0];
 	assign exists = read_active & (addrb >= h_index);
