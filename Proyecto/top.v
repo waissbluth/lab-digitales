@@ -109,7 +109,7 @@ module top
 	snake_game_i
 	(
 		mclk, reset,
-		gameTick,
+		gameTick & ~game_over,
 		move,
 		eval_x, eval_y,
 
@@ -121,8 +121,17 @@ module top
 	
 	/* Score */
 	wire score_color_valid;
+	
+	reg [(logb2(game_size_x*game_size_y)-1):0] score_display;
+	
+	always @(posedge mclk)
+		if(score < 3)
+			score_display <= 0;
+		else 
+			score_display <= score - 3;
+	
 
-	score_print #(game_size_x, game_size_y, 4, 1) score_print_i (mclk, score, eval_x, eval_y, 20, 320, score_color_valid);
+	score_print #(game_size_x, game_size_y, 4, 1) score_print_i (mclk, score_display, game_over, eval_x, eval_y, 20, 320, score_color_valid);
 	
 	always @(posedge mclk)
 	begin
@@ -147,7 +156,7 @@ module top
 	//assign Led[1] = ticked;
 	//assign Led[3:2] = max_steel;
 	//assign Led[7:0] = snake_game_color;
-	assign Led[7:0] =  score;
+	assign Led[7:0] =  {0, game_over};
 
 endmodule
 

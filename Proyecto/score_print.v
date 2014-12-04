@@ -26,6 +26,7 @@ module score_print #(
 )(		
 		input clk,
 		input [(logb2(H*V)-1):0] score,
+		input game_over,
 		input [9:0] evalX,
 		input [9:0] evalY,
 		input [9:0] posX,
@@ -80,39 +81,88 @@ module score_print #(
 
 
 	always @(posedge clk) begin
-		if(subsX < 1*width + spacing) begin //S
-			char <= 83;
-			posXChar <= 0;
-		end else if(subsX < 2*(width + spacing)) begin //C
-			char <= 67;
-			posXChar <= 1*(width + spacing);
-		end else if(subsX < 3*(width + spacing)) begin //O
-			char <= 79;
-			posXChar <= 2*(width + spacing);
-		end else if(subsX < 4*(width + spacing)) begin //R
-			char <= 82;
-			posXChar <= 3*(width + spacing);
-		end else if(subsX < 5*(width + spacing)) begin //E
-			char <= 69;
-			posXChar <= 4*(width + spacing);
-		end else if(subsX < 6*(width + spacing)) begin //:
-			char <= 58;
-			posXChar <= 5*(width + spacing);
-		end else if(subsX < 7*(width + spacing)) begin // ' '
-			char <= 32;
-			posXChar <= 6*(width + spacing);
-		end else if(subsX < 8*(width + spacing)) begin // a3
-			char <= 48 + a3;
-			posXChar <= 7*(width + spacing);
-		end else if(subsX < 9*(width + spacing)) begin // a2
-			char <= 48 + a2;
-			posXChar <= 8*(width + spacing);
-		end else if(subsX < 10*(width + spacing)) begin // a1
-			char <= 48 + a1;
-			posXChar <= 9*(width + spacing);
-		end else if(subsX < 11*(width + spacing)) begin // a0
-			char <= 48 + a0;
-			posXChar <= 10*(width + spacing);
+		if(game_over) begin
+			if(subsX < 1*width) begin //G
+				char <= 71;
+				posXChar <= 0;
+			end else if(subsX >= 1*(width + spacing) && subsX < 2*(width + spacing) - spacing) begin //A
+				char <= 65;
+				posXChar <= 1*(width + spacing);
+			end else if(subsX >= 2*(width + spacing) && subsX < 3*(width + spacing) - spacing) begin //M
+				char <= 77;
+				posXChar <= 2*(width + spacing);
+			end else if(subsX >= 3*(width + spacing) && subsX < 4*(width + spacing) - spacing) begin //E
+				char <= 69;
+				posXChar <= 3*(width + spacing);
+			end else if(subsX >= 4*(width + spacing) && subsX < 5*(width + spacing) - spacing) begin // ' '
+				char <= 32;
+				posXChar <= 4*(width + spacing);
+			end else if(subsX >= 5*(width + spacing) && subsX < 6*(width + spacing) - spacing) begin // O
+				char <= 79;
+				posXChar <= 5*(width + spacing);
+			end else if(subsX >= 6*(width + spacing) && subsX < 7*(width + spacing) - spacing) begin // V
+				char <= 86;
+				posXChar <= 6*(width + spacing);
+			end else if(subsX >= 7*(width + spacing) && subsX < 8*(width + spacing) - spacing) begin // E
+				char <= 69;
+				posXChar <= 7*(width + spacing);
+			end else if(subsX >= 8*(width + spacing) && subsX < 9*(width + spacing) - spacing) begin // R
+				char <= 82;
+				posXChar <= 8*(width + spacing);
+			end else if(subsX >= 9*(width + spacing) && subsX < 10*(width + spacing) - spacing) begin // :
+				char <= 58;
+				posXChar <= 9*(width + spacing);
+			end else if(subsX >= 10*(width + spacing) && subsX < 11*(width + spacing) - spacing) begin // a3
+				char <= 48 + a3;
+				posXChar <= 10*(width + spacing);
+			end else if(subsX >= 11*(width + spacing) && subsX < 12*(width + spacing) - spacing) begin // a2
+				char <= 48 + a2;
+				posXChar <= 11*(width + spacing);
+			end else if(subsX >= 12*(width + spacing) && subsX < 13*(width + spacing) - spacing) begin // a1
+				char <= 48 + a1;
+				posXChar <= 12*(width + spacing);
+			end else if(subsX >= 13*(width + spacing) && subsX < 14*(width + spacing) - spacing) begin // a0
+				char <= 48 + a0;
+				posXChar <= 13*(width + spacing);
+			end else
+				char <= 0;
+
+		end else begin
+			if(subsX < 1*width) begin //S
+				char <= 83;
+				posXChar <= 0;
+			end else if(subsX >= 1*(width + spacing) && subsX < 2*(width + spacing) - spacing) begin //C
+				char <= 67;
+				posXChar <= 1*(width + spacing);
+			end else if(subsX >= 2*(width + spacing) && subsX < 3*(width + spacing) - spacing) begin //O
+				char <= 79;
+				posXChar <= 2*(width + spacing);
+			end else if(subsX >= 3*(width + spacing) && subsX < 4*(width + spacing) - spacing) begin //R
+				char <= 82;
+				posXChar <= 3*(width + spacing);
+			end else if(subsX >= 4*(width + spacing) && subsX < 5*(width + spacing) - spacing) begin //E
+				char <= 69;
+				posXChar <= 4*(width + spacing);
+			end else if(subsX >= 5*(width + spacing) && subsX < 6*(width + spacing) - spacing) begin //:
+				char <= 58;
+				posXChar <= 5*(width + spacing);
+			end else if(subsX >= 6*(width + spacing) && subsX < 7*(width + spacing) - spacing) begin // ' '
+				char <= 32;
+				posXChar <= 6*(width + spacing);
+			end else if(subsX >= 7*(width + spacing) && subsX < 8*(width + spacing) - spacing) begin // a3
+				char <= 48 + a3;
+				posXChar <= 7*(width + spacing);
+			end else if(subsX >= 8*(width + spacing) && subsX < 9*(width + spacing) - spacing) begin // a2
+				char <= 48 + a2;
+				posXChar <= 8*(width + spacing);
+			end else if(subsX >= 9*(width + spacing) && subsX < 10*(width + spacing) - spacing) begin // a1
+				char <= 48 + a1;
+				posXChar <= 9*(width + spacing);
+			end else if(subsX >= 10*(width + spacing) && subsX < 11*(width + spacing) - spacing) begin // a0
+				char <= 48 + a0;
+				posXChar <= 10*(width + spacing);
+			end else
+				char <= 0;
 		end
 		
 	end

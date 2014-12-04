@@ -168,12 +168,13 @@ module snake
 					
 				last_data <= doutb;
 				next_wea <= 1;
+				if(last_head == last_data) self_col <= 1; // FIX
 				
 			end
 			
 			applyReset <= 0;
 			
-			if(last_head == doutb) self_col <= 1; // FIX
+			
 			
 		end else if(~applyReset) begin
 			case(move)
